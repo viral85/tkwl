@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219100908) do
+ActiveRecord::Schema.define(version: 20141219101417) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -88,6 +88,20 @@ ActiveRecord::Schema.define(version: 20141219100908) do
 
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
+
+  create_table "spree_blog_entries", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "visible",      default: false
+    t.datetime "published_at"
+    t.text     "summary"
+    t.integer  "author_id"
+  end
+
+  add_index "spree_blog_entries", ["author_id"], name: "index_spree_blog_entries_on_author_id"
 
   create_table "spree_calculators", force: true do |t|
     t.string   "type"
@@ -1054,6 +1068,10 @@ ActiveRecord::Schema.define(version: 20141219100908) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "nickname"
+    t.string   "website_url"
+    t.string   "google_plus_url"
+    t.text     "bio_info"
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
@@ -1107,5 +1125,23 @@ ActiveRecord::Schema.define(version: 20141219100908) do
   end
 
   add_index "spree_zones", ["default_tax"], name: "index_spree_zones_on_default_tax"
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
 end

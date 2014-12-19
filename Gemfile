@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 gem 'spree_multi_currency', :github => "spree-contrib/spree_multi_currency", branch: '2-4-stable'
 #use i18n for internationalization
 gem 'spree_i18n', github: 'spree/spree_i18n', branch: '2-4-stable'
+#use spree_blogging forked from stefansenk, updated gemspec to support spree 2-4-0
+gem 'spree_blogging_spree', github: 'tkwl/spree-blogging-spree'
 
 gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '2-4-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-4-stable'

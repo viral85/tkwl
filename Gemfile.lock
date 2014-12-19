@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/spree/spree.git
+  remote: https://github.com/spree/spree.git
   revision: 18ba0efc35daf6108f2462d5a17086a6636f9f16
   branch: 2-4-stable
   specs:

@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/spree-contrib/spree_multi_currency.git
+  revision: 4def9c4c00a79efac90a82fbcc42c00de2cfca8d
+  branch: 2-4-stable
+  specs:
+    spree_multi_currency (2.2.0)
+      spree_core (~> 2.4.0)
+
+GIT
   remote: https://github.com/spree/spree.git
   revision: 18ba0efc35daf6108f2462d5a17086a6636f9f16
   branch: 2-4-stable
@@ -313,6 +321,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_gateway!
+  spree_multi_currency!
   spring
   sqlite3
   turbolinks

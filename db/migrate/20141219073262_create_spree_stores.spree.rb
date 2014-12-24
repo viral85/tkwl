@@ -17,6 +17,7 @@ class CreateSpreeStores < ActiveRecord::Migration
         t.string :mail_from_address
         t.string :default_currency
         t.string :code
+        t.boolean :logo_file_name
         t.boolean :default, default: false, null: false
 
         t.timestamps

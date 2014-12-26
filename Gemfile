@@ -53,6 +53,7 @@ gem 'spree_blogging_spree', github: 'tkwl/spree-blogging-spree'
 gem 'spree_static_content', github: 'tkwl/spree_static_content', branch: 'master'
 gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '2-4-stable'
 gem 'tinymce-rails-langs'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '2-4-stable'
 
 gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '2-4-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-4-stable'

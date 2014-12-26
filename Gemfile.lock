@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/spree-contrib/better_spree_paypal_express.git
+  revision: 2f540c33ea0e85c24e10d03fabbee00b7145a55c
+  branch: 2-4-stable
+  specs:
+    spree_paypal_express (2.0.3)
+      paypal-sdk-merchant (= 1.106.1)
+      spree_core (~> 2.4.0.beta)
+
+GIT
   remote: git://github.com/spree-contrib/spree_editor.git
   revision: 08a3a9383bbc28fe380186e6ed47d5444ea78f30
   branch: 2-4-stable
@@ -47,6 +56,16 @@ GIT
       i18n_data (~> 0.5.1)
       rails-i18n (~> 4.0.1)
       spree_core (~> 2.4.0)
+
+GIT
+  remote: git://github.com/spree/spree_wombat.git
+  revision: b3d872a22fb2391708561d9c0a71c81f416f201e
+  branch: 2-4-stable
+  specs:
+    spree_wombat (2.2.0)
+      active_model_serializers (= 0.9.0.alpha1)
+      httparty
+      spree_core (~> 2.4.0.rc4)
 
 GIT
   remote: git://github.com/tkwl/spree-blogging-spree.git
@@ -157,6 +176,8 @@ GEM
       activesupport (= 4.1.8)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.9.0.alpha1)
+      activemodel (>= 3.2)
     active_utils (2.2.3)
       activesupport (>= 2.3.11)
       i18n
@@ -292,6 +313,11 @@ GEM
       mime-types
     paranoia (2.0.4)
       activerecord (~> 4.0)
+    paypal-sdk-core (0.2.10)
+      multi_json (~> 1.0)
+      xml-simple
+    paypal-sdk-merchant (1.106.1)
+      paypal-sdk-core (~> 0.2.3)
     pg (0.17.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
@@ -389,6 +415,7 @@ GEM
       tzinfo
     warden (1.2.3)
       rack (>= 1.0)
+    xml-simple (1.1.4)
 
 PLATFORMS
   ruby
@@ -409,8 +436,10 @@ DEPENDENCIES
   spree_i18n!
   spree_multi_currency!
   spree_multi_domain!
+  spree_paypal_express!
   spree_price_books!
   spree_static_content!
+  spree_wombat!
   spring
   sqlite3
   tinymce-rails-langs

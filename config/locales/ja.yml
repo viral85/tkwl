@@ -19,6 +19,6 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ja:
   hello: "Hello world"
-  about1: "Translated About Content"
+  about1: '日本語　Translated About Content'

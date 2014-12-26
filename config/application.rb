@@ -36,3 +36,9 @@ module Tkwl
     config.mails_from = "questions@tokyowheel.com"
   end
 end
+
+# Load Wombat webhook handlers
+Dir.glob(File.join(File.dirname(__FILE__), "../lib/**/*_handler.rb")) do |c|
+  Rails.configuration.cache_classes ? require(c) : load(c)
+end
+        

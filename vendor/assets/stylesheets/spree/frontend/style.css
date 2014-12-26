@@ -356,7 +356,7 @@ margin-top: 15px;
 
 .product-thumbnail.ad-template-160x600 {width:160px; height:600px;}
 .product-thumbnail.ad-template-160x600 img{max-height:180px;padding:0px 0px;margin-bottom:5px;}
-.product-thumbnail.ad-template-160x600 .caption{padding-top:0;line-height:;}
+.product-thumbnail.ad-template-160x600 .caption{padding-top:0;line-height:1;}
 .product-thumbnail.ad-template-160x600 .lead{font-size:20px;line-height:1;}
 .product-thumbnail.ad-template-160x600 .caption .text-muted {font-size:17px;line-height:1;}
 .product-thumbnail.ad-template-160x600 .caption .btn {margin-top:4px;}
@@ -369,7 +369,7 @@ margin-top: 15px;
 
 .product-thumbnail.ad-template-120x600 {width:120px; height:600px;}
 .product-thumbnail.ad-template-120x600 img{max-height:135px;padding:0px;margin-bottom:5px;}
-.product-thumbnail.ad-template-120x600 .caption{padding-top:0;line-height:;}
+.product-thumbnail.ad-template-120x600 .caption{padding-top:0;line-height:1;}
 .product-thumbnail.ad-template-120x600 .lead{font-size:17px;line-height:1;}
 .product-thumbnail.ad-template-120x600 .caption .text-muted {font-size:15px;line-height:1;}
 .product-thumbnail.ad-template-120x600 .caption .btn {margin-top:4px;}

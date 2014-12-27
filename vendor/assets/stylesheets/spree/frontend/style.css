@@ -543,3 +543,5 @@ padding-bottom: 15px !important;
 #notice-bar a{color:#fff;}
 #notice-bar a span{margin-right:5px;font-weight: 500;line-height: 1.1;font-size:18px}
 #notice-bar img{padding-bottom:2px}
+
+ul.nav.navbar-nav.navbar-right.top li a{font-size: 85%;}

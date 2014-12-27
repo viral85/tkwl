@@ -11,25 +11,10 @@
     <%= render partial: 'spree/shared/header' %>
  <%-# render partial: 'spree/shared/sale_banner' %> 
 
-  
-    <div class="container">
-
-      <div class="row" data-hook>
-
-        <%= breadcrumbs(@taxon) %>
-
-        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
-
-        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
           <%= flash_messages %>
           <%= yield %>
-        </div>
 
         <%= yield :templates %>
-
-      </div>
-
-    </div>
 	
 	<%-# TODO show CW 101 opt in conditionally unless page.handle == 'orders' or page.handle == 'sign-up' or template == 'cart' or page.handle == 'sale-sign-up-thank-you' or template contains 'customer' or page.handle == 'ambassador' or page.handle == 'angular' or page.handle == 'share' -%>
     <%= render partial: 'spree/shared/carbon_wheels_101_opt_in' %>

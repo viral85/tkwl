@@ -65,17 +65,17 @@
           <div role="navigation" class="navbar-main navbar-default navbar-static-top" id='main-nav'>
               <div class="container">
                   <div class="navbar-header hidden-sm">
-                    <a class="navbar-brand slim hidden-xs" href="/"><img src="{{ 'logo-file.png" alt="{{ shop.name }}"></a>
-                    <a class="navbar-brand visible-xs" href="/"><img src="{{ 'logo-file.png" alt="{{ shop.name }}"></a>  
+                    <a class="navbar-brand slim hidden-xs" href="/"><img src="http://cdn.tokyowheel.com/logo-file.png" alt="Tokyowheel™"></a>
+                    <a class="navbar-brand visible-xs" href="/"><img src="http://cdn.tokyowheel.com/logo-file.png" alt="Tokyowheel™"></a>  
                    
-                    {% comment %}{% unless template contains 'cart' %}
+                    <% if false %>{% unless template contains 'cart' %}
                      <div class='visible-xs pull-right navbar-cart'>
             			<a href="/cart" class="btn btn-success navbar-btn" >
               				<i class="fa fa-shopping-cart fa-lg"></i> <span class="sr-only">Shopping Cart</span> {% if cart.item_count != 0 %}<span class='badge'>{{ cart.item_count }}</span>{% endif %}
             			</a>
          			</div>
                  
-                    {% endunless %}{% endcomment %}
+                    {% endunless %}<% end %>
                     
                     
                     
@@ -92,7 +92,7 @@
                 
                 <div class="navbar-header col-sm-12 visible-sm">
                     
-                    <a class="navbar-brand col-sm-12 text-center" href="/"><img src="{{ 'logo-file.png" alt="{{ shop.name }}"></a>
+                    <a class="navbar-brand col-sm-12 text-center" href="/"><img src="http://cdn.tokyowheel.com/logo-file.png" alt="Tokyowheel™"></a>
                     
                   </div><!-- navbar header -->
                 
@@ -193,14 +193,14 @@
     Forum
   </a>
 </li>
-{% comment %}<li class="">
+<% if false %> <li class="">
   <a href="/pages/contact" title="Contact">
     FAQ
   </a>
 </li> 
                        <li>
   <a href="/pages/share">Earn Money</a>
-      </li>{% endcomment %}
+      </li><% end %>
     
 
                         <li class="dropdown visible-xs">
@@ -257,30 +257,6 @@
                           </ul>
                         </li>
                        {% endif %}
-      
-      
-                       <li class='visible-xs' style='margin-right:15px;margin-bottom:15px;'>
-                         <div class="currency-switcher form-group" stle='height:auto;'>
-  <select id="currencies2" name="currencies" class="form-control">
-  	<option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
-    <option value="ARS">ARS</option>
-    <option value="ANG">ANG</option>
-    <option value="AUD">AUD</option>
-    <option value="BRL">BRL</option>
-    <option value="CHF">CHF</option>
-    <option value="EUR">EUR</option>
-    <option value="GBP">GBP</option>
-    <option value="HKD">HKD</option>
-    <option value="JPY">JPY</option>
-    <option value="KRW">KRW</option>
-    <option value="NZD">NZD</option>
-    <option value="PHP">PHP</option>
-    <option value="SGD">SGD</option>
-    <option value="THB">THB</option>
-    <option value="USD">USD</option>
-</select>
-</div>
-      </li> 
                         
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -288,9 +264,26 @@
       {% unless template contains 'cart' %}
       <li class=''>
          <div>
-           <a href="/cart" class="btn btn-success navbar-btn" style='margin-right:15px;' >
+
+           <a href="/cart" class="btn btn-success navbar-btn" style='margin-right:15px;' data-hook>
               <span><i class="fa fa-shopping-cart fa-lg"></i> {% if cart.item_count != 0 %}<span class='badge'>{{ cart.item_count }}</span>{% endif %}<span class="visible-xs"> Shopping Cart</span></span>
             </a>
+	          
+			  
+  	        <li id="link-to-cart" data-hook>
+ 	          <noscript>
+ 	            <%= link_to Spree.t(:cart), '/cart' %>
+ 	          </noscript>
+ 	        <script>Spree.fetch_cart()</script>
+  	        </li>
+			
+<% if current_spree_page?(spree.cart_path) %>
+<h2>YES Cart Page</h2>
+<% else %>
+<h2>NOT Cart Page</h2>
+<% end %>
+
+			
          </div>
           </li>
       {% endunless %}

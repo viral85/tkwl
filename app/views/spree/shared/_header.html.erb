@@ -4,34 +4,29 @@
   <header id="header" data-hook>
 <%= render :partial => 'spree/shared/shipping_bar' %>
 <%= render :partial => 'spree/shared/header_bar' %>
+<div class="well well-sm no-margin support-bar-well visible-xs">
+
+                <div class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><center><strong><i class="fa fa-phone"></i> 24/7 Support </strong>1-855-534-5070  <img src="http://cdn.tokyowheel.com/us.png" alt="United States" class=""><span class="caret"></span></center></a>
+            				<ul class="dropdown-menu">
+<%= render :partial => 'spree/shared/phone_number_li' %>
+            				</ul>
+      			</div>
+</div><!-- support-bar-well -->
+						
+						
 <div role="navigation" class="navbar navbar-default no-margin sm-navbar navbar-square hidden-xs" id='sub-nav'>        
               <div class="container">
                 <div class='row'>
                   <div class="navbar-top-collapse navbar-collapse collapse">
                      <ul class="nav navbar-nav navbar-left top">
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><small><i class="fa fa-phone"></i> Call Us 1-877-549-2069 <span class="caret"></span></small></a>
-            				<ul class="dropdown-menu">
-<li><a href="tel:+810345895010"><strong><img src="http://cdn.tokyowheel.com/jp.gif" alt="Japan" class=""> Tokyo, Japan  </strong> +81 03 4589 5010</a></li>
-<li><a href="tel:+18775492069"><strong><img src="http://cdn.tokyowheel.com/us.gif" alt="USA" class=""> United States <small class='text-muted'>(Toll Free)</small>  </strong> +1 (877) 549-2069</a></li>
-<li><a href="tel:+18775492069"><strong><img src="http://cdn.tokyowheel.com/ca.gif" alt="Canada" class=""> Canada <small class='text-muted'>(Toll Free)</small>  </strong> +1 (877) 549-2069</a></li>
-<li><a href="tel:+61388997533"><strong><img src="http://cdn.tokyowheel.com/au.gif" alt="Australia" class=""> Australia  </strong> +61 3 8899 7533</a></li>
-<li><a href="tel:+448008085791"><strong><img src="http://cdn.tokyowheel.com/gb.gif" alt="United Kingdom" class=""> United Kingdom <small class='text-muted'>(Toll Free)</small>  </strong> +44 800 808 5791</a></li>
-<li><a href="tel:+43720884764"><strong><img src="http://cdn.tokyowheel.com/at.gif" alt="Austria" class=""> Austria  </strong> +43 720 884 764</a></li>
-<li><a href="tel:+3278481705"><strong><img src="http://cdn.tokyowheel.com/be.gif" alt="Belgium" class=""> Belgium  </strong> +32 78 481 705</a></li>
-<li><a href="tel:+4589883294"><strong><img src="http://cdn.tokyowheel.com/dk.gif" alt="Denmark" class=""> Denmark  </strong> +45 89 88 32 94</a></li>
-<li><a href="tel:+358753251385"><strong><img src="http://http://cdn.tokyowheel.com/cdn.tokyowheel.com/fi.gif" alt="Finland" class=""> Finland  </strong> +358 75 325 1385</a></li>
-<li><a href="tel:+33975189179"><strong><img src="http://cdn.tokyowheel.com/fr.gif" alt="France" class=""> France  </strong> +33 9 75 18 91 79</a></li>
-<li><a href="tel:+85258084534"><strong><img src="http://cdn.tokyowheel.com/hk.gif" alt="Hong Kong" class=""> Hong Kong  </strong> +852 58084534</a></li>
-<li><a href="tel:+353766805787"><strong><img src="http://cdn.tokyowheel.com/ie.gif" alt="Ireland" class=""> Ireland  </strong> +353 76 680 5787</a></li>
-<li><a href="tel:+390811892137"><strong><img src="http://cdn.tokyowheel.com/it.gif" alt="Italy" class=""> Italy  </strong> +39 081 189 2137</a></li>
-<li><a href="tel:+31858884391"><strong><img src="http://cdn.tokyowheel.com/nl.gif" alt="Netherlands" class=""> Netherlands  </strong> +31 85 888 4391</a></li>
-<li><a href="tel:+6478083142"><strong><img src="http://cdn.tokyowheel.com/nz.gif" alt="New Zealand" class=""> New Zealand  </strong> +64 7 808 3142</a></li>
-<li><a href="tel:+48618803256"><strong><img src="http://cdn.tokyowheel.com/pl.gif" alt="ydowo, Poland" class=""> Poland  </strong> +48 61 880 32 56</a></li>
-<li><a href="tel:+351308802535"><strong><img src="http://cdn.tokyowheel.com/pt.gif" alt="Portugal" class=""> Portugal  </strong> +351 308 802 535</a></li>
-<li><a href="tel:+46108848529"><strong><img src="http://cdn.tokyowheel.com/se.gif" alt="Sweden" class=""> Sweden  </strong> +46 10 8848529</a></li>
-            				</ul>
-      					</li>
+						                        <li class="dropdown">
+						                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><small><strong><i class="fa fa-phone"></i> 24/7 Support </strong><span>1-855-534-5070</span>  <img src="http://cdn.tokyowheel.com/us.png" alt="United States" class=""><span class="caret"></span></small></a>
+						            				<ul class="dropdown-menu">
+						<%= render :partial => 'spree/shared/phone_number_li' %>
+						            				</ul>
+						      					</li>
+												
                     </ul>
                       <ul class="nav navbar-nav navbar-right top">
                        
@@ -68,14 +63,16 @@
                     <a class="navbar-brand slim hidden-xs" href="/"><img src="http://cdn.tokyowheel.com/logo-file.png" alt="Tokyowheel™"></a>
                     <a class="navbar-brand visible-xs" href="/"><img src="http://cdn.tokyowheel.com/logo-file.png" alt="Tokyowheel™"></a>  
                    
-                    <% if false %>{% unless template contains 'cart' %}
+                    <% if false %>
+						<% unless current_spree_page?(spree.cart_path) %>
                      <div class='visible-xs pull-right navbar-cart'>
             			<a href="/cart" class="btn btn-success navbar-btn" >
-              				<i class="fa fa-shopping-cart fa-lg"></i> <span class="sr-only">Shopping Cart</span> {% if cart.item_count != 0 %}<span class='badge'>{{ cart.item_count }}</span>{% endif %}
+              				<i class="fa fa-shopping-cart fa-lg"></i> <span class="sr-only">Shopping Cart</span> <span class='badge'>1</span>
             			</a>
          			</div>
                  
-                    {% endunless %}<% end %>
+                    	<% end %>
+					<% end %>
                     
                     
                     
@@ -104,7 +101,7 @@
                      <ul class="nav navbar-nav">
       <li class="">
         <div>
-  <a class='btn {% if cart.item_count == 0 %}btn-primary{% else %}btn-default{% endif %} navbar-btn' href="/pages/wheels" title="Wheels">
+  <a class='btn btn-primary navbar-btn' href="/pages/wheels" title="Wheels">
     Shop Wheels
   </a>
         </div>
@@ -202,71 +199,25 @@
   <a href="/pages/share">Earn Money</a>
       </li><% end %>
     
-
-                        <li class="dropdown visible-xs">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone"></i> Call Us 1-877-549-2069 <span class="caret"></span></a>
-            				<ul class="dropdown-menu">
-<li><a href="tel:+810345895010"><strong><img src="http://cdn.tokyowheel.com/jp.gif" alt="Japan" class=""> Tokyo, Japan  </strong> +81 03 4589 5010</a></li>
-<li><a href="tel:+18775492069"><strong><img src="http://cdn.tokyowheel.com/us.gif" alt="USA" class=""> United States <small class='text-muted'>(Toll Free)</small>  </strong> +1 (877) 549-2069</a></li>
-<li><a href="tel:+18775492069"><strong><img src="http://cdn.tokyowheel.com/ca.gif" alt="Canada" class=""> Canada <small class='text-muted'>(Toll Free)</small>  </strong> +1 (877) 549-2069</a></li>
-<li><a href="tel:+61388997533"><strong><img src="http://cdn.tokyowheel.com/au.gif" alt="Australia" class=""> Australia  </strong> +61 3 8899 7533</a></li>
-<li><a href="tel:+448008085791"><strong><img src="http://cdn.tokyowheel.com/gb.gif" alt="United Kingdom" class=""> United Kingdom <small class='text-muted'>(Toll Free)</small>  </strong> +44 800 808 5791</a></li>
-<li><a href="tel:+43720884764"><strong><img src="http://cdn.tokyowheel.com/at.gif" alt="Austria" class=""> Austria  </strong> +43 720 884 764</a></li>
-<li><a href="tel:+3278481705"><strong><img src="http://cdn.tokyowheel.com/be.gif" alt="Belgium" class=""> Belgium  </strong> +32 78 481 705</a></li>
-<li><a href="tel:+4589883294"><strong><img src="http://cdn.tokyowheel.com/dk.gif" alt="Denmark" class=""> Denmark  </strong> +45 89 88 32 94</a></li>
-<li><a href="tel:+358753251385"><strong><img src="http://cdn.tokyowheel.com/fi.gif" alt="Finland" class=""> Finland  </strong> +358 75 325 1385</a></li>
-<li><a href="tel:+33975189179"><strong><img src="http://cdn.tokyowheel.com/fr.gif" alt="France" class=""> France  </strong> +33 9 75 18 91 79</a></li>
-<li><a href="tel:+85258084534"><strong><img src="http://cdn.tokyowheel.com/hk.gif" alt="Hong Kong" class=""> Hong Kong  </strong> +852 58084534</a></li>
-<li><a href="tel:+353766805787"><strong><img src="http://cdn.tokyowheel.com/ie.gif" alt="Ireland" class=""> Ireland  </strong> +353 76 680 5787</a></li>
-<li><a href="tel:+390811892137"><strong><img src="http://cdn.tokyowheel.com/it.gif" alt="Italy" class=""> Italy  </strong> +39 081 189 2137</a></li>
-<li><a href="tel:+31858884391"><strong><img src="http://cdn.tokyowheel.com/nl.gif" alt="Netherlands" class=""> Netherlands  </strong> +31 85 888 4391</a></li>
-<li><a href="tel:+6478083142"><strong><img src="http://cdn.tokyowheel.com/nz.gif" alt="New Zealand" class=""> New Zealand  </strong> +64 7 808 3142</a></li>
-<li><a href="tel:+48618803256"><strong><img src="http://cdn.tokyowheel.com/pl.gif" alt="ydowo, Poland" class=""> Poland  </strong> +48 61 880 32 56</a></li>
-<li><a href="tel:+351308802535"><strong><img src="http://cdn.tokyowheel.com/pt.gif" alt="Portugal" class=""> Portugal  </strong> +351 308 802 535</a></li>
-<li><a href="tel:+46108848529"><strong><img src="http://cdn.tokyowheel.com/se.gif" alt="Sweden" class=""> Sweden  </strong> +46 10 8848529</a></li>
-            				</ul>
-      					</li>
-
                         <li class="visible-xs"><a href="/account" class="">Track Order</a></li>
-                        
-      {% if customer %}
-                        <li class="dropdown visible-xs">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>{{ customer.first_name }} {{ customer.last_name }} <span class="caret"></span></span></a>
-            				<ul class="dropdown-menu">
-                              {% if template contains 'account' %}
-                              {% else %}
-                              <li><a href="/account">Dashboard</a></li>
-                              <li class=""><a href="/account" class="">Ambassador</a></li>
-                              {% if customer.orders.size != 0 %}
-                              <li class=""><a href="/account#orders" class="">Orders</a></li>
-                              <li class=""><a href="/account#tax" class="">Customs Tax</a></li>
-                              <li class=""><a href="/account#warranty" class="">Warranty</a></li>
-                              <li class=""><a href="/account#return" class="">Returns & Exchanges</a></li>
-                              {% endif %}
-                              {% endif %}
-                              
-                              <li>{{ 'Log out' | customer_logout_link }}</li>
-                          </ul>
-                        </li>
-  						  {% else %}
-                          <li class="dropdown visible-xs">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
-            				<ul class="dropdown-menu">
-                              <li><a href="http://www.tokyowheel.com/account/login">Sign In</a></li>
-                               <li><a href="http://www.tokyowheel.com/account/register">Create an Account</a></li>
-                          </ul>
-                        </li>
-                       {% endif %}
+  
+     <% if spree_current_user %>
+	 	<li class="visible-xs"><%= link_to Spree.t(:my_account), spree.account_path %></li>
+	 	<li class="visible-xs"><%= link_to Spree.t(:logout), spree.logout_path %></li>
+     <% else %>
+	 	<li class="visible-xs"><%= link_to Spree.t(:login), spree.login_path %></li>
+	 	<li class="visible-xs"><%= link_to Spree.t(:signup), spree_signup_path %></li>
+  	 <% end %>
                         
     </ul>
     <ul class="nav navbar-nav navbar-right">
      
-      {% unless template contains 'cart' %}
+      <% unless current_spree_page?(spree.cart_path) %>
       <li class=''>
          <div>
 
            <a href="/cart" class="btn btn-success navbar-btn" style='margin-right:15px;' data-hook>
-              <span><i class="fa fa-shopping-cart fa-lg"></i> {% if cart.item_count != 0 %}<span class='badge'>{{ cart.item_count }}</span>{% endif %}<span class="visible-xs"> Shopping Cart</span></span>
+              <span><i class="fa fa-shopping-cart fa-lg"></i> <span class='badge'>1</span><span class="visible-xs"> Shopping Cart</span></span>
             </a>
 	          
 			  
@@ -276,17 +227,13 @@
  	          </noscript>
  	        <script>Spree.fetch_cart()</script>
   	        </li>
+	  
 			
-<% if current_spree_page?(spree.cart_path) %>
-<h2>YES Cart Page</h2>
-<% else %>
-<h2>NOT Cart Page</h2>
-<% end %>
 
 			
          </div>
           </li>
-      {% endunless %}
+      <% end %>
       <% if false %> <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="http://cdn.tokyowheel.com/en-flag.png" alt="English" class=""> <span class="caret"></span>

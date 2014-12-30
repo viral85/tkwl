@@ -29,7 +29,21 @@
 												
                     </ul>
                       <ul class="nav navbar-nav navbar-right top">
-                       
+						  <!-- begin user identifier -->
+					   <% if try_spree_current_user.try(:has_spree_role?, "admin") %>
+					   <li class=""><span>You are an ADMIN</span></li>
+					   <% elsif try_spree_current_user.try(:has_spree_role?, "dealer") %>
+					   <li class=""><span>You are a DEALER</span></li>
+					   <% elsif try_spree_current_user.try(:has_spree_role?,"ambassador") %>
+					   <li class=""><span>You are an AMBASSADOR</span></li>
+					   <% elsif try_spree_current_user.try(:has_spree_role?, "blogger") %>
+					   <li class=""><span>You are an ATHLETE</span></li>
+					   <% elsif try_spree_current_user.try(:has_spree_role?, "user") %>
+					    <li class=""><span>You are a USER</span></li>
+					   <% end %>
+					   <!-- end user identifier -->
+					   
+					   
                         <li class=""><a href="/pages/contact" class="">Contact</a></li>
                         <li class=""><a href="/account#orders" class="">Track Order</a></li>
 						

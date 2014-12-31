@@ -1,0 +1,886 @@
+<%= render :partial => 'spree/shared/notice_bar' %>
+
+
+
+<div class='container'>
+  <div id="gallery-links">
+      <div class="row main-image-row">
+          <a href="//cdn.shopify.com/s/files/1/0210/5956/products/epic-38-set_grande.jpg?v=1409927999"class="thumbnail col-md-12 main-product-image" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img class="img-responsive" src="//cdn.shopify.com/s/files/1/0210/5956/products/epic-38-set_large.jpg?v=1409927999" alt="Epic 38 - Carbon Clincher - Wheelset" >
+          </a>
+      </div>
+      
+        
+      
+      <div class='row'>  
+        
+        <div class="col-md-3 col-xs-3">
+        <a href="//cdn.shopify.com/s/files/1/0210/5956/products/epic-38-rear-side-hero_grande.jpg?v=1409927999" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/epic-38-rear-side-hero_small.jpg?v=1409927999" alt="" />
+          </a>
+        </div>
+        
+        
+        <div class="col-md-3 col-xs-3">
+        <a href="//cdn.shopify.com/s/files/1/0210/5956/products/epic-38-front-side-hero_grande.jpg?v=1409927999" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/epic-38-front-side-hero_small.jpg?v=1409927999" alt="" />
+          </a>
+        </div>
+        
+        
+        <div class="col-md-3 col-xs-3">
+        <a href="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-road-hub-rear-side3_grande.jpg?v=1409927999" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-road-hub-rear-side3_small.jpg?v=1409927999" alt="" />
+          </a>
+        </div>
+        
+        
+        <div class="col-md-3 col-xs-3">
+        <a href="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-road-front-hub-angle_grande.jpg?v=1409927999" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-road-front-hub-angle_small.jpg?v=1409927999" alt="" />
+          </a>
+        </div>
+        </div><div class="row">
+        
+        <div class="col-md-3 col-xs-3">
+        <a href="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-epic-rim-closeup_grande.jpg?v=1409927999" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-epic-rim-closeup_small.jpg?v=1409927999" alt="" />
+          </a>
+        </div>
+        
+        
+        <div class="col-md-3 col-xs-3">
+        <a href="//cdn.shopify.com/s/files/1/0210/5956/products/epic-clincher-rim_1_grande.jpg?v=1409927999" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/epic-clincher-rim_1_small.jpg?v=1409927999" alt="" />
+          </a>
+        </div>
+        
+        
+        <div class="col-md-3 col-xs-3">
+        <a href="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-road-accessories-ceramic-champion_6d982961-4496-4263-b2ff-d652fe1215bf_grande.jpg?v=1409928007" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-road-accessories-ceramic-champion_6d982961-4496-4263-b2ff-d652fe1215bf_small.jpg?v=1409928007" alt="" />
+          </a>
+        </div>
+    
+     <div class="col-md-3 col-xs-3">
+        <a href="https://www.youtube.com/watch?v=SaH2wsn99KY" class="thumbnail product-thumbnails img-responsive" title='Epic 38 - Carbon Clincher - Wheelset' data-gallery>
+            <img src="//cdn.shopify.com/s/files/1/0210/5956/products/tokyowheel-road-accessories-ceramic-champion_6d982961-4496-4263-b2ff-d652fe1215bf_small.jpg?v=1409928007" alt="" />
+          </a>
+        </div>
+        
+        
+        </div>
+        
+      </div><!-- end gallery links -->
+       <!-- blueimp image gallery -->
+</div>
+
+
+<%= render :partial => 'spree/shared/blueimp_gallery_modal' %>
+
+
+<script src='https://raw.githubusercontent.com/blueimp/Gallery/master/js/blueimp-gallery-video.js'></script>
+<script src='https://raw.githubusercontent.com/blueimp/Gallery/master/js/blueimp-gallery-youtube.js'></script>
+
+<script src='https://raw.githubusercontent.com/blueimp/Gallery/master/js/blueimp-helper.js'></script>
+  <script>
+document.getElementById('gallery-links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
+
+
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+      <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="//www.youtube.com/embed/cwATBUZHG2M?autoplay=1"></iframe>
+</div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="spokes row-bg-dark">
+<div class="container">
+  <div class="row ">
+  <h2 class="product-info-title text-center">Spokes</h2>
+  </div><!-- row -->
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">3.2mm Aero Bladed Spokes. <span class="text-muted"> Increase Wheel Strength and Improve Aerodynamic Speed.</span></h2>
+          <p class="lead">Standard 3.2mm Aero Bladed spokes comes standard on all Tokyowheels, and offer the improved aerodynamics of the bladed spoke shape.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="http://cdn.shopify.com/s/files/1/0210/5956/files/3.2mm-Aero-Bladed-Spokes_large.jpg?15886" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/3.2mm-Aero-Bladed-Spokes_large.jpg?15886" alt="3.2mm Aero Bladed Spokes">
+        </div>
+      </div><!-- row featurette-->
+  <hr class="featurette-divider product">
+   <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="http://cdn.shopify.com/s/files/1/0210/5956/files/sapim-cx-ray-sils-spoke-nipple_large.jpg?15884" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/sapim-cx-ray-sils-spoke-nipple_large.jpg?15884" alt="Sapim Cx-Ray Spokes & Sapim Sils Nipples">
+        </div>
+     <div class="col-md-7">
+          <h2 class="featurette-heading">Sapim CX-Ray. <span class="text-muted"><span class="text-warning">Optional</span> Premium Spokes.</span></h2>
+      
+       <p class="lead">Arguably the best spokes in the world. The aerodynamic shape of the CX-Ray is also 30% lighter than standard round spokes.</p>
+     <a class="btn btn-primary" data-toggle="modal" href="#sapim" >Learn More</a>  
+
+  <div id="discourse-comments"></div>
+
+<script type="text/javascript">
+  var discourseUrl = "http://forum.tokyowheel.com/",
+      discourseEmbedUrl = 'http://www.tokyowheel.com/pages/sandbox';
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+      d.src = discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+  
+     </div>
+      </div><!-- row featurette-->
+     <hr class="featurette-divider product">
+  </div><!-- container -->
+      </div><!-- Spokes -->
+      
+        <div class="hub">
+<div class="container">
+  <div class="row ">
+  <h2 class="product-info-title text-center">Hub</h2>
+  </div><!-- row -->
+      
+
+   <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-road-hub-set_large.jpg?15882" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-road-hub-set_large.jpg?15882" alt="Tokyowheel Vapor Hubs">
+        </div>
+     <div class="col-md-7">
+          <h2 class="featurette-heading">Tokyowheel Vapor. <span class="text-muted"> Standard Road Bike Hubs.</span></h2>
+       <p class="lead">Lightweight, smooth rolling, and durable. Vapor hubs, feature a 6 pawl cassette (Industry standard is 3 pawls), for better power engagement to the wheel. With 4 sealed cartridge bearings in the rear hub and 2 in the front, Vapor hubs are great all around durable road bike hubs.</p>
+        </div>
+      </div><!-- row featurette-->
+    <hr class="featurette-divider product">
+  <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Tokyowheel Vapor Ceramic. <span class="text-muted"><span class="text-warning">Optional</span> Lighter Ceramic 4 Bearing Hubs.</span></h2>
+          <p class="lead">A lighter version of our Vapor hub, with ceramic bearings for the ultimate in low friction rolling. 4 USA Enduro Ceramic bearings are used in each of the front and rear hubs (Industry standard hubs use only 2 bearings per hub). The extra 2 bearings per hub distribute forces across a greater number of bearing balls and improve durability and bearing life.<small>Get this hub upgrade and we will include Titanium quick release skewers.</small></p>
+    <a class="btn btn-primary" data-toggle="modal" href="#ceramic-hubs">Learn More</a>    
+    </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="http://cdn.shopify.com/s/files/1/0210/5956/files/jpeg-3_large.jpeg?15876" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/jpeg-3_large.jpeg?15876" alt="Tokyowheel Vapor Ceramic Bearing Hubs">
+        </div>
+      </div><!-- row featurette-->
+   <hr class="featurette-divider product">
+  <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="https://cdn.shopify.com/s/files/1/0210/5956/files/dt-swiss_2402-straight-pull-hubset_hero_large.png?28489" data-src="https://cdn.shopify.com/s/files/1/0210/5956/files/dt-swiss_2402-straight-pull-hubset_hero_large.png?28489" alt="DT Swiss 240s Straight Pull Hubs">
+        </div>
+     <div class="col-md-7">
+          <h2 class="featurette-heading">DT Swiss 240s Straight Pull. <span class="text-muted"><span class="text-warning">Optional </span>Premium Road Bike Hubs.</span></h2>
+       <p class="lead">One of the most well known names in hubs. DT Swiss components have a long history of quality and high performance. <small>Get this hub upgrade and we will include Titanium quick release skewers.</small></p>
+    <a class="btn btn-primary" data-toggle="modal" href="#dtswiss240" >Learn More</a>   
+    </div>
+      </div><!-- row featurette-->
+      <hr class="featurette-divider product">
+  <h2 class="product-info-title text-center">Hub & Spoke Comparison</h2>
+  <table class="table table-condensed">
+    <thead>
+        <tr>
+          <th></th>
+          <th>Standard Hubs & Spokes</th>
+          <th>Lighter Ceramic Upgrade</th>
+          <th>DT Swiss Upgrade</th>
+          <th>Disc Brake Upgrade</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+<td><strong>Total Wheelset Weight</strong></td>
+<td><strong class="text-success">315g</strong></td>
+<td><strong class="text-success">315g</strong></td>
+<td><strong class="text-success">315g</strong></td> 
+<td><strong class="text-success">315g</strong></td>         
+</tr>
+ <tr>
+<td><strong>Total Hub Set (Front+ Rear) Weight</strong></td>
+<td>315g</td>
+<td>315g</td>
+<td>315g</td>
+<td>315g</td>   
+</tr>      
+<tr>
+<td><strong>Front Hub Weight</strong></td>
+<td><strong>70g</strong></td>
+</tr>
+<tr>
+<td><strong>Rear Hub Weight</strong></td>
+<td><strong>235g</strong></td>
+</tr>
+<tr>
+<td><strong>Front Spoke Holes</strong></td>
+<td><strong>20</strong></td>
+</tr>
+<tr>
+<td><strong>Rear Spoke Holes</strong></td>
+<td><strong>24</strong></td>
+</tr>
+  <tr>
+<td><strong>Front Spoke Lacing Pattern</strong></td>
+<td><strong>Radial</strong></td>
+</tr>
+<tr>
+<td><strong>Rear Spoke Lacing Pattern</strong></td>
+<td><strong>Drive Side: 2x Non-Drive Side: Radial</strong></td>
+</tr>
+<tr>
+<td><strong>Front Hub Width</strong></td>
+<td><strong>100mm</strong></td>
+</tr>
+<tr>
+<td><strong>Rear Hub Width</strong></td>
+<td><strong>130mm</strong></td>
+</tr>  
+<tr>
+<td><strong>Bearings</strong></td>
+<td><strong>Sealed Cartridge Bearings</strong></td>
+</tr>
+  <tr>
+<td><strong>Freehub Engagement</strong></td>
+<td><strong>6 Pawls, 2 engagement groups</strong></td>
+</tr>
+<tr>
+<td><strong>Mounting</strong></td>
+<td><strong>Titanium Quick Release Skewer</strong></td>
+</tr>
+<tr>
+<td><strong>Brand</strong></td>
+<td><strong>Tokyowheel</strong></td>
+</tr>
+  <tr>
+<td><strong>Model</strong></td>
+<td><strong>Vapor™</strong></td>
+</tr>
+<tr>
+
+<td><strong>Colors</strong></td>
+<td><strong>Black</strong></td>
+</tr>
+<tr>
+<td><strong>Included Accessories</strong></td>
+<td><strong>Titanium Quick Release Skewer</strong></td>
+</tr>
+<tr>
+<td><strong>Total Spoke + Nipple Weight</strong></td>
+<td><strong class="text-success">300g</strong></td>
+</tr>
+<tr>
+<td><strong>Front Spoke Count</strong></td>
+<td><strong>20</strong></td>
+</tr>
+  <tr>
+<td><strong>Rear Spoke Count</strong></td>
+<td><strong>24</strong></td>
+</tr>
+<tr>
+<td><strong>Front Spoke Lacing Pattern</strong></td>
+<td><strong>Radial</strong></td>
+</tr>
+<tr>
+<td><strong>Rear Spoke Lacing Pattern</strong></td>
+<td><strong>Drive Side: 2x Non-Drive Side: Radial</strong></td>
+</tr>
+<tr>
+<td><strong>Spoke Width Width</strong></td>
+<td><strong>3.2mm</strong></td>
+</tr>
+<tr>
+<td><strong>Spoke Shape</strong></td>
+<td><strong>Flat Aero Blade</strong></td>
+</tr>  
+<tr>
+<td><strong>Nipples</strong></td>
+<td><strong>External, Alloy</strong></td>
+</tr>
+<tr>
+<td><strong>Spoke Color</strong></td>
+  <td><strong>Black</strong></td>
+</tr>
+  <tr>
+<td><strong>Nipple Color</strong></td>
+  <td><strong>Black</strong></td>
+</tr>
+      <tr>
+<td><strong>Price</strong></td>
+  <td><strong class="text-success"><span class="money">+$0.00 USD</span></strong></td>
+  <td><strong class="text-success"><span class="money">+$269.00 USD</span></strong></td>
+  <td><strong class="text-success"><span class="money">+$479.00 USD</span></strong></td>
+  <td><strong class="text-success"><span class="money">+$269.00 USD</span></strong></td>      
+</tr>
+    </tbody>
+</table>
+        <hr class="featurette-divider product">
+  
+  </div><!-- container -->
+      </div><!-- hub -->
+
+    
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-4'>
+      <div class>
+        <h2 class='lead'>James Ferrer on Strava</h2>
+<iframe height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='http://www.strava.com/athletes/156854/latest-rides/d25518b588f2f8dc5a5291419a9b3b17816db7ca'></iframe>
+      </div>
+    </div><!-- col -->
+    
+    <div class='col-sm-8'>
+      <h2 class='lead'>James Ferrer on Instagram <style>.ig-b- { display: inline-block; }
+.ig-b- img { visibility: hidden; }
+.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+.ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }</style>
+<a href="http://instagram.com/james_ferrer?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a>
+      </h2>
+    <!-- SnapWidget -->
+<!-- SnapWidget -->
+<script src="http://snapwidget.com/js/snapwidget.js"></script>
+<iframe src="http://snapwidget.com/in/?u=amFtZXNfZmVycmVyfGlufDEyNXw2fDEwfHxub3w1fG5vbmV8b25TdGFydHx5ZXN8eWVz&ve=020914" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+      
+    </div><!-- col -->
+    </div><!-- row -->
+  </div><!-- container -->
+
+<% if false %>
+  <div class='container'>
+  <div class='row'>
+    <div class='col-md-10 col-md-offset-1'>
+      <!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="http://www.ustream.tv/embed/18656851?v=3&amp;wmode=direct" >    </iframe>
+</div>
+      
+      
+      </div>
+    </div><!-- row -->
+  
+  </div><!-- container -->
+     
+<% end %>
+
+
+<% if false %>
+<!-- header bar -->
+
+ <div class='container sub-nav' >
+  
+  <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse sub-nav" style='margin-bottom:0 !important;'>
+        
+    <ul class="nav navbar-nav">
+      {% for l in linklists.main-menu.links %}
+          {% include '_navbar-link' with 'top' %}
+      {% endfor %}
+    </ul>
+   
+    <ul class="nav navbar-nav navbar-right">
+       <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{'en-flag.png' | asset_url }}" alt="English" class=""> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.tokyowheel.com"><img src="{{'en-flag.png' | asset_url }}" alt="English" class=""> {% include '__localize' with 'English' %}</a></li>
+				<li><a href="http://www.tokyowheel.jp"><img src="{{'jp-flag.png' | asset_url }}" alt="日本語" class=""> {% include '__localize' with '日本語' %}</a></li>
+            </ul>
+      </li>
+      <li>
+        {% include 'currency-switcher' %}
+      </li>
+      
+    </ul>
+        
+  </div><!-- /.navbar-collapse sub-nav-->
+  </div><!-- container -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-default" role="navigation" style='margin-bottom:0 !important;'>
+<div class='container'>
+   
+  
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/"><img src="{{ 'logo-file.png' | asset_url }}" alt="{{ shop.name }}"></a>
+  </div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse ">
+        
+    <ul class="nav navbar-nav">
+      {% for l in linklists.main-menu-2.links %}
+          {% include '_navbar-link' with 'top' %}
+      {% endfor %}
+    </ul>
+   
+    <ul class="nav navbar-nav navbar-right">
+       <li>
+            <a href="/cart" class="" >
+              <i class="fa fa-shopping-cart fa-lg"></i> Shopping Cart
+            </a>
+          </li>
+      {% comment %} <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{'en-flag.png' | asset_url }}" alt="English" class=""> <span class="caret"></span>
+            </a>
+          <ul class="dropdown-menu">
+              <li><a href="http://www.tokyowheel.com"><img src="{{'en-flag.png' | asset_url }}" alt="English" class=""> {% include '__localize' with 'English' %}</a></li>
+				<li><a href="http://www.tokyowheel.jp"><img src="{{'jp-flag.png' | asset_url }}" alt="日本語" class=""> {% include '__localize' with '日本語' %}</a></li>
+            </ul>
+      </li>{% endcomment %}
+      <li>
+        {% include 'currency-switcher' %}
+      </li>
+    </ul> 
+  </div><!-- /.navbar-collapse -->
+  </div><!-- container -->
+
+</nav>
+
+<!-- end navbar -->
+{% endcomment %}
+{% comment %}
+     <script>
+  //<![CDATA[
+    var _curebitq = _curebitq || [];
+    _curebitq.push(['init', {
+      site_id: 'tokyowheel', // REQUIRED - Curebit Site ID
+      // server: 'https://www.curebit.com' // OPTIONAL - use your own domain, that suppose to be setup as alias to curebit.com (this option is only possible for Enterprise client)
+    }]);
+
+    _curebitq.push(['register_affiliate', {
+      iframe: { // REQUIRED - html attributes for iframe tag to fit page design
+        width: '100%', // REQUIRED - width of the iframe
+        height: 960, // REQUIRED - initial height of the iframe. Will be automatically updated if responsive option is set to true.
+        //container: "id", // OPTIONAL - Tell Curebit where to insert the iframe (ID attribute). See Asynchronous Integration for more details.
+        id: 'new_curebit_affiliate_member' // OPTIONAL - any other HTML attribute
+      },
+  
+      affiliate_member: { // OPTIONAL - curebit will ask person to signup in case when his email is not given by merchant
+        email: '{{customer.email}}', // OPTIONAL - customer email
+        first_name: '{{customer.first_name}}', // OPTIONAL - customer first name
+        last_name: '{{customer.last_name}}', // OPTIONAL - customer last name
+        customer_id: '', // OPTIONAL - customer ID from your site
+        traffic_source: '' // OPTIONAL - indicate person traffic source. Can be used as segmentation parameter in reporting.
+      },
+      responsive: true, // OPTIONAL - fit iframe into viewport (also on resize) and allow Curebit display mobile templates
+      // device: 'desktop', // OPTIONAL - enforce mobile/tablet/desktop view or skip this to allow Curebit choose corresponding template
+      campaign_tags: ['tw'] // OPTIONAL - campaign tags for offer targeting
+    }]);
+  //]]>
+</script>
+<script src="//d2jjzw81hqbuqv.cloudfront.net/integration/curebit-1.0.min.js" type="text/javascript"></script>
+<!-- End Curebit integration code -->
+    
+<% end %>
+
+
+
+  <div class="jumbotron jumbotron1">
+  <div class="container text-center">
+  <div class="col-sm-5">
+    <img id='jumbotron1-hero-image' class="img-responsive" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500.png?14751" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500.png?14751" alt="Tokyowheel Epic 60">
+    </div>
+    <div class="col-sm-7"> 
+    <h1>Tokyowheel Carbon Wheels</h1>
+    <p>Carbon wheels For Road, Triathlon, and Cyclocross Bikes.</p>
+    <p><a id='index-cta-top'class="btn btn-warning btn-lg" href='/pages/wheels'>Shop Carbon Wheels</a></p>
+    </div>
+    </div>
+</div>
+
+
+
+
+<!-- collection page -->
+<div class='container'>
+ <h1 id="" class="page-header">EPIC <small>Clincher Wheelsets</small></h1>
+<div class="row">
+<div class="col-md-3 col-sm-6">
+ 
+  <div class="thumbnail product-thumbnail"><a href="/products/epic-38-carbon-clincher-wheelset"><img src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-set_large.png?15504" class="img-responsive" alt="Epic 38 Carbon Clincher Wheelset" /></a>
+<div class="caption">
+    <span class="lead">EPIC 38 </span>
+    <div class="text-muted">Carbon Clincher - Wheelset</div>
+  <div class=""><small class="muted">From </small><span class="money text-success">$979.00 USD </span> <span class="label label-default">FREE Shipping</span></div>
+<div class="characteristics">
+        <h5 class="text-warning text-center">Aerodynamics</h5>
+       <p class='text-muted'><small>Low Drag</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:67%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Stability in Windy Conditions</small></p>
+        
+         <h5 class="text-danger text-center">Weight</h5>
+       <p class='text-muted'><small>Acceleration</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:10%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Constant Speed</small></p>
+          
+              <h5 class="text-info text-center">Best Use</h5>
+       <p class='text-muted'><small>Hills</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:0%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Flats</small></p>
+
+        </div><!-- characteristics -->
+ <a href="/products/epic-38-carbon-clincher-wheelset" class="btn btn-success btn-block product-box-button "><i class="fa fa-shopping-cart"></i> Buy Now</a>
+  		<a href="/products/epic-38-carbon-clincher-wheelset" class="btn btn-primary btn-block product-box-button "><i class="fa fa-list"></i> Learn More</a>
+    </div>
+  </div>
+</div>
+<!-- col-md-3 -->
+<div class="col-md-3  col-sm-6">
+  <div class="thumbnail product-thumbnail"><a href="/products/epic-50-carbon-clincher-wheelset"><img src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-50-set_large.jpg?15504"class="img-responsive" alt="Epic 50 Carbon Clincher Wheelset" /></a>
+<div class="caption">
+  <div>
+    <span class="lead">EPIC 50 </span>
+    <div class="text-muted">Carbon Clincher - Wheelset</div>
+    
+    </div>
+  <div class=""><small class="muted">From </small><span class="money text-success">$1019.00 USD </span> <span class="label label-default">FREE Shipping</span></div>
+   <div class="characteristics"> 
+        <h5 class="text-warning text-center">Aerodynamics</h5>
+       <p class='text-muted'><small>Low Drag</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:33%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Stability in Windy Conditions</small></p>
+        
+         <h5 class="text-danger text-center">Weight</h5>
+       <p class='text-muted'><small>Acceleration</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:20%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Constant Speed</small></p>
+          
+              <h5 class="text-info text-center">Best Use</h5>
+       <p class='text-muted'><small>Hills</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:33%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Flats</small></p>
+
+        </div><!-- characteristics -->		
+  
+        <a href="#" class="btn btn-success btn-block product-box-button "><i class="fa fa-shopping-cart"></i> Buy Now</a>
+  		<a href="/products/epic-50-carbon-clincher-wheelset" class="btn btn-primary btn-block product-box-button "><i class="fa fa-list"></i> Learn More</a>
+  </div> <!-- caption -->
+</div> <!-- product thumbnail -->
+</div><!-- col-md-3  col-sm-6 -->
+  
+<!-- col-md-3 -->
+  <div class="col-md-3  col-sm-6">
+  <div class="thumbnail product-thumbnail"><a href="/products/epic-60-carbon-clincher-wheelset"><img src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-set_large.jpg?15519"class="img-responsive" alt="Epic 60 Carbon Clincher Wheelset" /></a>
+<div class="caption">
+  <div>
+    <span class="lead">EPIC 60 </span>
+    <div class="text-muted">Carbon Clincher - Wheelset</div>
+    
+    </div>
+  <div class=""><small class="muted">From </small><span class="money text-success">$1039.00 USD </span> <span class="label label-default">FREE Shipping</span></div>
+<div class="characteristics"> 
+        <h5 class="text-warning text-center">Aerodynamics</h5>
+       <p class='text-muted'><small>Low Drag</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:20%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Stability in Windy Conditions</small></p>
+        
+         <h5 class="text-danger text-center">Weight</h5>
+       <p class='text-muted'><small>Acceleration</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:33%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Constant Speed</small></p>
+          
+              <h5 class="text-info text-center">Best Use</h5>
+       <p class='text-muted'><small>Hills</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:40%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Flats</small></p>
+
+        </div><!-- characteristics -->
+  <a href="/products/epic-60-carbon-clincher-wheelset" class="btn btn-success btn-block product-box-button "><i class="fa fa-shopping-cart"></i> Buy Now</a>
+  		<a href="/products/epic-60-carbon-clincher-wheelset" class="btn btn-primary btn-block product-box-button "><i class="fa fa-list"></i> Learn More</a>
+
+    </div>
+</div>
+</div>
+<!-- col-md-3 -->
+  <div class="col-md-3  col-sm-6">
+  <div class="thumbnail product-thumbnail"><a href="/products/epic-88-carbon-clincher-wheelset"><img src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-88-set_large.jpg?15519"class="img-responsive" alt="Epic 88 Carbon Clincher Wheelset" /></a>
+<div class="caption">
+  <div>
+    <span class="lead">EPIC 88 </span>
+    <div class="text-muted">Carbon Clincher - Wheelset</div>
+    
+    </div>
+  <div class=""><small class="muted">From </small><span class="money text-success">$1099.00 USD </span><span class="label label-default">FREE Shipping</span></div>
+<div class="characteristics"> 
+        <h5 class="text-warning text-center">Aerodynamics</h5>
+       <p class='text-muted'><small>Low Drag</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:10%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Stability in Windy Conditions</small></p>
+        
+         <h5 class="text-danger text-center">Weight</h5>
+       <p class='text-muted'><small>Acceleration</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:40%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Constant Speed</small></p>
+          
+              <h5 class="text-info text-center">Best Use</h5>
+       <p class='text-muted'><small>Hills</small></p> 
+        <div class="progress progress-striped">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%;margin-left:55%;">
+  </div>
+</div><!-- progress bar -->
+        <p class="text-right text-muted"><small>Flats</small></p>
+
+        </div><!-- characteristics -->
+    <a href="/products/epic-88-carbon-clincher-wheelset" class="btn btn-success btn-block product-box-button "><i class="fa fa-shopping-cart"></i> Buy Now</a>
+  		<a href="/products/epic-88-carbon-clincher-wheelset" class="btn btn-primary btn-block product-box-button "><i class="fa fa-list"></i> Learn More</a>
+
+</div>
+</div>
+<!-- col-md-3 -->
+</div>
+<!-- row -->
+
+</div><!-- container -->
+<!-- end collection page -->
+<div id='horizontal-opt-in' class='well well-sm' style='margin-bottom: 20px;'>
+  <div class='row'>
+      <div class='col-sm-7 col-sm-offset-1'>
+        <h3 class=''>Get <em><strong>FREE</strong></em> Carbon Wheel Tips, News, and Special Offers.</h3> 
+      </div><!-- col-sm-7 -->
+      <div class='col-sm-3'>
+        <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#opt-in-modal">Get It!</button>
+      </div><!-- col-sm-3 -->
+  	</div><!-- row -->
+  </div><!-- well -->
+
+
+<div class="container">
+<div class='row'>
+	<div class='col-sm-6'>
+      <div class="jumbotron jumbotron1">
+  <div class="container text-center">
+  <div class="col-sm-5">
+    <img id='jumbotron1-hero-image' class="img-responsive" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500.png?14751" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500.png?14751" alt="Tokyowheel Epic 60">
+    </div>
+    <div class="col-sm-7"> 
+    <h1>Mountain</h1>
+    <p>Mountain Bike.</p>
+    <p><a id='index-cta-top'class="btn btn-warning btn-lg" href='/pages/wheels'>Shop MTB WHEELS</a></p>
+    </div>
+    </div>
+</div>
+
+  	</div><!-- col-sm- -->
+  	<div class='col-sm-6'>
+      <div class="jumbotron jumbotron1">
+  <div class="container text-center">
+  <div class="col-sm-5">
+    <img id='jumbotron1-hero-image' class="img-responsive" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500.png?14751" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500.png?14751" alt="Tokyowheel Epic 60">
+    </div>
+    <div class="col-sm-7"> 
+      <h1>Road</h1>
+    <p>Road Bike</p>
+    <p><a id='index-cta-top'class="btn btn-warning btn-lg" href='/pages/wheels'>Shop ROAD BIKE Wheels</a></p>
+    </div>
+    </div>
+</div>
+
+  	</div><!-- col-sm- -->
+  </div><!-- row -->
+</div><!-- container -->
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-6'>
+      
+    </div>
+    <div class='col-sm-6'>
+		<%= render :partial => 'spree/shared/availability_countdown' %>
+      
+    </div>    
+  </div><!-- row -->
+</div><!-- container -->
+<%= render :partial => 'spree/shared/sale_lg' %>
+<%= render :partial => 'spree/shared/sale_banner' %>
+
+
+<style><!--
+.form-signin input[type="text"] {
+margin-bottom: -1px;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+}
+.form-signin input[type="email"] {
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+.form-signin .form-control {
+position: relative;
+font-size: 16px;
+height: auto;
+padding: 10px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+--></style>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<div class="well"><form class="form-signin" role="form" action="https://app.getresponse.com/add_contact_webform.html" method="post">
+<h2 class="form-signin-heading">Please Sign Up</h2>
+<input type="text" class="form-control" placeholder="Name" required="" name="name" /> <input type="email" class="form-control" placeholder="Email address" required=""  name="email" />
+  <p><i class='icon-lock text-warning'></i> <small>We Respect Your Privacy</small></p>
+<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Sign Up!">Sign Up</button> <input type="hidden" name="webform_id" value="651786" /></form></div>
+<!-- well --></div>
+<!-- col -->
+<div class="col-md-4">
+<style>.abt{display:none;}</style>
+  <button id='sign-up-btn' class="abt abt1 btn btn-lg btn-success btn-block" data-toggle="modal" data-target="#opt-in-modal" onClick="_gaq.push(['_trackEvent', 'Button', 'Click', 'Sign Up Button', 1 ]);">Sign Up</button> 
+  <button id='sign-up-btn' class="abt abt2 btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#opt-in-modal" onClick="_gaq.push(['_trackEvent', 'Button', 'Click', 'Sign Up Button', 1 ]);">Sign Up</button>
+  </div><!-- col --> <!-- row --></div>
+  
+  <%= render :partial => 'spree/shared/carbon_wheels_101_opt_in' %>
+
+  
+  
+  
+  
+  
+<div id='horizontal-opt-in' class='well well-sm'>
+  <div class='row'>
+      <div class='col-sm-7 col-sm-offset-1'>
+        <h3 class=''>Get <em><strong>FREE</strong></em> Carbon Wheel Tips, News, and Special Offers.</h3> 
+      </div><!-- col-sm-7 -->
+      <div class='col-sm-3'>
+        <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#opt-in-modal-klaviyo">Get It Klaviyo!</button>
+      </div><!-- col-sm-3 -->
+  	</div><!-- row -->
+  </div><!-- well -->
+<!-- container --></div>
+  
+  
+  
+  
+  
+  
+<div id='horizontal-opt-in' class='well well-sm'>
+  <div class='row'>
+      <div class='col-sm-7 col-sm-offset-1'>
+        <h3 class=''>Get <em><strong>FREE</strong></em> Carbon Wheel Tips, News, and Special Offers.</h3> 
+      </div><!-- col-sm-7 -->
+      <div class='col-sm-3'>
+        <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#opt-in-modal">Get It!</button>
+      </div><!-- col-sm-3 -->
+  	</div><!-- row -->
+  </div><!-- well -->
+<!-- container --></div>
+
+
+
+
+
+<div class="modal fade" id="opt-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+<div class="modal-body">
+<div class="well"><form class="form-signin" role="form" action="https://app.getresponse.com/add_contact_webform.html?u=SrXv" method="post">
+<h2 class="form-signin-heading">Get <em><strong>FREE</strong></em> Carbon Wheel Tips, News, and Special Offers Delivered To Your Email. </h2>
+<input type="text" class="form-control input-lg" placeholder="Your Name" required=""  name="name" /> 
+<input type="email" class="form-control input-lg" placeholder="Your Best Email address" required=""  name="email" />
+<p><i class='fa fa-lock text-yellow'></i> <small>We Respect Your Privacy</small></p>
+<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Sign Up!">Get It!</button> <input type="hidden" name="webform_id" value="651786" /></form></div>
+<!-- well --></div>
+</div>
+<!-- /.modal-content --></div>
+<!-- /.modal-dialog --></div>
+<!-- /.modal -->
+
+<div class="modal fade opt-in-modal" id="opt-in-modal-klaviyo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+<div class="modal-body">
+<div class="well">
+<h2 class="form-signin-heading">Get <em><strong>FREE</strong></em> Carbon Wheel Tips, News, and Special Offers Delivered To Your Email. </h2>
+ <form id="email_signup1" class="" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+  <input type="hidden" name="g" value="hi8MmF">
+  <input type="hidden" name="$fields" value="first_name" />
+
+  <div class="klaviyo_field_group">
+    <input type="text" class="form-control input-lg" value="" name="first_name" id="k_id_email" placeholder="Your First Name" />
+    <input type="email" class="form-control input-lg" value="" name="email" id="k_id_email" placeholder="Your Best Email" />
+   <p><i class='fa fa-lock text-yellow'></i> <small>We Respect Your Privacy</small></p>
+   </div>
+  <div class="klaviyo_messages">
+    <div class="success_message" style="display:none;"></div>
+    <div class="error_message" style="display:none;"></div>
+    </div>
+  <div class="klaviyo_form_actions">
+    <button type="submit" class="klaviyo_submit_button btn btn-lg btn-primary btn-block">Get It!</button>
+  </div>
+</form>
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+<script type="text/javascript">
+  KlaviyoSubscribe.attachToForms('#email_signup1', {
+    hide_form_on_success: true,
+    success_message: "<h2 class='text-center text-success'>Success!</h2><h4 class='text-center'>Check your email for a confirmation message.</h4><button class='btn btn-default btn-lg btn-block' data-dismiss='modal' aria-hidden='true'>Close</button>"
+  });
+</script>
+</div>
+<!-- well --></div>
+</div>
+<!-- /.modal-content --></div>
+<!-- /.modal-dialog --></div>
+<!-- /.modal -->
+ 
+ 

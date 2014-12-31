@@ -37,7 +37,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree-multi-domain.git
-  revision: 6f88a414dc01b754de62d77ae25d8480689398e5
+  revision: d8030221793a185d7e7b23972d26118d9bd2d0e8
   specs:
     spree_multi_domain (1.0.0)
       spree_api (~> 2.4.0.beta)
@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 080da35cf4be4d2d8c4e930c612bd9ee25a7509b
+  revision: 18ba0efc35daf6108f2462d5a17086a6636f9f16
   branch: 2-4-stable
   specs:
     spree (2.4.3.beta)
@@ -121,7 +121,7 @@ GIT
       httparty (~> 0.11)
       json (~> 1.7)
       kaminari (~> 0.15, >= 0.15.1)
-      monetize (~> 1.1)
+      monetize
       paperclip (~> 4.2.0)
       paranoia (~> 2.0)
       premailer-rails
@@ -204,7 +204,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.0.2)
       rails (>= 3, < 5)
-    acts_as_list (0.6.0)
+    acts_as_list (0.5.0)
       activerecord (>= 3.0)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
@@ -266,11 +266,11 @@ GEM
       money (~> 6.0)
     highline (1.6.21)
     hike (1.2.3)
-    htmlentities (4.3.3)
+    htmlentities (4.3.2)
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.7.0)
+    i18n (0.6.11)
     i18n_data (0.5.1)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -287,12 +287,12 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
-    mini_portile (0.6.2)
+    mini_portile (0.6.1)
     minitest (5.5.0)
-    monetize (1.1.0)
-      money (~> 6.5.0)
-    money (6.5.0)
-      i18n (>= 0.6.4, <= 0.7.0)
+    monetize (1.0.0)
+      money (~> 6.4.0)
+    money (6.4.0)
+      i18n (>= 0.6.4, <= 0.7.0.beta1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     nokogiri (1.6.5)

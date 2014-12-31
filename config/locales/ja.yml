@@ -20,5 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  hello: "日本語　Hello world"
+  hello: "Hello world"
   about1: '日本語　Translated About Content'

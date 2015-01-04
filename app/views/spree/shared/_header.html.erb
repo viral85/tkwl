@@ -227,27 +227,15 @@
     <ul class="nav navbar-nav navbar-right">
      
       <% unless current_spree_page?(spree.cart_path) %>
-      <li class=''>
-         <div>
-
-           <a href="/cart" class="btn btn-success navbar-btn" style='margin-right:15px;' data-hook>
-              <span><i class="fa fa-shopping-cart fa-lg"></i> <span class='badge'>1</span><span class="visible-xs"> Shopping Cart</span></span>
-            </a>
-	          
-			  
-  	        <li id="link-to-cart" data-hook>
+            <li >
+				<div id="link-to-cart" data-hook>
  	          <noscript>
  	            <%= link_to Spree.t(:cart), '/cart' %>
  	          </noscript>
  	        <script>Spree.fetch_cart()</script>
+		  </div>
   	        </li>
-	  
-			
-
-			
-         </div>
-          </li>
-      <% end %>
+	  <% end %>
       <% if false %> <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="http://cdn.tokyowheel.com/en-flag.png" alt="English" class=""> <span class="caret"></span>

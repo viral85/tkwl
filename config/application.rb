@@ -35,7 +35,7 @@ module Tkwl
     config.enable_mail_delivery = true
     config.mails_from = "questions@tokyowheel.com"
  
-   
+   config.use_transactional_fixtures = false
   end
 end
 

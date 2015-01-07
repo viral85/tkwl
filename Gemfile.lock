@@ -1,11 +1,11 @@
 GIT
   remote: git://github.com/spree-contrib/better_spree_paypal_express.git
-  revision: 2f540c33ea0e85c24e10d03fabbee00b7145a55c
+  revision: d9a24eb509251c6385cd4d7fb6b43019c4589f01
   branch: 2-4-stable
   specs:
     spree_paypal_express (2.0.3)
       paypal-sdk-merchant (= 1.106.1)
-      spree_core (~> 2.4.0.beta)
+      spree_core (~> 2.4.0)
 
 GIT
   remote: git://github.com/spree-contrib/spree_editor.git
@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 080da35cf4be4d2d8c4e930c612bd9ee25a7509b
+  revision: 834bd4107af67662ef26609abc46d57045b29392
   branch: 2-4-stable
   specs:
     spree (2.4.3.beta)
@@ -190,10 +190,11 @@ GEM
     arel (5.0.1.20140414130214)
     awesome_nested_set (3.0.1)
       activerecord (>= 4.0.0, < 5)
-    aws-sdk (1.27.0)
+    aws-sdk (1.60.2)
+      aws-sdk-v1 (= 1.60.2)
+    aws-sdk-v1 (1.60.2)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
-      uuidtools (~> 2.1)
     bcrypt (3.1.9)
     builder (3.2.2)
     camertron-eprun (1.1.0)
@@ -300,7 +301,7 @@ GEM
       xml-simple
     paypal-sdk-merchant (1.106.1)
       paypal-sdk-core (~> 0.2.3)
-    pg (0.17.1)
+    pg (0.18.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -383,11 +384,10 @@ GEM
       tzinfo
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.6.0)
+    uglifier (2.6.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode_utils (1.4.0)
-    uuidtools (2.1.5)
     versioncake (2.3.1)
       actionpack (>= 3.2)
       activesupport (>= 3.2)

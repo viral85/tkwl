@@ -34,6 +34,8 @@ module Tkwl
     # config.i18n.default_locale = :de
     config.enable_mail_delivery = true
     config.mails_from = "questions@tokyowheel.com"
+ 
+   
   end
 end
 

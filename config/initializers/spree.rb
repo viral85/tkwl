@@ -11,7 +11,7 @@ Spree.config do |config|
   # config.track_inventory_levels = false
   config.allow_ssl_in_production = false
   
-  
+   if Rails.env.production? then
   #S3 configuration
   attachment_config = {
 
@@ -51,6 +51,7 @@ Spree.config do |config|
   attachment_config.each do |key, value|
     Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
   end
+end
 end
 
 

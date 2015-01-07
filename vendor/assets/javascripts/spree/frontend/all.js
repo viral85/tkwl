@@ -11,5 +11,4 @@
 //= require_tree .
 //= require spree/frontend/spree_multi_currency
 //= require spree/frontend/spree_i18n
-//= require spree/frontend/spree_price_books
 //= require spree/frontend/spree_paypal_express

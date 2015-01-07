@@ -42,8 +42,8 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'spree_multi_domain', git: 'git://github.com/spree/spree-multi-domain.git'
-gem 'spree_price_books', github: 'spree-contrib/spree_price_books', branch: '2-4-stable'
+#gem 'spree_multi_domain', git: 'git://github.com/spree/spree-multi-domain.git'
+#gem 'spree_price_books', github: 'spree-contrib/spree_price_books', branch: '2-4-stable'
 gem 'spree_multi_currency', :github => "spree-contrib/spree_multi_currency", branch: '2-4-stable'
 #use i18n for internationalization
 gem 'spree_i18n', github: 'spree/spree_i18n', branch: '2-4-stable'
@@ -55,6 +55,7 @@ gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '2-4-stable'
 gem 'tinymce-rails-langs'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '2-4-stable'
 gem 'spree_wombat', github: 'spree/spree_wombat', branch: '2-4-stable'
+gem 'aws-sdk'
 
 gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '2-4-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-4-stable'

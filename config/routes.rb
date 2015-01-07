@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   mount Ckeditor::Engine => '/ckeditor'
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
@@ -61,4 +61,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end

@@ -26,16 +26,6 @@ GIT
       spree_core (~> 2.4.0)
 
 GIT
-  remote: git://github.com/spree-contrib/spree_price_books.git
-  revision: fc3462bfe2be3d2305a1c2422bd286357a4de2a1
-  branch: 2-4-stable
-  specs:
-    spree_price_books (2.3.0.beta)
-      google_currency
-      spree_core (~> 2.4.0)
-      validates_timeliness (~> 3.0)
-
-GIT
   remote: git://github.com/spree/spree-multi-domain.git
   revision: 6f88a414dc01b754de62d77ae25d8480689398e5
   specs:
@@ -262,8 +252,6 @@ GEM
     globalize (4.0.3)
       activemodel (>= 4.0.0, < 5)
       activerecord (>= 4.0.0, < 5)
-    google_currency (3.1.0)
-      money (~> 6.0)
     highline (1.6.21)
     hike (1.2.3)
     htmlentities (4.3.3)
@@ -387,7 +375,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    timeliness (0.3.7)
     tinymce-rails (4.0.28.2)
       railties (>= 3.1.1)
     tinymce-rails-langs (4.20140129)
@@ -406,8 +393,6 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode_utils (1.4.0)
-    validates_timeliness (3.0.14)
-      timeliness (~> 0.3.6)
     versioncake (2.3.1)
       actionpack (>= 3.2)
       activesupport (>= 3.2)
@@ -437,7 +422,6 @@ DEPENDENCIES
   spree_multi_currency!
   spree_multi_domain!
   spree_paypal_express!
-  spree_price_books!
   spree_static_content!
   spree_wombat!
   spring

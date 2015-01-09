@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226081242) do
+ActiveRecord::Schema.define(version: 20150107121626) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20141226081242) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "products_stores", id: false, force: true do |t|
+    t.integer "product_id"
+    t.integer "store_id"
+  end
+
+  add_index "products_stores", ["product_id"], name: "index_products_stores_on_product_id"
+  add_index "products_stores", ["store_id"], name: "index_products_stores_on_store_id"
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"

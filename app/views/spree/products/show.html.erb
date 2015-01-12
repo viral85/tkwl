@@ -188,7 +188,7 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
 
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         {% if product.compare_at_price > product.price %}
-          {% comment %}<p>Regular Price: <del id="compare-at-price-field" class="muted"></del></p>{% endcomment %}
+          <% if false %><p>Regular Price: <del id="compare-at-price-field" class="muted"></del></p><% end %>
         {% endif %}
           
         
@@ -197,22 +197,21 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
           <meta itemprop='price' content='{{ product.price }}'/>
           <meta itemprop='priceCurrency' content='USD'/>
         
-      {% comment %}  
+       
         	<div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">Wholesale Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3></div>
-{% endcomment %}
-  			{% if product.url == '/products/epic-performance-system'%}
+
+
           <div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">SALE Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3> </div>
           
-          {% else %}
+
           <div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">Total Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3></div>
-          {% endif %}
-          
 
           
           
           
         <% if false %><span id="sale-field" class="label label-danger">On sale</span> <% end %>
-        </div><!-- schema.org offers -->
+       
+	    </div><!-- schema.org offers -->
       </div>
       <div id="cart-form" data-hook="cart_form">
         <%= render :partial => 'cart_form' %>
@@ -227,11 +226,17 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
     </div>
   </div><!-- end row -->
 </div><!-- container -->
-<div class="row" itemprop="description" data-hook="description">   
-      <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+<div class="row" itemprop="description" data-hook="description"> 
+	
+	<% if lookup_context.exists?(@product.slug.parameterize.underscore, ["spree/products"], true) %>
+	
+	<%= render :partial => @product.slug.parameterize.underscore %>
+	<% else %>  
+	  <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+	<% end %>
  </div><!-- row description -->
 
-{% if product.tags contains 'wheel'%}
+<% if @product.taxons.map(&:name).include?("Wheel") %>
 <div id="shipping" class="row-bg-medium" >
 <div class="container">
   <div class="row ">
@@ -240,7 +245,11 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
   <div class="row ">
      <div class="col-md-3 col-sm-6">
        <img src="http://cdn.shopify.com/s/files/1/0210/5956/files/fast-FREE-shipping_large.png?15910" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/fast-FREE-shipping_large.png?15910" alt="Free Shipping Worldwide" class="img-responsive">  
-       {% comment %}<img src="http://cdn.shopify.com/s/files/1/0210/5956/files/dhl-logo_large.png?24710" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/dhl-logo_large.png?24710" alt="Free DHL Shipping Worldwide" class="img-responsive" >    {% endcomment %}   
+       
+	   <% if false%>
+	   <img src="http://cdn.shopify.com/s/files/1/0210/5956/files/dhl-logo_large.png?24710" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/dhl-logo_large.png?24710" alt="Free DHL Shipping Worldwide" class="img-responsive" >    
+	   <% end %>
+	   
         <h3>Free Express Shipping Worldwide</h3>
         <p>We ship to all countries, by Express Air, for FREE. See the shipping table to the right for a list of countries. Once we get your order we immediately begin custom hand-building your wheels with the options you've selected. We ship out your wheels by Express Air and always provide a tracking number.</p>
     </div><!-- col-sm-3 -->
@@ -252,7 +261,8 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
     <div class="col-md-6 col-sm-12">
  <div class="row">
       <h3>Shipping Rates</h3>
-             {% include 'shipping-table-sm' %}
+
+			   <%= render :partial => 'spree/shared/shipping_table_sm' %>
            </div><!-- row -->
       <div class="row">
         <h3>Tokyowheel Customer Map</h3>
@@ -260,7 +270,8 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
 <a class='hidden-xs' href='http://www.tokyowheel.com/pages/map'><img class='img-responsive' src='https://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-customer-map_555x312.png?29822' alt='Tokyowheel Customer Map'></a>                
         </div><!-- row --> 
     </div><!-- col-md-6 -->
-   {%include 'shipping-modal'%}
+	  <%= render :partial => 'spree/shared/shipping_modal' %>
+
   </div><!-- row -->
   <hr class="featurette-divider product">
   </div><!-- container -->
@@ -317,9 +328,10 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
     <hr class="featurette-divider product">
 </div><!-- container -->
 </div><!-- build-process -->
-{% include 'manufacturing' %}
 
-{% include 'rider-photos' %}
+  <%= render :partial => 'spree/shared/manufacturing' %>
+
+  <%= render :partial => 'spree/shared/rider_photos' %>
 
 <% end %>
 
@@ -327,7 +339,7 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
 
 <div class="container">
   <div class="row ">
-   {% comment %}
+   <% if false %>
     <div class=col-md-6>
       
       <h2 class="product-info-title text-center">Write a Comment or Suggestion.</h2>
@@ -356,7 +368,7 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
 
     <!-- end facebook comments --> 
     </div>
-    {% endcomment %}
+    <% end %>
     
     
           <h2 id='reviews' class="product-info-title text-center">Reviews </h2>
@@ -405,12 +417,13 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
 <div class="container">
   <h2 class="product-info-title text-center">FAQ & Information</h2>
 <h3>Tokyowheel™ Learning Center <small>Get Answers & Learn About Your Wheels</small></h3>
-  {% include 'learning-center' %}
+
+    <%= render :partial => 'spree/shared/learning_center' %>
 </div><!-- container -->
 <div class="container">
 <div class="row ">
   <h2 class="product-info-title text-center">Ask a Question</h2>
-  {% include 'contact' %}
+  <%= render :partial => 'spree/shared/contact' %>
 </div>
 </div>
 <div class="container">
@@ -424,9 +437,9 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
 </div><!-- row -->
 </div><!-- container -->
 
-{% include 'sale-modal-opt-in' %}
+<%= render :partial => 'spree/shared/sale_modal_opt_in' %>
 
-{% comment %}
+<% if false %>
   <div class="yotpo reviews"
 data-appkey="icVL5bPNxcINEFHWJwg8M6v64RMlLSx9MCtdko8P"
 data-domain="{{ shop.permanent_domain | escape }}"
@@ -438,7 +451,7 @@ data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '
 data-description="{{ product.description | escape }}"
 data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
 </div>
-{% endcomment %}
+<% end %>
 
 
  <!-- Klaviyo -->
@@ -456,3 +469,4 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
         <div data-hook="promotions">
           <%= render :partial => 'promotions' %>
         </div>
+		<% end %>

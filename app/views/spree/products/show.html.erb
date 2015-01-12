@@ -1,11 +1,10 @@
 <% cache [I18n.locale, current_currency, @product] do %>
 <div itemscope itemtype="http://schema.org/Product" id='product-container' class="container">
  <% @body_id = 'product-details' %>
-<h3 itemprop="name" class="page-header visible-sm visible-xs" id="buy"><%= title %></h3>
+<h3 itemprop="name" class="page-header visible-sm visible-xs" id="buy" itemprop="name"><%= @product.name %></h3>
 <%= render :partial => 'product_gallery' %>
- 
     <div class="col-md-6" id='buy-info'>
-      <h1 itemprop="name" class="page-header hidden-sm hidden-xs" id="buy"><%= title %></h1>
+      <h1 itemprop="name" class="page-header hidden-sm hidden-xs" id="buy"><%= @product.name %></h1>
       
       <div class="lead">
         
@@ -212,12 +211,15 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
           
           
           
-        {% comment %}<span id="sale-field" class="label label-danger">{% include '__localize' with 'On sale' %}</span>
-       {% endcomment %}
+        <% if false %><span id="sale-field" class="label label-danger">On sale</span> <% end %>
         </div><!-- schema.org offers -->
       </div>
+      <div id="cart-form" data-hook="cart_form">
+        <%= render :partial => 'cart_form' %>
+      </div>
+	  
       <form action="/cart/add" method="post" role="form">
-      	 
+         
       		{% include 'product-add-to-cart-form' %}
 
       </form>
@@ -225,9 +227,9 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
     </div>
   </div><!-- end row -->
 </div><!-- container -->
-<div class="row">    
-  {{ product.description }}  
- </div><!-- row -->
+<div class="row" itemprop="description" data-hook="description">   
+      <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+ </div><!-- row description -->
 
 {% if product.tags contains 'wheel'%}
 <div id="shipping" class="row-bg-medium" >
@@ -451,60 +453,6 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
  <!-- Klaviyo -->
 
 
-
-----------
-
-
-
-  <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
-    <% @body_id = 'product-details' %>
-
-    <div class="col-md-4" data-hook="product_left_part">
-      <div data-hook="product_left_part_wrap">
-
-        <div id="product-images" data-hook="product_images">
-          <div id="main-image" class="panel panel-default" data-hook>
-            <div class="panel-body text-center">
-              
-            </div>
-          </div>
-          <div id="thumbnails" data-hook>
-            
-          </div>
-        </div>
-
-        <div data-hook="product_properties">
-          <%= render :partial => 'properties' %>
-        </div>
-
         <div data-hook="promotions">
           <%= render :partial => 'promotions' %>
         </div>
-
-      </div>
-    </div>
-
-    <div class="col-md-8" data-hook="product_right_part">
-      <div data-hook="product_right_part_wrap">
-
-        <div id="product-description" data-hook="product_description">
-
-          <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
-
-          <div class="well" itemprop="description" data-hook="description">
-            <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
-          </div>
-
-          <div id="cart-form" data-hook="cart_form">
-            <%= render :partial => 'cart_form' %>
-          </div>
-
-        </div>
-
-        <%= render :partial => 'taxons' %>
-
-      </div>
-    </div>
-
-  </div>
-<% end %>

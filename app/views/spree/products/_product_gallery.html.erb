@@ -1,37 +1,43 @@
-<% if defined?(image) && image %>
-  <%= image_tag image.attachment.url(:product), :itemprop => "image" %>
-<% else %>
-  <%= product_image(@product, :itemprop => "image") %>
-<% end %>
-
-
   <div class="row">
     <div class="col-md-6">
       <div id="gallery-links">
       <div class="row main-image-row">
-          <a href="{{ product.featured_image.src | product_img_url: 'grande' }}"class="thumbnail col-md-12 main-product-image" title='{{ product.featured_image.alt }}' data-gallery>
-            <img class="img-responsive" src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.title | escape }}" >
-          </a>
-      </div>
-      
-        {% if product.images.size > 1 %}
-      
-      <div class='row'>  
-        {% for image in product.images | offset: 1 %}
-        <div class="col-md-3 col-xs-3">
-        <a href="{{ image.src | product_img_url: 'grande'}}" class="thumbnail product-thumbnails img-responsive" title='{{ image.alt }}' data-gallery>
-            {{ image.src | product_img_url: 'small' | img_tag }}
-          </a>
-        </div>
-        {% cycle '', '','','</div><div class="row">' %}
-        {% endfor %}
-        </div>
-        {% endif %}
-      </div><!-- end gallery links -->
-      {% include 'blueimp-gallery-modal' %}
-      {% if product.tags contains 'wheel'%}
-      
-      {% if customer.tags contains 'test'%}
+	      <%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
+         </div><!-- row -->
+		 
+	  <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+	  <div class='row'>  
+	      <% @product.images.drop(1).each.with_index(1) do |i,e| %>
+		   <div class="col-md-3 col-xs-3">
+	          <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail product-thumbnails img-responsive"), i.attachment.url(:grande), :data => { :gallery => ''}) %>
+		  </div><!-- col -->
+		  	<% if (e/4) == 1 %>
+		  		</div><div class="row">
+		  <% end %>
+		  <% end %>
+		 </div><!-- row --> 
+	 <% end %>
+	 
+
+	      <% if @product.has_variants? %>
+		  <div class='row'>  
+	        <% @product.variant_images.each.with_index do |i,e| %>
+	          <% next if @product.images.include?(i) %>
+	          <div class="col-md-3 col-xs-3">
+	            <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail"), i.attachment.url(:grande), :data => { :gallery => ''}) %>
+			  </div><!-- col -->
+			  	<% if (e/4) == 1 %>
+			  		</div><div class="row">
+			  <% end %>
+	        <% end %>
+	      <% end %>
+	    </div><!-- row -->
+	  </div><!-- end gallery links -->
+<%= render :partial => 'spree/shared/blueimp_gallery_modal' %>
+
+<% if @product.taxons.map(&:name).include?("Wheel") %>
+<% if try_spree_current_user.try(:has_spree_role?, "admin") %>
+   <div class="alert alert-warning" role="alert">Visible Only To ADMIN</div>
       <!-- Customer Video Reviews -->
       <h2>Product Videos</h2>
       <div class='row video-reviews'>
@@ -39,7 +45,7 @@
 		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="SaH2wsn99KY" data-ratio="16:9">Loading...</div></div>
       </div><!-- col -->
       </div><!-- row -->
-      {% endif %}
+<% end %>
       
       
       <!-- Customer Video Reviews -->
@@ -105,5 +111,7 @@
       </div><!-- row -->
       
       <!-- End Customer Video Reviews -->
-      {% endif %}
+	  <% end %>
+	  <%# end taxon wheel%>
+      
     </div><!-- end col-md-6 -->

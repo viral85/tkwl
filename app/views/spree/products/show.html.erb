@@ -1,4 +1,461 @@
 <% cache [I18n.locale, current_currency, @product] do %>
+<div itemscope itemtype="http://schema.org/Product" id='product-container' class="container">
+ <% @body_id = 'product-details' %>
+<h3 itemprop="name" class="page-header visible-sm visible-xs" id="buy"><%= title %></h3>
+<%= render :partial => 'product_gallery' %>
+ 
+    <div class="col-md-6" id='buy-info'>
+      <h1 itemprop="name" class="page-header hidden-sm hidden-xs" id="buy"><%= title %></h1>
+      
+      <div class="lead">
+        
+        <% if false %>
+         <div class="yotpo bottomLine"
+data-appkey="icVL5bPNxcINEFHWJwg8M6v64RMlLSx9MCtdko8P"
+data-domain="{{ shop.permanent_domain | escape }}"
+data-product-id="{{ product.id }}"
+data-product-models="{{ product.id }}"
+data-name="{{ product.title | escape }}"
+data-url="{{ page.url }}"
+data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+data-description="{{ product.description | escape }}"
+data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+</div>
+        <% end %>
+        <div class='' itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">  
+          <a href='#reviews'><em><span itemprop="reviewCount">118</span> Reviews</em> <i class="fa fa-star text-yellow"></i><i class="fa fa-star text-yellow"></i><i class="fa fa-star text-yellow"></i><i class="fa fa-star text-yellow"></i><i class="fa fa-star-half-o text-yellow"></i></a>
+           <meta itemprop='ratingValue' content='4.9'/>
+        </div><!-- row -->
+        
+      <span><strong>Availability:</strong> <span class="text-success">In Stock</span></span> 
+        <div class=''>  
+<%# <%= render :partial => 'spree/shared/availability_countdown' %>
+        </div><!-- row -->
+        
+      </div><!-- lead -->
+        <div class='panel panel-warning'><!-- purchase guarantees -->
+    <div class='panel-body'>
+    <div>
+    <a data-toggle="modal" href="#shipping-rates"><span class="text-muted"><span class='fa-stack'>
+     <i class="fa fa-certificate fa-stack-2x text-yellow"></i>
+     <i class="fa fa-plane fa-stack-1x text-danger"></i>
+    </span> FREE Express Shipping <span id="country-name">Worldwide</span><!-- Modal -->. Get Your Wheels In <%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</span></a> <span><a data-toggle="modal" href="#shipping-rates"><small>Learn More</small></a></span>
+    </div>
+    <div>
+      <a data-toggle="modal" href="#customs"><span class="text-muted"><span class='fa-stack'>
+     <i class="fa fa-certificate fa-stack-2x text-yellow"></i>
+     <i class="fa fa-check fa-stack-1x text-success"></i>
+    </span> 110% Guaranteed No Customs Taxes</span></a> <small><a data-toggle="modal" href="#customs">Learn More</a></small>
+    </div>
+    <div>
+    <a data-toggle="modal" href="#guarantee"><span class="text-muted"><span class='fa-stack'>
+     <i class="fa fa-certificate fa-stack-2x text-yellow"></i>
+     <i class="fa fa-check fa-stack-1x text-success"></i>
+    </span> 365 Day Test Ride + 110% Moneyback Paid Returns</span></a> <small><a data-toggle="modal" href="#guarantee">Learn More</a></small>
+    </div>
+      
+      
+    <a data-toggle="modal" href="#warranty"><span class="text-muted"><span class='fa-stack'>
+     <i class="fa fa-certificate fa-stack-2x text-yellow"></i>
+     <i class="fa fa-check fa-stack-1x text-success"></i>
+    </span> 1 Year Warranty & 2 Year Crash Replacement</span></a> <small><a data-toggle="modal" href="#warranty">Learn More</a></small>
+    
+    </div><!-- panel-body -->
+  </div><!-- panel --> <!-- end purchase guarantees -->
+        <div>
+        
+        <% if false %><div class=''><a data-toggle="modal" href="#shipping-rates"><span class="label label-default"><i class="icon-plane"></i> FREE Shipping <span id="country-name">Worldwide</span><!-- Modal -->. Get Your Wheels In <%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</span></a> <span><a data-toggle="modal" href="#shipping-rates"><small>Learn More</small></a></span></div><% end %>
+		
+		
+        <% if @product.taxons.map(&:name).include?("Wheel") %>
+        
+           <!-- Modal -->
+  <div class="modal fade" id="customs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">110% Guaranteed No Customs Taxes</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-sm-4 col-sm-offset-4"><img src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-tax-fees_large.png?15987" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-tax-fees_large.png?15987" alt="No Tax and Fees" class="img-responsive"></div><!-- col-sm-4 -->
+          </div><!-- row -->
+          <div class="row">
+          <h3>110% Guaranteed No Customs Taxes</h3>
+        <p>110% Guaranteed No Customs Taxes. We are experts in global logistics and shipping, and we ship out wheels so customers don't pay any fees or taxes. As a company philosophy we believe that in an ideal world all riders should have equal access to our products. A rider in L.A. should get his wheels for the same total price as a rider in Mozambique. Free worldwide shipping and guaranteed no customs taxes is a big part of our effort to make that a reality. It's also an integral part of how we plan to lead the cycling industry and expand globally. We back that up with a 110% Guarantee, which means that in the case that you have to pay any additional fees to get your wheels to your door, we'll refund you 100% the cost of those fees, plus an extra 10% to say thanks (This rarely happens, but when it does we go the extra mile to support our riders).</p>
+    </div><!-- row -->
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+        
+        
+        
+        <div class="modal fade" id="guarantee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">365 Day Test Ride + 110% Moneyback Paid Returns</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-sm-4 col-sm-offset-4"><img src="http://cdn.shopify.com/s/files/1/0210/5956/files/110-money-back-returns_large.png?19884" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/110-money-back-returns_large.png?19884" alt="Tokyowheel 110% Money-Back Returns" class="img-responsive"></div><!-- col-sm-4 -->
+          </div><!-- row -->
+          <div class="row">
+      <h3>365-Day test ride + 110% Moneyback Paid Returns</h3>
+        <p>Test ride your new Tokyowheels for up to 365 days. If you don't absolutely love your wheels, then send them back and we'll refund you 110% of your purchase price, and pay your return shipping. We know you're going to enjoy your new wheels, and we want to back up that promise not just with words, but with real cash. </p>
+    </div><!-- row -->
+          
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+        
+        
+           <!-- Modal -->
+  <div class="modal fade" id="warranty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">1 Year Warranty & 2 Year Crash Replacement</h4>
+        </div>
+        <div class="modal-body">
+          
+        <div class="row ">
+     <div class="col-sm-7 col-sm-offset-2">
+       <div class="col-sm-6">
+<img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-warranty-dark_medium.png?16521" src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-warranty-dark_medium.png?16521" alt="Tokyowheel Warranty" class="img-responsive" style="margin:10px">
+       </div>
+       <div class="col-sm-6">
+<img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/crash-replacement.png?16701" src="http://cdn.shopify.com/s/files/1/0210/5956/files/crash-replacement.png?16701" alt="Crash Replacement" class="img-responsive" style="margin:10px">
+       </div>
+          </div><!-- col-sm-4 -->
+          
+          
+   </div><!-- row -->
+               <div class="row"> 
+      <table class="table table-condensed">   
+      <tbody>
+           <tr><th>Situation</th><th>Warranty</th></tr>
+           <tr><td>Manufacturing Defects Found Within 1 year</td><td>We will replace the warranty item and pay shipping both ways.</td></tr>
+           <tr><td>After 1 Year</td><td>Maintenance, upgrade, and repair service at minimal cost.</td></tr>
+           <tr><td>You Crash and Destroy your Wheels (Within 2 Years)</td><td>We will sell you a new set of wheels at 50% off.</td></tr>
+        	<tr><td>What's Not Covered</td><td>Normal Wear and Tear</td></tr>
+         </tbody>
+      </table>
+              </div><!-- row -->
+              <div class="row">
+                <div class="col-sm-6">
+                  <strong>The following will void your warranty</strong>
+<ul>
+     <li>Misuse (Jumping, trick riding, etc)
+       <li>Modification of wheels</li>
+<li>Tire pressure exceeding 140psi</li>
+<li>Improper assembly</li>
+<li>Improper follow-up maintenance or maintenance by an unauthorised technician</li>
+<li>Installation of parts or accessories not originally intended for, or not compatible with the wheel sets sold.</li>
+<li>Use of brake pads not designed for carbon wheels</li>
+     </ul>
+                </div><!-- col-sm-6 -->
+                <div class="col-sm-6">
+                  <strong>This warranty does not cover</strong>
+<ul><li>Normal wear and tear (bearings, skewers, spokes etc)</li>
+<li>Surface finish and cosmetic treatments (anodising, decals, etc)</li>
+<li>All other bicycle components</li>
+<li>Consequential or incidental damages (where applicable)</li>
+  </ul>
+                </div><!-- col-sm-6 -->
+    </div><!-- row -->
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+<% end %>
+
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        {% if product.compare_at_price > product.price %}
+          {% comment %}<p>Regular Price: <del id="compare-at-price-field" class="muted"></del></p>{% endcomment %}
+        {% endif %}
+          
+        
+          
+        <link itemprop="availability" href="http://schema.org/InStock" content="In Stock"/>
+          <meta itemprop='price' content='{{ product.price }}'/>
+          <meta itemprop='priceCurrency' content='USD'/>
+        
+      {% comment %}  
+        	<div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">Wholesale Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3></div>
+{% endcomment %}
+  			{% if product.url == '/products/epic-performance-system'%}
+          <div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">SALE Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3> </div>
+          
+          {% else %}
+          <div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">Total Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3></div>
+          {% endif %}
+          
+
+          
+          
+          
+        {% comment %}<span id="sale-field" class="label label-danger">{% include '__localize' with 'On sale' %}</span>
+       {% endcomment %}
+        </div><!-- schema.org offers -->
+      </div>
+      <form action="/cart/add" method="post" role="form">
+      	 
+      		{% include 'product-add-to-cart-form' %}
+
+      </form>
+      
+    </div>
+  </div><!-- end row -->
+</div><!-- container -->
+<div class="row">    
+  {{ product.description }}  
+ </div><!-- row -->
+
+{% if product.tags contains 'wheel'%}
+<div id="shipping" class="row-bg-medium" >
+<div class="container">
+  <div class="row ">
+    <h2 class="product-info-title text-center">Shipping</h2>
+  </div><!-- row -->
+  <div class="row ">
+     <div class="col-md-3 col-sm-6">
+       <img src="http://cdn.shopify.com/s/files/1/0210/5956/files/fast-FREE-shipping_large.png?15910" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/fast-FREE-shipping_large.png?15910" alt="Free Shipping Worldwide" class="img-responsive">  
+       {% comment %}<img src="http://cdn.shopify.com/s/files/1/0210/5956/files/dhl-logo_large.png?24710" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/dhl-logo_large.png?24710" alt="Free DHL Shipping Worldwide" class="img-responsive" >    {% endcomment %}   
+        <h3>Free Express Shipping Worldwide</h3>
+        <p>We ship to all countries, by Express Air, for FREE. See the shipping table to the right for a list of countries. Once we get your order we immediately begin custom hand-building your wheels with the options you've selected. We ship out your wheels by Express Air and always provide a tracking number.</p>
+    </div><!-- col-sm-3 -->
+    <div class="col-md-3 col-sm-6">
+      <img src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-tax-fees_large.png?15987" data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-tax-fees_large.png?15987" alt="No Tax and Fees" class="img-responsive">  
+      <h3>110% Guaranteed No Customs Taxes</h3>
+        <p>We 110% Guarantee that you will pay no customs fees or taxes. As part of our guarantee, if you have to pay any fees, we will reimburse you for the full amount of the fees. We ship wheels all over the world, and we monitor your shipment until it reaches your door. We communicate with customs officials on your behalf if there are any issues with your wheels passing through customs. It can be a big disappointment to get your wheels with a costly customs tax attached, we realize this and we guarantee that this won't be the case if you order from Tokyowheel. Feel confident that the price you see listed on this website is the full price for your wheels. There will be no additional fees or taxes at all.</p>
+    </div><!-- col-sm-3 -->
+    <div class="col-md-6 col-sm-12">
+ <div class="row">
+      <h3>Shipping Rates</h3>
+             {% include 'shipping-table-sm' %}
+           </div><!-- row -->
+      <div class="row">
+        <h3>Tokyowheel Customer Map</h3>
+        <a class='visible-xs' href='http://www.tokyowheel.com/pages/map'><img class='img-responsive' src='https://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-customer-map_458x258.png?29804' alt='Tokyowheel Customer Map'></a>
+<a class='hidden-xs' href='http://www.tokyowheel.com/pages/map'><img class='img-responsive' src='https://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-customer-map_555x312.png?29822' alt='Tokyowheel Customer Map'></a>                
+        </div><!-- row --> 
+    </div><!-- col-md-6 -->
+   {%include 'shipping-modal'%}
+  </div><!-- row -->
+  <hr class="featurette-divider product">
+  </div><!-- container -->
+</div>
+<div class="build-process row-bg-dark">
+<div class="container">
+  <div class="row ">
+    <h2 class="product-info-title text-center">BUILD PROCESS</h2>
+  </div><!-- row -->
+  <div class="row ">
+    <div class="col-md-3 col-sm-6">
+  	<img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-support_3842eed1-5aeb-4a49-b0c6-b32feb962837_large.png?15965" src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-support_3842eed1-5aeb-4a49-b0c6-b32feb962837_large.png?15965" alt="Tokyowheel Support" class="img-responsive">
+      <h4>We Support You</h4>
+      <p>Our build process starts with support. Choosing your new wheels can be a difficult decision. We understand that and are here to help. Send us an email or give us a call and ask us a few questions about your future wheels. We will help you choose the best wheelset for you. Once you've placed an order, we keep in touch with you while your order is processing and support you after you've received your new wheels.</p>
+    </div><!-- col-sm-3 -->
+   <div class="col-md-3 col-sm-6">
+  	<img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/handbuilt_large.png?15968" src="http://cdn.shopify.com/s/files/1/0210/5956/files/handbuilt_large.png?15968" alt="Handbuilt Carbon Wheels" class="img-responsive">
+      <h4>Hand Built</h4>
+     <p>Building wheels is one of the few things that machines can't do as well as humans. Although a handmade wheel and a machine made wheel might look the same initially, the hand made wheel will ride faster and more comfortably and stay truer over time. Tokyowheel master wheel-builders assemble, true, balance, and test every wheelset to exact precision standards, to ensure that your wheels perform perfectly, for as long as you own them.
+       
+         
+    </div><!-- col-sm-3 -->
+    <div class="col-md-3 col-sm-6">
+<img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/guaranteed-quality_large.png?15973" src="http://cdn.shopify.com/s/files/1/0210/5956/files/guaranteed-quality_large.png?15973" alt="Tokyowheel Carbon Wheels" class="img-responsive">
+      <h4>Strict Quality Testing</h4>
+      <p>Your wheels are built to within very strict tolerances limits, to guaranteed you the most durable highest performing wheels</p>
+      <table class="table table-condensed">
+         <tbody>
+           <tr><th>Build Measurement</th><th>Tolerance</th></tr>
+           <tr><td>Roundness</td><td>&lt;0.5mm</td></tr>
+           <tr><td>Lateral Offset</td><td>&lt;0.2mm</td></tr>
+           <tr><td>Max Rim Tension</td><td>300kgf</td></tr>
+           <tr><td>Max Spoke Tension (Front)</td><td>100kgf</td></tr>
+           <tr><td>Max Spoke Tension (Rear)</td><td>140kgf</td></tr>
+         </tbody>
+     </table>
+    
+    </div><!-- col-sm-3 -->
+    <div class="col-md-3 col-sm-6">
+  	<img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-warranty_large.png?15962" src="http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-warranty_large.png?15962" alt="Tokyowheel Warranty & Crash Replacement" class="img-responsive">
+      <h4>1 Year Warranty & 2 Year Crash Replacement</h4>
+      <table class="table table-condensed">   
+      <tbody>
+           <tr><th>Situation</th><th>Warranty</th></tr>
+           <tr><td>Manufacturing Defects Found Within 1 Year</td><td>We will replace your wheels and pay shipping both ways.</td></tr>
+           <tr><td>After 1 Year</td><td>Maintenance, upgrade, and repair service at minimal cost.</td></tr>
+           <tr><td>You Crash and Destroy your Wheels (Within 2 Years)</td><td>We will sell you a new set of wheels at 50% off.</td></tr>
+        	<tr><td>What's Not Covered</td><td>Normal Wear and Tear</td></tr>
+         </tbody>
+      </table>
+    </div><!-- col-sm-3 -->
+    
+    </div><!-- row -->
+    <hr class="featurette-divider product">
+</div><!-- container -->
+</div><!-- build-process -->
+{% include 'manufacturing' %}
+
+{% include 'rider-photos' %}
+
+<% end %>
+
+
+
+<div class="container">
+  <div class="row ">
+   {% comment %}
+    <div class=col-md-6>
+      
+      <h2 class="product-info-title text-center">Write a Comment or Suggestion.</h2>
+      
+     <!-- facebook comments --> 
+<div class="fb-comments" data-href="http://www.tokyowheel.com" data-width="470"></div>
+<style>
+  @media only screen and (max-width: 870px) {
+.fb-comments{width: 100% !important;}
+.fb-comments iframe[style]{width: 100% !important;}
+.fb-like-box{width: 100% !important;}
+.fb-like-box iframe[style]{width: 100% !important;}
+.fb-comments span{width: 100% !important;}
+.fb-comments iframe span[style]{width: 100% !important;}
+.fb-like-box span{width: 100% !important;}
+.fb-like-box iframe span[style]{width: 100% !important;} }
+</style>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=195346660512159";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- end facebook comments --> 
+    </div>
+    {% endcomment %}
+    
+    
+          <h2 id='reviews' class="product-info-title text-center">Reviews </h2>
+    
+    <div class='row video-reviews'>
+ <div class='col-md-3 col-sm-6'>
+    <div class="embed-responsive embed-responsive-16by9"><iframe src="//player.vimeo.com/video/97573706" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+   </div><!-- col -->
+   
+      <div class='col-md-3 col-sm-6'>
+        <div class="embed-responsive embed-responsive-16by9"><iframe src="//www.youtube.com/embed/aE7WhBQUBoc?rel=0"allowfullscreen=""></iframe></div>
+      </div><!-- col -->
+      
+   <div class='col-md-3 col-sm-6'>
+    <div class="embed-responsive embed-responsive-16by9"><iframe src="//www.youtube.com/embed/qn-ljre4ujw" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+   </div><!-- col -->
+   
+   
+   <div class='col-md-3 col-sm-6'>
+    <div class="embed-responsive embed-responsive-16by9"><iframe src="//www.youtube.com/embed/ijy1QaitM-M" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+   </div><!-- col -->
+   
+   
+      
+      <div class='col-md-3 col-sm-6'>
+		<div class="embed-responsive embed-responsive-16by9"><iframe src="//www.youtube.com/embed/dlniho3JPOc?rel=0" allowfullscreen=""></iframe></div>
+      </div><!-- col -->      
+
+      <div class='col-md-3 col-sm-6'>
+        <div class="embed-responsive embed-responsive-16by9"><iframe src="//www.youtube.com/embed/cP56-6v-BNg?rel=0" allowfullscreen=""></iframe></div>
+      </div><!-- col -->      
+
+      <div class='col-md-3 col-sm-6'>
+		<div class="embed-responsive embed-responsive-16by9"><iframe src="//www.youtube.com/embed/LVLHvwoIC-s?rel=0" allowfullscreen=""></iframe></div>
+      </div><!-- col --> 
+   
+    </div><!-- row -->
+        
+    <div class='row'>
+<script type="text/javascript"> var yotpo_app_key = "icVL5bPNxcINEFHWJwg8M6v64RMlLSx9MCtdko8P"; (function(){function e(){var e=document.createElement("script");e.type="text/javascript",e.async=!0, e.src="//staticwww.yotpo.com/js/yQuery.js";var t=document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,t)}window.attachEvent?window.attachEvent("onload",e):window.addEventListener("load",e,!1)})(); </script>
+<div id='yotpo-testimonials-custom-tab'></div>
+</div><!-- row -->
+    
+  </div><!-- row -->
+</div><!-- container -->
+<div class="container">
+  <h2 class="product-info-title text-center">FAQ & Information</h2>
+<h3>Tokyowheel™ Learning Center <small>Get Answers & Learn About Your Wheels</small></h3>
+  {% include 'learning-center' %}
+</div><!-- container -->
+<div class="container">
+<div class="row ">
+  <h2 class="product-info-title text-center">Ask a Question</h2>
+  {% include 'contact' %}
+</div>
+</div>
+<div class="container">
+<hr>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+  <div class="well">
+    <a href="#buy" class="btn btn-success btn-lg btn-block"><i class="fa fa-shopping-cart fa-lg"></i> Add To Cart</a>
+  </div>
+  </div><!-- col-sm-4 -->
+</div><!-- row -->
+</div><!-- container -->
+
+{% include 'sale-modal-opt-in' %}
+
+{% comment %}
+  <div class="yotpo reviews"
+data-appkey="icVL5bPNxcINEFHWJwg8M6v64RMlLSx9MCtdko8P"
+data-domain="{{ shop.permanent_domain | escape }}"
+data-product-id="{{ product.id }}"
+data-product-models="{{ product.id }}"
+data-name="{{ product.title | escape }}"
+data-url="{{ page.url }}"
+data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+data-description="{{ product.description | escape }}"
+data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+</div>
+{% endcomment %}
+
+
+ <!-- Klaviyo -->
+<script text="text/javascript">
+  var _learnq = _learnq || [];
+  _learnq.push(['track', 'Viewed Product', {
+    Name: {{ product.title|json }}, 
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }}
+  }]);
+</script>
+ <!-- Klaviyo -->
+
+
+
+----------
+
+
+
   <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
     <% @body_id = 'product-details' %>
 
@@ -8,11 +465,11 @@
         <div id="product-images" data-hook="product_images">
           <div id="main-image" class="panel panel-default" data-hook>
             <div class="panel-body text-center">
-              <%= render :partial => 'image' %>
+              
             </div>
           </div>
           <div id="thumbnails" data-hook>
-            <%= render :partial => 'thumbnails' %>
+            
           </div>
         </div>
 

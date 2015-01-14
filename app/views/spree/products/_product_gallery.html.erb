@@ -2,18 +2,29 @@
     <div class="col-md-6">
       <div id="gallery-links">
       <div class="row main-image-row">
-	      <%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
+		  <% if defined?(image) && image %>
+		    <%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
+		  <% else %>
+		  <%# TODO Fix this for cases that a product has no images uploaded %>
+		  <a href='#' class='thumbnail col-md-12 main-product-image'>
+		    <%= product_image(@product, :itemprop => "image") %>
+		</a>
+		<%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
+		  <% end %>
+	      
          </div><!-- row -->
-		 
+		 <% @i = 4 %>
 	  <% if (@product.images + @product.variant_images).uniq.size > 1 %>
 	  <div class='row'>  
 	      <% @product.images.drop(1).each.with_index(1) do |i,e| %>
 		   <div class="col-md-3 col-xs-3">
 	          <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail product-thumbnails img-responsive"), i.attachment.url(:grande), :data => { :gallery => ''}) %>
 		  </div><!-- col -->
-		  	<% if (e/4) == 1 %>
+		  
+		  <% @i -= 1 %>
+		  <%  next unless @i.zero? %>
+		  <% @i = 4 %>
 		  		</div><div class="row">
-		  <% end %>
 		  <% end %>
 		 </div><!-- row --> 
 	 <% end %>
@@ -37,7 +48,7 @@
 <% if try_spree_current_user.try(:has_spree_role?, "admin") %>
    <div class="alert alert-warning" role="alert">Visible Only To ADMIN</div>
 <% end %>
-<% if @product.taxons.map(&:name).include?("Wheel") %>
+<% if @product.taxons.map(&:name).include?("wheel") %>
   <% if @product.taxons.map(&:name).include?("Epic 38") %>
 	        <h2>Epic 38 Video</h2>
 	        <div class='row video-reviews'>

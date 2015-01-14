@@ -37,7 +37,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_i18n.git
-  revision: 881c154eaeb046218cf40e592247e0e460c18b08
+  revision: 4d0a452e58727c71fb827dd667607fb30663a176
   branch: 2-4-stable
   specs:
     spree_i18n (3.0.0)
@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_wombat.git
-  revision: b3d872a22fb2391708561d9c0a71c81f416f201e
+  revision: f1ce41c0ef35b0addb76e1e07a01dc87321593ad
   branch: 2-4-stable
   specs:
     spree_wombat (2.2.0)
@@ -75,7 +75,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 834bd4107af67662ef26609abc46d57045b29392
+  revision: f40ef677a1e563a0e4a77de1e06381b459dd707f
   branch: 2-4-stable
   specs:
     spree (2.4.3.beta)
@@ -131,11 +131,10 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
-  revision: 9d51f3d65a1ae6bd5aa1a48b649a1c57e52107a5
+  revision: e2ee95e53de65d516c93eeb3246bc11d9f7ce15a
   branch: 2-4-stable
   specs:
     spree_auth_devise (2.2.0)
-      cancan (~> 1.6.10)
       devise (~> 3.2.3)
       devise-encryptable (= 0.1.2)
       json
@@ -198,7 +197,7 @@ GEM
       activerecord (>= 3.0)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
-    awesome_nested_set (3.0.1)
+    awesome_nested_set (3.0.2)
       activerecord (>= 4.0.0, < 5)
     aws-sdk (1.60.2)
       aws-sdk-v1 (= 1.60.2)
@@ -208,7 +207,6 @@ GEM
     bcrypt (3.1.9)
     builder (3.2.2)
     camertron-eprun (1.1.0)
-    cancan (1.6.10)
     cancancan (1.9.2)
     canonical-rails (0.0.7)
       rails (>= 3.1, < 5.0)
@@ -247,7 +245,7 @@ GEM
       devise (>= 2.1.0)
     erubis (2.7.0)
     execjs (2.2.2)
-    ffaker (1.25.0)
+    ffaker (1.30.0)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     friendly_id (5.0.4)
@@ -273,7 +271,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.3)
       railties (>= 3.2.16)
-    json (1.8.1)
+    json (1.8.2)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -281,7 +279,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     mini_portile (0.6.2)
-    minitest (5.5.0)
+    minitest (5.5.1)
     monetize (1.1.0)
       money (~> 6.5.0)
     money (6.5.0)
@@ -324,7 +322,7 @@ GEM
     rabl (0.9.4.pre1)
       activesupport (>= 2.3.14)
     rack (1.5.2)
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.8)
       actionmailer (= 4.1.8)
@@ -394,7 +392,7 @@ GEM
       tzinfo
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.6.1)
+    uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode_utils (1.4.0)

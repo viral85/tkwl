@@ -13,6 +13,18 @@ Spree::BaseHelper.module_eval do
 
        link_to text.html_safe, spree.cart_path, :class => "cart-info #{css_class}"
      end
+     
+
+     def flash_messages(opts = {})
+       ignore_types = ["order_completed"].concat(Array(opts[:ignore_types]).map(&:to_s) || [])
+
+       flash.each do |msg_type, text|
+         unless ignore_types.include?(msg_type)
+           concat(content_tag :div, text, class: "alert alert-#{msg_type} text-center no-margin")
+         end
+       end
+       nil
+     end
 end
 
 

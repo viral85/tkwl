@@ -7,7 +7,8 @@ Spree::BaseHelper.module_eval do
          text = "<span><i class='fa fa-shopping-cart fa-lg'></i> <span class='visible-xs'> Shopping Cart</span></span>"
          css_class = 'btn btn-success navbar-btn'
        else
-         text = "<span><i class='fa fa-shopping-cart fa-lg'></i> <span class='badge'>#{text}: (#{simple_current_order.item_count})  <span class='amount'>#{simple_current_order.display_total.to_html}</span></span><span class='visible-xs'> Shopping Cart</span></span>"
+#         text = "<span><i class='fa fa-shopping-cart fa-lg'></i> <span class='badge'>#{text}: (#{simple_current_order.item_count})  <span class='amount'>#{simple_current_order.display_total.to_html}</span></span><span class='visible-xs'> Shopping Cart</span></span>"
+         text = "<span><i class='fa fa-shopping-cart fa-lg'></i> <span class='badge'>#{simple_current_order.item_count}</span><span class='visible-xs'> Shopping Cart</span></span>"
          css_class = 'btn btn-success navbar-btn'
        end
 

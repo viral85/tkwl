@@ -1,6 +1,6 @@
 <% @body_id = 'cart' %>
-<div data-hook="cart_container">
-  <h1><%= Spree.t(:shopping_cart) %></h1>
+<div id='shopping-cart' class="container" data-hook="cart_container">
+  <h1 class="page-header"><%= Spree.t(:shopping_cart) %></h1>
 
   <% if @order.line_items.empty? %>
 
@@ -10,7 +10,22 @@
     </div>
 
   <% else %>
-
+<div id='shopping-cart' class="container">
+<h1 class="page-header">Shopping Cart</h1>
+  <div class='row'>
+  <div class="col-md-3 col-sm-6">
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a data-toggle="modal" href="#shipping-rates">FREE Shipping Worldwide</a></h4>
+      </div>    
+  <div class="col-md-3 col-sm-6">
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a href='#guarantee-no-customs-tax'>110% Guaranteed No Customs Taxes</a></h4>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a href='#guarantee-money-back'>365 Day Test Ride</a></h4>      
+      </div>
+      <div class="col-md-3 col-sm-6">
+      <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a href='#guarantee-speed'>110% Speed Guaranteed</a></h4>      
+      </div>
+    </div><!-- row -->
     <div data-hook="outside_cart_form">
       <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart'} do |order_form| %>
         <div data-hook="inside_cart_form">
@@ -44,3 +59,142 @@
     </div>
   <% end %>
 </div>
+
+
+
+
+---------------------
+
+
+{% if cart.item_count == 0 %}
+<p class="lead">
+  {% include '__localize' with 'Your cart is empty' %}.{% unless settings.collection-to-link-to-if-cart-empty == blank %} <a href="http://www.tokyowheel.com/pages/wheels">{% include '__localize' with 'Browse all products' %}</a>.{% endunless %}
+</p>
+{% else %}
+<script type="text/javascript">
+function remove_item(id) {
+  document.getElementById('updates_'+id).value = 0;
+  document.getElementById('cart').submit();
+}
+</script>
+<form action="/cart" method="post" id="cart" role="form">
+<div id="no-more-tables">
+  <table class="table table-striped table-condensed ">
+    <thead>
+      <tr>
+        <th class="">Item</th>
+        <th>&nbsp;</th>
+        <th class="money hidden-xs">{% include '__localize' with 'Price' %}</th>
+        <th class="text-center">{% include '__localize' with 'QTY' %}</th>
+        <th class="">&nbsp;</th>
+        <th class="money">{% include '__localize' with 'Total' %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in cart.items %}
+      <tr>
+        <td data-title="Item"class="col-md-2"><img src="{{ i.product.featured_image | product_img_url: 'small' }}" class="thumbnail"></td>
+        <td data-title="Description">
+          <strong>{{ i.product.title | link_to: i.product.url }}</strong><br/>
+          <small>{{ i.title | remove: i.product.title | remove: ' - ' }}</small>
+          <!-- line item properties -->
+          {% for p in i.properties %}
+          <br />
+  			{% unless p.last == blank %}
+    			<small>{{ p.first }}:
+    			{% if p.last contains '/uploads/' %}
+    				<a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+    			{% else %}
+                  {{ p.last }}</small>
+    			{% endif %}
+    			
+  			{% endunless %}
+		  {% endfor %}
+          <!-- end line item properties -->
+        </td>
+        <td data-title="Price" class="money"><span class='money'>{{ i.price | money_with_currency | replace: ' ','&nbsp' }}</span></td>
+        <td data-title="QTY">
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+          <input type="text" class="form-control input-sm text-center " name="updates[]" id="updates_{{ i.variant.id }}" value="{{ i.quantity }}" onfocus="this.select();"/>
+              <input type="submit" id="update-cart" name="update" value="{% include '__localize' with 'Update' %}" class="btn btn-link btn-block btn-sm"/>
+            </div>
+          </div><!-- row -->
+        </td>
+        <td data-title="" class=""><a class="muted" href="/cart/change?line={{ forloop.index }}&quantity=0"><i class="fa fa-trash-o fa-lg"></i></a></td>
+        <td data-title="Total" class="money">
+          <span class='money'><strong>{{ i.line_price | money_with_currency | replace: ' ','&nbsp' }}</strong></span>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div><!-- no-more-tables -->
+  
+  <div class='faq'>  
+   <a class='btn btn-link' data-toggle="collapse" data-target="#n"><i class="fa fa-comment-o text-muted"></i> Include a Message To Tokyowheel</a>
+  <div id="n" class="collapse">
+    <div class='row'>
+    <div class='col-sm-4'>
+      <textarea class='form-control' style='margin-bottom:10px' name="note" placeholder='Message'id="note" rows="1" cols="60" >{{ cart.note }}</textarea>
+    </div><!-- col -->
+  </div><!-- row -->
+</div>  <!-- faq -->
+  
+  <div class="well text-right">
+    <div class="row">
+      <div class="col-sm-8">
+        	<div class="row payment-icons-lg">	
+              	<img class="img-responsive" src="{{ 'payment-icons-lg.png' | asset_url }}" alt="VISA, Mastercard, Maestro, Discover, Diners Club, JCB, Paypal">
+			</div>        
+		</div>
+      <div class="col-sm-4">
+      		<h4><small>{% include '__localize' with 'Sub-total' %}</small> <span class='money'>{{ cart.total_price | money_with_currency | replace: ' ','&nbsp' }}</span></h4>
+            
+             <h4 class="split-test01">+ <a data-toggle="modal" href="#shipping-rates">FREE Shipping Worldwide{% comment %}to <span id="country-name"></span> {% include 'get-country' %}{% endcomment %}</a></h4>
+
+        <h3 class="split-test01">{% include '__localize' with 'Total' %} <span class='text-danger'>{{ cart.total_price | money_with_currency | replace: ' ','&nbsp' }}</span></h3>
+        <a href='/pages/wheels' class='btn btn-sm btn-default'>Continue Shopping</a>
+        	<input type="submit" name="checkout" value="{% include '__localize' with 'Checkout' %}" class="btn btn-success btn-lg" />
+        
+        <p class="text-muted text-left currency-warning">
+          {{ shop.name }} processes all orders in <strong>{{ shop.currency }}</strong>.
+  If you have selected an alternate currency, you will checkout using <strong>{{ shop.currency }}</strong> at the most current exchange rate.
+</p>
+      	</div>
+    </div><!-- row -->
+    
+    <p class='text-left'>Tokyowheel has a few guarantees designed to take anxiety out of purchasing, and eliminate the chance of a rider having a negative experience buying Tokyowheels. We have 3 main guarantees. <strong>110% Guaranteed No Customs Taxes</strong>. <strong>110% Moneyback Test Ride</strong>. <strong>110% Speed Guaranteed</strong>. Here is a little more info on each of those:</p>
+    
+    <div class='row text-left' id='guarantee-no-customs-tax'>
+      <div class="col-sm-4">
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> 110% Guaranteed No Customs Taxes</h4>
+        <p>We are experts in global logistics and shipping, and we ship out wheels so customers don't pay any fees or taxes. As a company philosophy we believe that in an ideal world all riders should have equal access to our products. A rider in L.A. should get his wheels for the same total price as a rider in Mozambique. Free worldwide shipping and guaranteed no customs taxes is a big part of our effort to make that a reality. It's also an integral part of how we plan to lead the cycling industry and expand globally. We back that up with a 110% Guarantee, which means that in the case that you have to pay any additional fees to get your wheels to your door, we'll refund you 100% the cost of those fees, plus an extra 10% to say thanks (This rarely happens, but when it does we go the extra mile to support our riders) 
+</p>
+      </div>
+      <div class="col-sm-4" id='guarantee-money-back'>
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span>365-Day test ride + 110% Moneyback Paid Returns</h4>      
+        <p>If you buy wheels from Tokyowheel, try them for up to 1 year and don't like them, then we have a responsibility to do something major to help you out. It's only fair. What we do is pay for the return shipping of the wheels, give a full refund, and an extra 10% cash back (via paypal). We don't want anyone to ever say they experienced anything short of amazing when dealing with us. That's our goal.</p>
+      </div>
+      <div class="col-sm-4" id='guarantee-speed'>
+      <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> 110% Speed Guaranteed</h4>      
+        <p>If you are looking for that extra speed edge, try Tokyowheel. We guarantee you will ride faster with our wheels, and if you don't, we'll pay for you to send them back, give you a full refund, and pay you an extra 10% as a thank you for trying them out.</p>
+      </div>
+    </div><!-- row -->
+    <div class='row text-left'>
+      <p><strong>As you can probably see, we're confident in our products.</strong> There would be no way that we could stay in business if our wheels were bad and we had a large number of people taking us up on these guarantees. The truth is we rarely have anyone that needs to use these guarantees, but if you happen to be one of the rare people who have a negative experience with Tokyowheel, then we appreciate the chance to show you how much we respect you as a rider and a customer. These guarantees are the official structured company policy that we use to show our respect and appreciation for our customers.</p>
+
+<p>If you have any questions, just let me know, and also let me know if you need something the we don't offer. Thanks.</p>
+<h5 class='text-right'>James Ferrer [Tokyowheel]</h5>
+      <h5 class='text-right'><a href='mailto:questions@tokyowheel.com'><i class="fa fa-envelope-o"></i> Click Here To Email James</a></h5>
+    </div><!-- row -->
+    
+  </div>
+</form>
+  
+{% endif %}
+
+</div><!-- container -->
+
+<!-- Shipping -->
+{%include 'shipping-modal'%}

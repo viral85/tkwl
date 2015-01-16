@@ -17,7 +17,10 @@
         <%= yield :templates %>
 	
 	<%-# TODO show CW 101 opt in conditionally unless page.handle == 'orders' or page.handle == 'sign-up' or template == 'cart' or page.handle == 'sale-sign-up-thank-you' or template contains 'customer' or page.handle == 'ambassador' or page.handle == 'angular' or page.handle == 'share' -%>
+   <% unless current_spree_page?(spree.cart_path) %>
     <%= render partial: 'spree/shared/carbon_wheels_101_opt_in' %>
+   <% end %>
+	
     <%= render partial: 'spree/shared/footer' %>
 
 	<%= render partial: 'spree/shared/become_a_dealer_modal' %>

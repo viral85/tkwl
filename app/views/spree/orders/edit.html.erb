@@ -1,17 +1,19 @@
 <% @body_id = 'cart' %>
 <div id='shopping-cart' class="container" data-hook="cart_container">
-  <h1 class="page-header"><%= Spree.t(:shopping_cart) %></h1>
+ <div class='row'> 
+	 <div class='col-md-12'>
+		 <h1 class="page-header"><%= Spree.t(:shopping_cart) %></h1>
+	 </div><!-- col -->
+ </div><!-- row -->
 
   <% if @order.line_items.empty? %>
 
     <div data-hook="empty_cart">
       <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
-      <p><%= link_to Spree.t(:continue_shopping), products_path, :class => 'btn btn-default' %></p>
+      <p><%= link_to Spree.t(:continue_shopping), "/pages/wheels", :class => 'btn btn-default' %></p>
     </div>
 
   <% else %>
-<div id='shopping-cart' class="container">
-<h1 class="page-header">Shopping Cart</h1>
   <div class='row'>
   <div class="col-md-3 col-sm-6">
         <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a data-toggle="modal" href="#shipping-rates">FREE Shipping Worldwide</a></h4>
@@ -194,7 +196,7 @@ function remove_item(id) {
   
 {% endif %}
 
-</div><!-- container -->
+
 
 <!-- Shipping -->
 {%include 'shipping-modal'%}

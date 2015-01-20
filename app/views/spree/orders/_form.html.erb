@@ -1,14 +1,16 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+<div id="no-more-tables">
 <table class="table" id="cart-detail" data-hook>
   <thead>
     <tr class="active" data-hook="cart_items_headers">
       <th class="cart-item-description-header" colspan="2"><%= Spree.t(:item) %></th>
-      <th class="cart-item-price-header"><%= Spree.t(:price) %></th>
-      <th class="cart-item-quantity-header"><%= Spree.t(:qty) %></th>
-      <th class="cart-item-total-header"><%= Spree.t(:total) %></th>
+      <th class="cart-item-price-header money hidden-xs"><%= Spree.t(:price) %></th>
+      <th class="cart-item-quantity-header text-center"><%= Spree.t(:qty) %></th>
+      <th class="cart-item-total-header money"><%= Spree.t(:total) %></th>
       <th class="cart-item-delete-header"></th>
     </tr>
   </thead>
+  
   <tbody id="line_items" data-hook>
     <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: {order_form: order_form} %>
   </tbody>
@@ -26,3 +28,4 @@
     <td></td>
   </tr>
 </table>
+</div><!-- no-more-tables -->

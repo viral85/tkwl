@@ -13,3 +13,5 @@
 //= require spree/backend/spree_i18n
 //= require spree/backend/spree_paypal_express
 //= require spree/backend/spree_multi_domain
+//= require spree/backend/spree_price_books
+//= require spree/backend/spree_variant_options

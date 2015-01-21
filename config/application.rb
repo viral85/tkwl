@@ -34,6 +34,12 @@ module Tkwl
     # config.i18n.default_locale = :de
     config.enable_mail_delivery = true
     config.mails_from = "questions@tokyowheel.com"
+    config.action_mailer.smtp_settings = {
+  :address   => "smtp.mandrillapp.com",
+  :port      => 587,
+  :user_name => ENV['MANDRILL_USERNAME'],
+  :password  => ENV['MANDRILL_PASSWORD']
+}
  
    config.use_transactional_fixtures = false
   end

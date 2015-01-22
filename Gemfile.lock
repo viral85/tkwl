@@ -359,8 +359,6 @@ GEM
     rails-i18n (4.0.3)
       i18n (~> 0.6)
       railties (~> 4.0)
-    rails_serve_static_assets (0.0.2)
-    rails_stdout_logging (0.0.3)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -396,6 +394,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sqlite3 (1.3.10)
     state_machine (1.2.0)
     stringex (1.5.1)
     thor (0.19.1)
@@ -441,8 +440,6 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.1.8)
-  rails_serve_static_assets
-  rails_stdout_logging
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spree!
@@ -460,6 +457,7 @@ DEPENDENCIES
   spree_wombat!
   spring
   sprockets
+  sqlite3
   tinymce-rails-langs
   turbolinks
   uglifier (>= 1.3.0)

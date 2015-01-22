@@ -8,24 +8,30 @@
     <%= render partial: 'spree/shared/head' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+  <% if current_spree_page?(spree.cart_path) || current_spree_page?('/checkout/registration') || current_spree_page?('/checkout') || current_spree_page?('/login') || current_spree_page?('/signup')%>
+   <%= render partial: 'spree/shared/checkout_header' %>
+  <% else %>
     <%= render partial: 'spree/shared/header' %>
- <%-# render partial: 'spree/shared/sale_banner' %> 
-
+    <%-# render partial: 'spree/shared/sale_banner' %> 
+  <% end %>
           <%= flash_messages %>
           <%= yield %>
 
         <%= yield :templates %>
 	
 	<%-# TODO show CW 101 opt in conditionally unless page.handle == 'orders' or page.handle == 'sign-up' or template == 'cart' or page.handle == 'sale-sign-up-thank-you' or template contains 'customer' or page.handle == 'ambassador' or page.handle == 'angular' or page.handle == 'share' -%>
-   <% unless current_spree_page?(spree.cart_path) %>
+   <% if current_spree_page?(spree.cart_path) || current_spree_page?('/checkout/registration') || current_spree_page?('/checkout') || current_spree_page?('/login') || current_spree_page?('/signup')%>
+   <%= render partial: 'spree/shared/checkout_footer' %>
+    
+   <% else %>
     <%= render partial: 'spree/shared/carbon_wheels_101_opt_in' %>
-   <% end %>
-	
     <%= render partial: 'spree/shared/footer' %>
 
 	<%= render partial: 'spree/shared/become_a_dealer_modal' %>
 	<%= render partial: 'spree/shared/get_sponsored_modal' %>
 	<%= render partial: 'spree/shared/work_at_tokyowheel_modal' %>
+   <% end %>
+   
 	
     <%= render partial: 'spree/shared/google_analytics' %>
 	<%= render partial: 'spree/shared/adroll' %>

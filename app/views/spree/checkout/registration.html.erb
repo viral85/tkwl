@@ -1,0 +1,55 @@
+<div class='container'>
+	<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+	<div id="registration" data-hook>
+	<div class='row'>
+		<div class='col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3'>
+		<div class="panel panel-default registration-panel">
+		  <div class="panel-body toggle">
+		    <h2 class='lead text-center'>LET’S GET STARTED!</h2>
+			<p class='text-muted text-center'>This will only take a minute.</p>
+			<div class='row'>
+				<div class='col-sm-8 col-sm-offset-2'>
+		    <% if Spree::Config[:allow_guest_checkout] %>
+		      <div id="guest_checkout" data-hook >
+		        <% if flash[:registration_error] %>
+		          <div class='flash error'><%= flash[:registration_error] %></div><!-- flash error -->
+		        <% end %>
+		        <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
+				  <div class="form-group">
+		            <%= f.label :email, Spree.t(:email), :class => 'sr-only' %>
+		            <%= f.email_field :email, :class => 'form-control  input-lg', :placeholder => Spree.t(:email), :type => 'email' %>
+		          </div><!-- form-group -->
+		          <%= f.submit Spree.t(:continue), :class => 'btn btn-success btn-block btn-lg' %>
+		        <% end %>
+		      </div>
+		    <% end %>
+			<hr>
+			<p class='text-muted text-center'><small>By registering, you agree to our <a href='/pages/privacy-policy' class='text-muted'><u>Privacy Policy</u></a> <br>and <a href='/pages/terms' class='text-muted'><u>Terms of Service</u></a></small></p>
+			</div><!-- col -->
+			</div><!-- row -->
+		  </div><!-- panel-body -->
+		  <div class="panel-body toggle" style='display:none'>
+		   <div id="account" class="">
+   		    <h2 class='lead text-center'>WELCOME BACK!</h2>
+   			<p class='text-muted text-center'>We're happy to see you again!</p>
+			<div class='row'>
+				<div class='col-sm-8 col-sm-offset-2'>
+		     <%= render template: 'spree/user_sessions/new' %>
+		 		</div><!-- col -->
+			</div><!-- row -->
+		   </div><!-- account -->
+		  </div><!-- panel-body -->
+		  
+		  <div class="panel-footer">
+			  <div class='btn btn-link text-center btn-block' id='have-account'><span class='toggle'>Already have an account? Click here.</span><span class='toggle' style='display:none;' >Create Account</span></div>
+		  <script>
+		  $( "div#have-account" ).click(function() {
+		    $( ".toggle" ).toggle();
+		  });
+		  </script>
+		  </div><!-- panel-footer -->
+		</div><!-- panel -->
+		</div><!-- col -->
+	</div><!-- row -->
+</div><!-- registration -->
+</div><!-- container -->

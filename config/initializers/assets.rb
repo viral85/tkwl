@@ -27,6 +27,7 @@ Rails.application.config.assets.precompile += %w( ckeditor/plugins/wsc/dialogs/t
 Rails.application.config.assets.precompile += %w( ckeditor/skins/moono/readme.md )
 Rails.application.config.assets.precompile += %w( frontend/out-of-stock.png )
 Rails.application.config.assets.precompile += %w( logo/spree_50.png )
+Rails.application.config.assets.precompile += %w( ckeditor/filebrowser/images/preloader.gif )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.

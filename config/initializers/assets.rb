@@ -5,6 +5,9 @@ Rails.application.config.assets.version = '1.0'
 
 # assets for spree_editor
 Rails.application.config.assets.precompile += %w( tinymce-jquery.js )
+Rails.application.config.assets.precompile += %w( product_variant_options.js )
+Rails.application.config.assets.precompile += %w( spree_variant_options.js )
+Rails.application.config.assets.precompile += %w( variant_options_script.js.erb )
 Rails.application.config.assets.precompile += %w( ckeditor/filebrowser/javascripts/fileuploader.js )
 Rails.application.config.assets.precompile += %w( ckeditor/filebrowser/javascripts/jquery.endless-scroll.js )
 Rails.application.config.assets.precompile += %w( ckeditor/filebrowser/javascripts/jquery.min.js )

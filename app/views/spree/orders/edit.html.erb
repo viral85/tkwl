@@ -1,46 +1,117 @@
 <% @body_id = 'cart' %>
-<div data-hook="cart_container">
-  <h1><%= Spree.t(:shopping_cart) %></h1>
+<div id='shopping-cart' class="container" data-hook="cart_container">
+ <div class='row'> 
+	 <div class='col-md-12'>
+		 <h1 class="page-header"><%= Spree.t(:shopping_cart) %></h1>
+	 </div><!-- col -->
+ </div><!-- row -->
 
   <% if @order.line_items.empty? %>
 
     <div data-hook="empty_cart">
       <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
-      <p><%= link_to Spree.t(:continue_shopping), products_path, :class => 'btn btn-default' %></p>
+      <p><%= link_to Spree.t(:continue_shopping), "/pages/wheels", :class => 'btn btn-default' %></p>
     </div>
 
   <% else %>
-
+  <div class='row'>
+      <div class='col-md-12 hidden-xs hidden-sm'>
+    		<center><span id="buySAFE_Kicker" name="buySAFE_Kicker" type="Kicker Guaranteed Border 960x38"></span></center>
+      </div><!-- col -->
+      <div class='col-sm-12 visible-sm'>
+    		<center><span id="buySAFE_Kicker" name="buySAFE_Kicker" type="Kicker Guaranteed Ribbon 700x30"></span></center>
+      </div><!-- col -->
+      <div class='col-xs-12 visible-xs'>
+    		<center><span id="buySAFE_Kicker" name="buySAFE_Kicker" type="Kicker Guaranteed Ribbon 200x90"></span></center>
+      </div><!-- col -->
+    
+    </div>
+    <hr>
+  <div class='row'>
+  <div class="col-md-3 col-sm-6">
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a data-toggle="modal" href="#shipping-rates">FREE Shipping Worldwide</a></h4>
+      </div>    
+  <div class="col-md-3 col-sm-6">
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a href='#guarantee-no-customs-tax'>110% Guaranteed No Customs Taxes</a></h4>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a href='#guarantee-money-back'>365 Day Test Ride</a></h4>      
+      </div>
+      <div class="col-md-3 col-sm-6">
+      <h4><span class="fa-stack"><i class="fa fa-certificate fa-stack-2x text-yellow"></i><i class="fa fa-check fa-stack-1x text-success"></i></span> <a href='#guarantee-speed'>110% Speed Guaranteed</a></h4>      
+      </div>
+    </div><!-- row -->
     <div data-hook="outside_cart_form">
+  	  
+	  <div class='row'>
+  		  <div id="empty-cart" class="col-md-9 col-sm-7" data-hook>
+  		  <hr class='visible-xs' style='margin:.5em'>
+          <%= form_tag empty_cart_path, :method => :put do %>
+            <p id="clear_cart_link" data-hook>
+              <%= submit_tag Spree.t(:empty_cart), :class => 'btn btn-default' %>
+              <%= Spree.t(:or) %>
+              <%= link_to Spree.t(:continue_shopping), "/pages/wheels", :class => 'continue' %>
+            </p>
+          <% end %>
+        </div>
+        </div><!-- row -->
+		
       <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart'} do |order_form| %>
         <div data-hook="inside_cart_form">
 
-          <div data-hook="cart_items" class="table-responsive">
+          <div data-hook="cart_items" class="">
             <%= render :partial => 'form', :locals => { :order_form => order_form } %>
           </div>
+	 	  <div class="well text-right">
+	 	    <div class="row">
+	 	      <div class="col-sm-8">
+	 			  <div class='row'>
+	 	        	<div class="col-md-12 payment-icons-lg">	
+	 	              	<img class="img-responsive pull-left hidden-xs hidden-sm" src="http://cdn.tokyowheel.com/payment-icons-lg.png" alt="VISA, Mastercard, Maestro, Discover, Diners Club, JCB, Paypal">
+	 					<img class="img-responsive visible-xs visible-sm" src="http://cdn.tokyowheel.com/payment-icons-lg.png" alt="VISA, Mastercard, Maestro, Discover, Diners Club, JCB, Paypal">
+	 				</div>  
+	 			</div><!-- row -->
+	 			<div class='row'>
+	 	            <div class="col-sm-5 col-md-6" data-hook="cart_buttons">
+	 	              <div class="input-group">
+	 	              <%= order_form.text_field :coupon_code, :placeholder => Spree.t(:coupon_code), class: "form-control" %>
+	 	               <span class="input-group-btn">
+	 	  				 <%= button_tag :class => 'btn btn-default', :id => 'update-button' do %>
+	 	                <%= Spree.t(:update) %>
+	 	  			  </span>
+	 	  			  </div><!-- /input-group -->
+	 	              <% end %>
+	 	            </div><!-- col -->  
+	 				</div><!-- row -->    
+	 			</div><!-- col -->
+	 	      <div class="col-sm-4">
+	 	      		<h4><small>Sub-total</small> <span class='money'><%= order_form.object.display_total %></span></h4>
+            
+	 	             <h4 class="">+ <a data-toggle="modal" href="#shipping-rates">FREE Shipping Worldwide</a></h4>
 
-          <div class="links col-md-6 navbar-form pull-right text-right" data-hook="cart_buttons">
-            <div class="form-group">
-            <%= order_form.text_field :coupon_code, :size => 10, :placeholder => Spree.t(:coupon_code), class: "form-control form-control-inline" %></div>
-            <%= button_tag :class => 'btn btn-primary', :id => 'update-button' do %>
-              <%= Spree.t(:update) %>
-            <% end %>
-            <%= button_tag :class => 'btn btn-lg btn-success', :id => 'checkout-link', :name => 'checkout' do %>
-              <%= Spree.t(:checkout) %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <div id="empty-cart" class="col-md-6 pull-left" data-hook>
-      <%= form_tag empty_cart_path, :method => :put do %>
-        <p id="clear_cart_link" data-hook>
-          <%= submit_tag Spree.t(:empty_cart), :class => 'btn btn-default' %>
-          <%= Spree.t(:or) %>
-          <%= link_to Spree.t(:continue_shopping), products_path, :class => 'continue' %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
+	 	        <h3 class=""><%= Spree.t(:total) %> <span class='text-danger'><%= order_form.object.display_total %></span></h3>
+				 <%= button_tag :class => 'btn btn-default', :id => 'update-button' do %>
+		        <%= Spree.t(:update) %>
+				<% end %>
+	 	            <%= button_tag :class => 'btn btn-lg btn-success', :id => 'checkout-link', :name => 'checkout' do %>
+	 	              <%= Spree.t(:checkout) %>
+	 	            <% end %>
+        
+		 
+	 	      	</div>
+	 	    </div><!-- row -->
+	     <%= render :partial => 'spree/orders/cart_guarantees_description' %>
+	 	  </div><!-- well -->
+    
+</div><!-- row -->	
+	  
+        <% end %>
+      </div>
+	  
+	 
+	  
+  <% end %> <!-- endif -->
 </div>
+
+<!-- Shipping -->
+<%= render :partial => 'spree/shared/shipping_modal' %>

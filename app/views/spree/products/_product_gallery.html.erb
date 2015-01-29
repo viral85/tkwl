@@ -1,0 +1,216 @@
+  <div class="row">
+    <div class="col-md-6">
+      <div id="gallery-links">
+      <div class="row main-image-row">
+		  <% if defined?(image) && image %>
+		    <%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
+		  <% else %>
+		  <%# TODO Fix this for cases that a product has no images uploaded %>
+		  <a href='#' class='thumbnail col-md-12 main-product-image'>
+		    <%= product_image(@product, :itemprop => "image") %>
+		</a>
+		<%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
+		  <% end %>
+	      
+         </div><!-- row -->
+		 <% @i = 4 %>
+	  <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+	  <div class='row'>  
+	      <% @product.images.drop(1).each.with_index(1) do |i,e| %>
+		   <div class="col-md-3 col-xs-3">
+	          <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail product-thumbnails img-responsive"), i.attachment.url(:grande), :data => { :gallery => ''}) %>
+		  </div><!-- col -->
+		  
+		  <% @i -= 1 %>
+		  <%  next unless @i.zero? %>
+		  <% @i = 4 %>
+		  		</div><div class="row">
+		  <% end %>
+		 </div><!-- row --> 
+	 <% end %>
+	 
+
+	      <% if @product.has_variants? %>
+		  <div class='row'>  
+	        <% @product.variant_images.each.with_index do |i,e| %>
+	          <% next if @product.images.include?(i) %>
+	          <div class="col-md-3 col-xs-3">
+	            <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail"), i.attachment.url(:grande), :data => { :gallery => ''}) %>
+			  </div><!-- col -->
+			  	<% if (e/4) == 1 %>
+			  		</div><div class="row">
+			  <% end %>
+	        <% end %>
+	      <% end %>
+	    </div><!-- row -->
+	  </div><!-- end gallery links -->
+<%= render :partial => 'spree/shared/blueimp_gallery_modal' %>
+<% if try_spree_current_user.try(:has_spree_role?, "admin") %>
+   <div class="alert alert-warning" role="alert">Visible Only To ADMIN</div>
+<% end %>
+<% if @product.taxons.map(&:name).include?("wheel") %>
+  <% if @product.taxons.map(&:name).include?("Epic 38") %>
+	        <h2>Epic 38 Video</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-12'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="NvY-INFEqzk" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+	        </div><!-- row -->
+	        <% end %>
+	        <% if @product.taxons.map(&:name).include?("Epic 50") || @product.taxons.map(&:name).include?("Epic 38-50") || @product.taxons.map(&:name).include?("Epic 50-60") %>
+	        <h2>Epic 50 Video</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-12'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="c7tcOupm-nc" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+	        </div><!-- row -->
+	        <% end %>
+	        <% if @product.taxons.map(&:name).include?("Epic 60") || @product.taxons.map(&:name).include?("Epic 50-60") %>
+	        <h2>Epic 60 Video</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-12'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="ge6spTRnv_Q" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+	        </div><!-- row -->
+	        <% end %>
+	        <% if @product.taxons.map(&:name).include?("Epic 88") || @product.taxons.map(&:name).include?("Epic 60-88")  %>
+	        <h2>Epic 88 Video</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-12'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="c_kU5sCNRGo" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+	        </div><!-- row -->
+	        <% end %>
+      
+	        <% if @product.taxons.map(&:name).include?("Elite 38") || @product.taxons.map(&:name).include?("Elite 38-50")  %>
+	        <h2>Elite 38 Video</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-12'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="EDiND7mi1e8" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+	        </div><!-- row -->
+	        <% end %>
+	         <% if @product.taxons.map(&:name).include?("Elite 88") || @product.taxons.map(&:name).include?("Elite 60-88")  %>
+	        <h2>Elite 88 Video</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-12'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="rtk41jAffek" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+	        </div><!-- row -->
+	        <% end %>
+      
+	        <h2>Color Option Videos</h2>
+	        <p>*<small class="text-muted"> Wheels in the color option videos may be different models than the wheels sold on this page, and are included for general information purposes.</small></p>
+	        <div class='row video-reviews'>
+	                   <% if @product.taxons.map(&:name).include?("Elite") %>
+	          <div class='col-md-6 col-sm-6'>
+	  			<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="Jc-NKn7X4z8" data-ratio="16:9">Loading...</div></div>
+	          </div><!-- col -->
+	          <% end %>
+	           <% if @product.taxons.map(&:name).include?("Epic") %>
+	          <div class='col-md-6 col-sm-6'>
+	  			<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="lp2MZHGXNBA" data-ratio="16:9">Loading...</div></div>
+	          </div><!-- col -->
+	          <% end %>
+	          <div class='col-md-6 col-sm-6'>
+	  			<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="Ws15szTTGYk" data-ratio="16:9">Loading...</div></div>
+	          </div><!-- col -->
+       
+	        </div><!-- row -->
+     
+      
+	        <h2>Hub Videos</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-6 col-sm-6'>
+	            <h3>Vapor Hubs</h3>
+	  			<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="f_cvMaXOHLc" data-ratio="16:9">Loading...</div></div>
+	        	</div><!-- col -->
+	          <div class='col-md-6 col-sm-6'>
+	            <h3>Vapor Ceramic Hubs</h3>
+	  			<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="hOmfhQ6WNc0" data-ratio="16:9">Loading...</div></div>
+	            <small class='text-muted'>*Spokes shown in video are standard spokes. Vapor Ceramic Hubs are now only available with Sapim CX-Ray spokes.</small>
+	          </div><!-- col -->
+	        </div><!-- row -->
+	        <div class='row video-reviews'>
+	          <div class='col-md-6 col-sm-6'>
+	            <h3>DT Swiss 240s Hubs</h3>
+	  			<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="Sm4VsLuIrbM" data-ratio="16:9">Loading...</div></div>
+	        	</div><!-- col -->
+	          <div class='col-md-6 col-sm-6'>
+	            <h3>Vapor Disc Hubs</h3>
+	  			<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="owYhaknvJ1w" data-ratio="16:9">Loading...</div></div>
+	        	</div><!-- col -->
+	        </div><!-- row -->
+
+
+      
+      
+	        <!-- Customer Video Reviews -->
+	        <h2>Tokyowheel Factory Tour Video</h2>
+	        <div class='row video-reviews'>
+	          <div class='col-md-12'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="OZspU8THG5s" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+	        </div><!-- row -->
+      
+	        <!-- Customer Video Reviews -->
+	        <h2>Customer Video Reviews</h2>
+	              <p>*<small class="text-muted"> Wheels in the video reviews may be different models than the wheels sold on this page, and are included for general information purposes.</small></p>
+     
+      
+	        <div class='row video-reviews'>
+	           <div class='col-md-6 col-sm-6'>
+	      <div class="embed-responsive embed-responsive-16by9"><iframe src="//player.vimeo.com/video/97573706" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+	     </div><!-- col -->
+   
+	         <div class='col-md-6 col-sm-6'>
+	          <div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="aE7WhBQUBoc" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+        
+	          <div class='col-md-6 col-sm-6'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="qUynzvS2AUM" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+        
+	          <div class='col-md-6 col-sm-6'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="jrLxNcWZgYY" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->
+        
+      
+      
+	     <div class='col-md-6 col-sm-6'>
+	      <div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="qn-ljre4ujw" data-ratio="16:9">Loading...</div></div>
+	     </div><!-- col -->
+   
+   
+	     <div class='col-md-6 col-sm-6'>
+	      <div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="ijy1QaitM-M" data-ratio="16:9">Loading...</div></div>
+	     </div><!-- col -->
+   
+	        <div class='col-md-6 col-sm-6'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="dlniho3JPOc" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->      
+
+	        <div class='col-md-6 col-sm-6'>
+	          <div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="cP56-6v-BNg" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col -->      
+
+	        <div class='col-md-6 col-sm-6'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="LVLHvwoIC-s" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col --> 
+        
+	          <div class='col-md-6 col-sm-6'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="t8V84T_3K9Y" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col --> 
+      
+	           <div class='col-md-6 col-sm-6'>
+	  		<div class="embed-responsive embed-responsive-16by9"><div class="lazyYT" data-youtube-id="ABBZRReTRFY" data-ratio="16:9">Loading...</div></div>
+	        </div><!-- col --> 
+
+        
+	        </div><!-- row -->
+      
+	        <!-- End Customer Video Reviews -->
+	        <% end %>
+	  <%# end taxon wheel%>
+      
+    </div><!-- end col-md-6 -->

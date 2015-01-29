@@ -78,14 +78,15 @@
                     <a class="navbar-brand visible-xs" href="/"><img src="http://cdn.tokyowheel.com/logo-file.png" alt="Tokyowheel™"></a>  
                    
                     <% if false %>
-						<% unless current_spree_page?(spree.cart_path) %>
-                     <div class='visible-xs pull-right navbar-cart'>
-            			<a href="/cart" class="btn btn-success navbar-btn" >
-              				<i class="fa fa-shopping-cart fa-lg"></i> <span class="sr-only">Shopping Cart</span> <span class='badge'>1</span>
-            			</a>
-         			</div>
-                 
-                    	<% end %>
+				        <% unless current_spree_page?(spree.cart_path) %>
+				              <li >
+				  				<div id="link-to-cart" data-hook>
+				   	          <noscript>
+				   	            <%= link_to Spree.t(:cart), '/cart' %>
+				   	          </noscript>
+				  		  </div>
+				    	        </li>
+				  	  <% end %>
 					<% end %>
                     
                     

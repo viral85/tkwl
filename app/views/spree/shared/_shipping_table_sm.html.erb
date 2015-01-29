@@ -1,10 +1,10 @@
   <table class="table table-bordered table-condensed"><tbody>
               <tr><th>Country</th><th>Wheelset Shipping Rate</th><th>Expected Delivery</th></tr>
-              <tr><td>USA</td><td><del class="money">$75.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td>{% include 'shipping-time' with 'm' %} Days</td></tr>
- <tr><td>Canada</td><td><del class="money">$85.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td>{% include 'shipping-time' with 'm' %} Days</td></tr>
- <tr><td>Japan</td><td><del class="money">$44.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td>{% include 'shipping-time' with 'm' %} Days</td></tr>
- <tr><td>Australia</td><td><del class="money">$60.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td>{% include 'shipping-time' with 'm' %} Days</td></tr>
- <tr><td>UK</td><td><del class="money">$80.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td>{% include 'shipping-time' with 'm' %} Days</td></tr>
- <tr><td>Denmark</td><td><del class="money">$95.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td>{% include 'shipping-time' with 'm' %} Days</td></tr>
+              <tr><td>USA</td><td><del class="money">$75.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td><%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</td></tr>
+ <tr><td>Canada</td><td><del class="money">$85.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td><%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</td></tr>
+ <tr><td>Japan</td><td><del class="money">$44.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td><%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</td></tr>
+ <tr><td>Australia</td><td><del class="money">$60.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td><%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</td></tr>
+ <tr><td>UK</td><td><del class="money">$80.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td><%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</td></tr>
+ <tr><td>Denmark</td><td><del class="money">$95.00</del> FREE Shipping <strong class="text-success money">$0.00 USD</strong></td><td><%= render :partial => 'spree/shared/shipping_time', locals: { shipping_time: 'm' } %> Days</td></tr>
  </tbody></table>
             <a data-toggle="modal" href="#shipping-rates" class="btn btn-primary btn-lg">See All Countries</a>

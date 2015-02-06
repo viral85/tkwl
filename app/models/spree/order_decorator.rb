@@ -11,5 +11,4 @@ def set_langugate
     self.language = I18n.locale
  end
 
-
 end

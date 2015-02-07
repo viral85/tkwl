@@ -495,7 +495,7 @@ background-color: #ffffff;
 #sidebar{margin-top:20px}
 
 .navbar-cart{margin-right: 15px;}
-.slim-hr hr{margin:0}
+.slim-hr hr, .slim {margin:0}
 
 .text-black{color:#000000;}
 .row-bg-md hr{border-top: 1px solid #ccc;}

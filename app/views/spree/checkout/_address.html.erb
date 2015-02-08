@@ -1,10 +1,9 @@
 <div class="row">
   <div class="col-sm-12" data-hook="billing_fieldset_wrapper">
-    <div class="panel panel-default white" id="billing" data-hook>
+      <h3 class=""><%= Spree.t(:billing_address) %></h3>
+	<div class="panel panel-default white" id="billing" data-hook>
       <%= form.fields_for :bill_address do |bill_form| %>
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= Spree.t(:billing_address) %></h3>
-        </div><!-- panel-heading -->
+        
         <div class="panel-body">
           <%= render :partial => 'spree/address/form', :locals => { :form => bill_form, :address_type => 'billing', :address => @order.bill_address } %>
         </div><!-- panel-body -->
@@ -13,11 +12,10 @@
   </div><!-- col -->
 
   <div class="col-sm-12" data-hook="shipping_fieldset_wrapper">
-    <div class="panel panel-default white" id="shipping" data-hook>
+      <h3 class=""><%= Spree.t(:shipping_address) %></h3>
+	<div class="panel panel-default white" id="shipping" data-hook>
       <%= form.fields_for :ship_address do |ship_form| %>
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= Spree.t(:shipping_address) %></h3>
-        </div><!-- panel-heading -->
+       
         <div class="panel-body">
           <p class="field checkbox" data-hook="use_billing">
             <%= label_tag :order_use_billing, :id => 'use_billing' do %>
@@ -44,8 +42,9 @@
     </span>
   <% end %>
 </div><!-- col -->
-<div class='col-sm-4 col-sm-offset-4'>
-  <%= submit_tag Spree.t(:next), :class => 'btn btn-lg btn-block btn-success' %>
+<div class='col-md-4 col-md-offset-8 col-sm-6 col-sm-offset-6'>
+  <%= submit_tag Spree.t(:next), :class => 'btn btn-lg btn-block btn-primary' %>
+   
 </div><!-- col -->
 </div><!-- well -->
 </div><!-- row -->

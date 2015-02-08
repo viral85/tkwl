@@ -568,3 +568,7 @@ ul.nav.navbar-nav.navbar-right.top li a{font-size: 85%;}
 .checkout-footer-links a{margin-left:15px;}
 .text-muted-dark{color:#555;}
 .flash-margin{top-margin:-20px !important;}
+
+.panel-default.white>.panel-heading {
+background-color: #fff; */
+}

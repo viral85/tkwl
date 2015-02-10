@@ -23,7 +23,7 @@
               <%= Spree.t(:use_billing_address) %>
             <% end %>
           </p>
-          <%= render :partial => 'spree/address/form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address } %>
+          <%= render :partial => 'spree/address/form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address} %>
         </div><!-- panel-body -->
       <% end %>
     </div><!-- panel -->

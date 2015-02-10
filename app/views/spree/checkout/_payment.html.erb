@@ -12,7 +12,7 @@
         <label for="use_existing_card_no"><%= radio_button_tag 'use_existing_card', 'no'  %> Use a new card / payment method</label>
       </li>
 
-      <div id="existing_cards" >
+      <div id="existing_cards">
 		  <h5>My Cards</h5>
         <p class="form-group" data-hook="existing_cards">
         
@@ -67,10 +67,10 @@
       <% end %>
     </ul>
 
-   <!-- <p class='field' data-hook='coupon_code'>
+  <!--  <p class='field' data-hook='coupon_code'>
       <%= form.label :coupon_code %><br />
       <%= form.text_field :coupon_code, :class => 'form-control' %>
-    </p> -->
+    </p> --> 
 	
   </div>
 </div>
@@ -84,3 +84,14 @@
   <script>Spree.disableSaveOnClick();</script>
 </div>
 <hr>
+<script>
+$(function() {
+    $("#use_existing_card_yes").click(function(){
+         
+            $("#existing_cards").show();
+    });
+    $("#use_existing_card_no").click(function(){
+            $('#existing_cards').hide();
+    });
+ });
+ </script

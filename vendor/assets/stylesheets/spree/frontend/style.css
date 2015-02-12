@@ -601,3 +601,10 @@ position: absolute;
 top: 50%;
 right: 1em;
 }
+
+a.option-value.btn i.fa {    			
+	display:none;			
+}
+a.option-value.btn.active i.fa {				
+	display:inline;			
+}

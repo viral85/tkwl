@@ -21,11 +21,16 @@ Spree::BaseHelper.module_eval do
 
        flash.each do |msg_type, text|
          unless ignore_types.include?(msg_type)
-           concat(content_tag :div, text, class: "alert alert-#{msg_type} text-center no-margin")
+           concat(content_tag :div, text, class: "alert alert-warning text-center flash-margin")
          end
        end
        nil
      end
+     
+     def money(base_amount)
+       Spree::Money.new(base_amount * Spree::CurrencyRate.find_by(base_currency: "USD", currency: current_currency).try(:exchange_rate), currency: current_currency) 
+     end
+     
 end
 
 

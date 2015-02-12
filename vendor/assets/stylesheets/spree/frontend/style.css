@@ -495,7 +495,7 @@ background-color: #ffffff;
 #sidebar{margin-top:20px}
 
 .navbar-cart{margin-right: 15px;}
-.slim-hr hr{margin:0}
+.slim-hr hr, .slim {margin:0}
 
 .text-black{color:#000000;}
 .row-bg-md hr{border-top: 1px solid #ccc;}
@@ -566,3 +566,45 @@ ul.nav.navbar-nav.navbar-right.top li a{font-size: 85%;}
 
 #spree-footer .well.white{margin-bottom:0px;}
 .checkout-footer-links a{margin-left:15px;}
+.text-muted-dark{color:#555;}
+.flash-margin{top-margin:-20px !important;}
+
+.panel-default.white>.panel-heading {background-color: #fff; }
+.payment-methods .payment-method {display: inline-block;}
+.payment-method {background-position: center center;background-repeat: no-repeat;}
+.payment-method.generic {background-image: url(//cdn.tokyowheel.com/payment-icon-generic.svg),none;}
+.payment-method.visa {background-image: url(//cdn.tokyowheel.com/payment-icon-visa.svg),none;}
+.payment-method.master {background-image: url(//cdn.tokyowheel.com/payment-icon-master.svg),none;}
+.payment-method.american-express {background-image: url(//cdn.tokyowheel.com/payment-icon-visa.svg),none;}
+.payment-method.discover {background-image: url(//cdn.tokyowheel.com/payment-icon-discover.svg),none;}
+.payment-method.jcb {background-image: url(//cdn.tokyowheel.com/payment-icon-jcb.svg),none;}
+.payment-method.diners-club {background-image: url(//cdn.tokyowheel.com/payment-icon-diners-club.svg),none;}
+.payment-method.paypal {background-image: url(//cdn.tokyowheel.com/paypal.png);width: 70px;}
+.payment-method {
+display: inline-block;
+width: 38px;
+height: 24px;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+color: transparent;
+-webkit-transition: opacity 0.5s cubic-bezier(0.3, 0, 0, 1.2);
+transition: opacity 0.5s cubic-bezier(0.3, 0, 0, 1.2);
+text-indent: 100%;
+white-space: nowrap;
+overflow: hidden;
+}
+.payment-methods {
+margin-top: -12px;
+}
+.field__icon {
+position: absolute;
+top: 50%;
+right: 1em;
+}
+
+a.option-value.btn i.fa {    			
+	display:none;			
+}
+a.option-value.btn.active i.fa {				
+	display:inline;			
+}

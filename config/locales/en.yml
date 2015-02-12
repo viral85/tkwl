@@ -22,6 +22,11 @@
 en:
   hello: "Hello world"
   about1: "Translated About Content"
-  email_address: Emaillll 
+  email_address: "Emaillll"
+  place_my_order: "Place My Order"
+  cvv: "CVV"
+  cvv_tooltip: 3 or 4 digit security code usually located on the back of the card.
+  processing: Processing...
+  select: Select
   
  

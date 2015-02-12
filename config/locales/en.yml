@@ -27,5 +27,6 @@ en:
   cvv: "CVV"
   cvv_tooltip: 3 or 4 digit security code usually located on the back of the card.
   processing: Processing...
+  select: Select
   
  

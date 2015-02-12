@@ -26,6 +26,11 @@ Spree::BaseHelper.module_eval do
        end
        nil
      end
+     
+     def money(base_amount)
+       Spree::Money.new(base_amount * Spree::CurrencyRate.find_by(base_currency: "USD", currency: current_currency).try(:exchange_rate), currency: current_currency) 
+     end
+     
 end
 
 

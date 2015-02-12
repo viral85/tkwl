@@ -119,7 +119,9 @@ function VariantOptions(params) {
         disable($(element).addClass('unavailable locked').unbind('click'));
       } else if (keys.length == 1) {
         _var = variants[keys[0]];
-        $(element).addClass(_var.in_stock ? selection.length == 1 ? 'in-stock auto-click' : 'in-stock' : 'out-of-stock');
+//        $(element).addClass(_var.in_stock ? selection.length == 1 ? 'in-stock auto-click' : 'in-stock' : 'out-of-stock');
+//make items always in stock
+        $(element).addClass(_var.in_stock ? selection.length == 1 ? 'in-stock auto-click' : 'in-stock' : 'in-stock');
       } else if (allow_backorders) {
         $(element).addClass('in-stock');
       } else {
@@ -127,7 +129,9 @@ function VariantOptions(params) {
         $.each(variants, function(key, value) {
           count += value.in_stock ? 1 : 0
         });
-        $(element).addClass(count > 0 ? 'in-stock' : 'out-of-stock');
+//        $(element).addClass(count > 0 ? 'in-stock' : 'out-of-stock');
+//make items always in stock
+		$(element).addClass(count > 0 ? 'in-stock' : 'out-of-stock');
       }
     });
   }
@@ -209,7 +213,8 @@ function VariantOptions(params) {
       }
 
       $('#variant_id, form[data-form-type="variant"] input[name$="[variant_id]"]').val('');
-      $('#cart-form button[type=submit], form[data-form-type="variant"] button[type=submit]').attr('disabled', true).fadeTo(0, 0.5);
+      // modified so add to cart is never disabled
+	  //$('#cart-form button[type=submit], form[data-form-type="variant"] button[type=submit]').attr('disabled', true).fadeTo(0, 0.5);
       price = $('#product-price .price').addClass('unselected')
       // Replace product price by "(select)" only when there are at least 1 variant not out-of-stock
       variants = $("div.variant-options.index-0")

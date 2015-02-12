@@ -8,7 +8,7 @@
 	             <div class="caption col-sm-6 upgrade-caption">
 	               <h4 class='upgrade-title'>Standard Hubs & Spokes</h4>
 	               <strong><p><a data-toggle="modal" href="#road-hubs" >Standard Road Bike Hubs + Standard Aero Spokes</a></p></strong>
-	               <span>+</span><span class="money">$0.00 USD</span><a data-toggle="modal" href="#road-hubs"> <i class="icon-play-circle"></i> Learn More</a>
+	               <span>+</span><span><%= money(0)%></span><a data-toggle="modal" href="#road-hubs"> <i class="icon-play-circle"></i> Learn More</a>
 	         	  </div><!-- col-md-6 -->
 	             <div class="col-sm-4">
 	             	<%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") + content_tag(:span, " Standard"), "#", :title => value.presentation, :class => classes.join(" btn-block "), :rel => "#{type.id}-#{value.id}" %></li>
@@ -165,7 +165,7 @@
           <div class="caption col-sm-6 upgrade-caption">
             <h4 class='upgrade-title'>Lighter Ceramic Upgrade</h4>
             <strong><p><a data-toggle="modal" href="#ceramic-hubs" > Lighter Ceramic 4 Bearing Hubs + Sapim Cx-Ray Spokes & SILS Nipples</a></p></strong>
-        	<span>+</span><span class="money">$269.00 USD</span><a data-toggle="modal" href="#ceramic-hubs"> <i class="icon-play-circle"></i> Learn More</a>
+        	<span>+</span><span><%= money(269)%></span><a data-toggle="modal" href="#ceramic-hubs"> <i class="icon-play-circle"></i> Learn More</a>
             
       	  </div><!-- col-md-6 -->
           <div class="col-sm-4">
@@ -330,7 +330,7 @@
           <div class="caption col-sm-6 upgrade-caption">
             <h4 class='upgrade-title'>DT Swiss Upgrade</h4>
             <strong><p><a data-toggle="modal" href="#dtswiss240" > DT Swiss 240s Straight Pull Hubs + Sapim Cx-Ray Straight Pull Spokes & SILS Nipples</a></p></strong>
-        	<span>+</span><span class="money">{% if product.url == '/products/epic-performance-system'%}$958.00 USD{% else %}$479.00 USD{% endif %}</span><a data-toggle="modal" href="#dtswiss240"> <i class="icon-play-circle"></i> Learn More</a>
+        	<span>+</span><span><%= money(479)%></span><a data-toggle="modal" href="#dtswiss240"> <i class="icon-play-circle"></i> Learn More</a>
 
            </div><!-- col-md-6 -->
           <div class="col-sm-4">
@@ -497,7 +497,7 @@
             <div class="caption col-sm-6 upgrade-caption">
               <h4 class='upgrade-title'>Disc Brake Upgrade</h4>
               <strong><p><a data-toggle="modal" href="#disc" > Disc Brake Road Bike Hubs + Sapim Cx-Ray Spokes & SILS Nipples</a></p></strong>
-          	<span>+</span><span class="money">  {% if product.url == '/products/epic-performance-system'%}$538.00 USD{% else %}$269.00 USD{% endif %}</span><a data-toggle="modal" href="#disc"> <i class="icon-play-circle"></i> Learn More</a>
+          	<span>+</span><span><%= money(269)%></span><a data-toggle="modal" href="#disc"> <i class="icon-play-circle"></i> Learn More</a>
 
              </div><!-- col-md-6 -->
             <div class="col-sm-4">

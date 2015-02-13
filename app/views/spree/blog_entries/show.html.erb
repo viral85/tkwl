@@ -5,21 +5,27 @@
 <% end %>
 
 <% content_for :sidebar do %>
-  <%= render :partial => 'spree/blog_entries/blog_sidebar' %>
+ 
 <% end %>
 
-<div id="blog_entry_container">
-  <div id="blog_entry_entry">
+<div id="blog_entry_container" class='container'>
+  <div id="blog_entry_entry" class='row'>
+	  <div class='col-md-9 '>
 
-    <h1><%= ERB.new(@blog_entry.title).result(binding) %></h1>
-
+    <h1 class='article page-header'><%= ERB.new(@blog_entry.title).result(binding).html_safe %></h1>
+<%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => @blog_entry} %>
+<hr class='article-header'>
     <div class="blog_entry_body">
+	  <%= ERB.new(@blog_entry.body).result(binding).html_safe %>
+    </div><!-- blog_entry_body -->
+	<%= render :partial => 'spree/blog_entries/comments', :locals => {:blog_entry => @blog_entry}  %>
+	    </div><!-- col -->
+	    <div class='col-md-3'>
+	  	  <%= render :partial => 'spree/blog_entries/blog_sidebar' %>
+	    </div>
+  </div><!-- blog_entry_entry -->
 
-	  <%= ERB.new(@blog_entry.body).result(binding) %>
-    </div>
+ 
+</div><!-- blog_entry_container -->
 
-    <%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => @blog_entry} %>
-  </div>
 
-  <%= render :partial => 'spree/blog_entries/comments', :locals => {:blog_entry => @blog_entry}  %>
-</div>

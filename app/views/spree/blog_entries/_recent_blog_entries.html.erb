@@ -1,15 +1,15 @@
 <% if recent_blog_entries.present? %>
   <div class="recent_blog_entries_wrapper">
-    <h6><%= Spree.t('blog.recent_entries') %></h6>
-    <ul class="recent_blog_entries">
+    <h4><%= Spree.t('blog.recent_posts') %></h4>
+    <div class="recent_blog_entries">
       <% recent_blog_entries.each do |blog_entry| %>
-        <li>
+        <h5>
           <%= link_to(blog_entry_permalink(blog_entry)) do %>
-            <%= blog_entry.title %>
-            <span class="blog_entry_date"><%= "#{time_ago_in_words blog_entry.published_at} #{Spree.t('blog.ago')}" %></span> 
+            <%= ERB.new(blog_entry.title).result(binding) %>
+            <!--<span class="text-muted blog_entry_date"><small><%= "#{time_ago_in_words blog_entry.published_at} #{Spree.t('blog.ago')}" %></small></span> -->
           <% end %>
-        </li>
+        </h5>
       <% end %>
-    </ul>
+    </div>
   </div>
 <% end %>

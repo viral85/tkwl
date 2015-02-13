@@ -1,6 +1,27 @@
-<div id="blog_entry_sidebar">
-  <%= render 'spree/blog_entries/categories_list' %>
-  <%= render 'spree/blog_entries/tag_cloud' %>
-  <%= render 'spree/blog_entries/recent_blog_entries', recent_blog_entries: Spree::BlogEntry.recent(10) %>
-  <%= render 'spree/blog_entries/news_archive', news_archive: Spree::BlogEntry.organize_blog_entries %>
+<div id="blog_entry_sidebar">  
+  <%#= render 'spree/blog_entries/tag_cloud' %>
+  <%#= render 'spree/blog_entries/news_archive', news_archive: Spree::BlogEntry.organize_blog_entries %>
+
+<div class="row">
+  <div class="well blog-sidebar-ad text-center">
+  	<img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500_medium.png?15074" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-60-rear-side-500x500_medium.png?15074" alt="Tokyowheel Carbon Wheels" class="img-responsive">
+  <p><a href="/pages/wheels"class="btn btn-primary btn-lg">Shop Carbon Wheels</a></p>
+</div>
+<%= render 'spree/blog_entries/recent_blog_entries', recent_blog_entries: Spree::BlogEntry.recent(5) %>
+ <%= render 'spree/blog_entries/categories_list' %>
+  <h4>Tokyowheel On Facebook</h4>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=325973014097621";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+<div class="fb-like-box" data-href="https://www.facebook.com/TokyoWheel" data-width="320" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
+<iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='http://www.strava.com/clubs/team-tokyowheel-109759/latest-rides/04f995c08cebd8a91bc3edd1d087478c5ec67443?show_rides=false'></iframe>
+  
+</div><!-- row -->
 </div>

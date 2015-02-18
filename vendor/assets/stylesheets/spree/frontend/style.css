@@ -112,7 +112,7 @@ margin-bottom:10px;}
 .upgrade-caption{padding-left:5px;}
 .upgrade-thumbnail img{max-height:63px;}
 
-.blog-sidebar-ad .btn{margin-top:10px;}
+.blog-sidebar-ad .btn, .blog-sidebar-ad{margin-top:10px;}
 .blog-sidebar-ad img{margin:auto}
 .blog-sidebar-ad{background-image: url(http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-riders_large.jpg?15074);
   background-position:center; 
@@ -164,7 +164,7 @@ div.characteristics{margin-bottom:20px}
 
 .single-wheel-button{}
 
-h1.article.page-header{margin: 0 0 8px}
+h1.article.page-header{margin: 10px 0 8px}
 hr.article-header{margin-top:10px}
 
 .color-selector{

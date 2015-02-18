@@ -186,42 +186,13 @@ data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"
   </div><!-- /.modal -->
 <% end %>
 
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        {% if product.compare_at_price > product.price %}
-          <% if false %><p>Regular Price: <del id="compare-at-price-field" class="muted"></del></p><% end %>
-        {% endif %}
-          
-        
-          
-        <link itemprop="availability" href="http://schema.org/InStock" content="In Stock"/>
-          <meta itemprop='price' content='{{ product.price }}'/>
-          <meta itemprop='priceCurrency' content='USD'/>
-        
-       
-        	<div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">Wholesale Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3></div>
-
-
-          <div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">SALE Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3> </div>
-          
-
-          <div class="alert alert-warning price-alert"><h4 style='display:inline;' class="">Total Price: </h4><h3 style='display:inline;' id="price-field" class="text-danger"></h3></div>
-
-          
-          
-          
-        <% if false %><span id="sale-field" class="label label-danger">On sale</span> <% end %>
-       
-	    </div><!-- schema.org offers -->
+     
       </div>
       <div id="cart-form" data-hook="cart_form">
         <%= render :partial => 'cart_form' %>
       </div>
 	  
-      <form action="/cart/add" method="post" role="form">
-         
-      		{% include 'product-add-to-cart-form' %}
-
-      </form>
+	  
       
     </div>
   </div><!-- end row -->

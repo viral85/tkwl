@@ -1,0 +1,14 @@
+<div class="blog_entry_summary">
+	<% if blog_entry.blog_entry_image %>
+	<%= link_to image_tag(blog_entry.blog_entry_image.attachment.url(:grande), class: 'img-responsive'), blog_entry_permalink(blog_entry) %>
+	<% end %>
+<h2 class=''><%= link_to ERB.new(blog_entry.title).result(binding) , blog_entry_permalink(blog_entry) %></h2>
+<%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => blog_entry} %>
+
+  <%== ERB.new(blog_entry.entry_summary).result(binding) %>
+  <span class="blog_read_more"><%= link_to Spree.t(:blog_read_more), blog_entry_permalink(blog_entry) %></span>
+</div>
+
+
+<hr>
+

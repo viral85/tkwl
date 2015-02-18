@@ -1,3 +1,5 @@
+
+<div class="container" style='margin-top:20px;'>
 <%
   paginated_products = @searcher.retrieve_products if params.key?(:keywords)
   paginated_products ||= products
@@ -26,26 +28,26 @@
   <% products = products.uniq %>
   <% products.each do |product| %>
     <% url = product_url(product, taxon_id: @taxon.try(:id)) %>
-    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 product-list-item" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-      <div class="panel panel-default">
+    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+      <div class="thumbnail product-thumbnail">
         <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
-          <div class="panel-body text-center product-body">
-            <%= link_to small_image(product, itemprop: "image"), url, itemprop: 'url' %><br/>
-            <%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name %>
-          </div>
-          <div class="panel-footer text-center">
-            <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-              <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
-            </span>
-          </div>
+          <a href="<%= url %>"><%= link_to product_image(product, itemprop: "image"), url, itemprop: 'url', class: 'img-responsive' %></a>
+		  <div class="caption">
+	        <div><strong><%= link_to truncate(product.name, length: 50), url, class: '', itemprop: "name", title: product.name %></strong></div>
+	        <div class="text-right"><span itemprop="offers" itemscope itemtype="http://schema.org/Offer" class='text-success'><%= display_price(product) %></span><span> </span><span class="label label-default">FREE Shipping</span></div>
+            <%= link_to truncate(t(:select), length: 50), url, class: 'btn btn-primary btn-block product-box-button', itemprop: "name", title: t(:select) %>
+          </div><!-- caption -->
         <% end %>
-      </div>
-    </div>
+      </div><!-- thumbnail -->
+    </div><!-- product -->
+	<%= cycle("", "", "", "</div><div class='row'>", name: "row") -%>
   <% end %>
-  <% reset_cycle("classes") %>
-</div>
+</div><!-- products -->
 <% end %>
 
 <% if paginated_products.respond_to?(:num_pages) %>
   <%= paginate paginated_products, theme: 'twitter-bootstrap-3' %>
 <% end %>
+
+
+</div><!-- container -->

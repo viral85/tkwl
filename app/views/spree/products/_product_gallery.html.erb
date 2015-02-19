@@ -17,7 +17,7 @@
 	  <div class='row'>  
 	      <% @product.images.drop(1).each.with_index(1) do |i,e| %>
 		   <div class="col-md-3 col-xs-3">
-	          <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail product-thumbnails img-responsive"), i.attachment.url(:grande), :data => { :gallery => ''}) %>
+	          <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail product-thumbnails img-responsive"), i.attachment.url(:grande), :title => i.alt, :data => { :gallery => ''} ) %>
 		  </div><!-- col -->
 		  
 		  <% @i -= 1 %>
@@ -213,3 +213,24 @@
 	  <%# end taxon wheel%>
       
     </div><!-- end col-md-6 -->
+	
+	  <script>
+	document.getElementById('gallery-links').onclick = function (event) {
+	    event = event || window.event;
+	    var target = event.target || event.srcElement,
+	        link = target.src ? target.parentNode : target,
+	        options = {index: link, event: event},
+	        links = this.getElementsByTagName('a');
+	    blueimp.Gallery(links, options);
+	};
+	</script>
+	  <script>
+	document.getElementById('gallery-links2').onclick = function (event) {
+	    event = event || window.event;
+	    var target = event.target || event.srcElement,
+	        link = target.src ? target.parentNode : target,
+	        options = {index: link, event: event},
+	        links = this.getElementsByTagName('a');
+	    blueimp.Gallery(links, options);
+	};
+	</script>

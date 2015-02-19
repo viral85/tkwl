@@ -60,7 +60,7 @@ GIT
 
 GIT
   remote: git://github.com/tkwl/spree-blogging-spree.git
-  revision: 2c5623016aeee3c2535da9b3411d26e4e17ab358
+  revision: 69757551f62a9fe45fd118eb9df19c62bc463408
   specs:
     spree_blogging_spree (2.3.0)
       acts-as-taggable-on (~> 3.0.2)

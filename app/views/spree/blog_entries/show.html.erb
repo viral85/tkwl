@@ -1,3 +1,4 @@
+<% self.title = ERB.new(@blog_entry.title).result(binding) %> <!-- set page title via translated content -->
 <% content_for :head do %>
   <% if !@blog_entry.author.blank? and !@blog_entry.author.google_plus_url.blank? %>
     <link rel="author" href="<%= @blog_entry.author.google_plus_url %>"/>

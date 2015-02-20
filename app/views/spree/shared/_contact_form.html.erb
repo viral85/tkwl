@@ -1,31 +1,62 @@
-<% @contact ||= Spree::ContactUs::Contact.new(params[:contact_us_contact]) %>
+<style>
+.side-bar-contact label.error {
+background-color: #d9534f;
+}
+.side-bar-contact label.error {
+display: inline;
+padding: .2em .6em .3em;
+font-size: 75%;
+font-weight: 700;
+line-height: 1;
+color: #fff;
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: .25em;
+}
+.side-bar-contact input.error {
+border-color: #a94442;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+    </style>
 
+<% @contact ||= Spree::ContactUs::Contact.new(params[:contact_us_contact]) %>
+ <div class='well '>
+<div id="contactFormWrapper" class='side-bar-contact'>
+  <div class='row'>
+    <div class=''>
 <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
   <% if SpreeContactUs.require_name %>
-    <p>
+   <div class="form-group">
       <%= f.label :name %>
-      <span class="required">*</span><br/>
-      <%= f.text_field :name, class: 'required' %>
-    </p>
+      <%= f.text_field :name, class: 'required form-control', placeholder: "John Doe" %>
+     </div><!-- form-group -->
   <% end %>
-  <p>
+ <div class="form-group">
     <%= f.label :email %>
-    <span class="required">*</span><br/>
-    <%= f.email_field :email, class: 'required email' %>
-  </p>
+    <%= f.email_field :email, class: 'required email  form-control', placeholder: "john@example.com"  %>
+</div><!-- form-group -->
+</div><!-- col-sm-4 -->
+    <div class=''>
+ 
   <% if SpreeContactUs.require_subject %>
-    <p>
+
       <%= f.label :subject %>
       <span class="required">*</span><br/>
       <%= f.text_field :subject, class: 'required' %>
-    </p>
+  
   <% end %>
-  <p>
+   <div class="form-group">
     <%= f.label :message %>
-    <span class="required">*</span><br/>
-    <%= f.text_area :message, class: 'required' %>
-  </p>
-  <p>
-    <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :title => Spree.t(:submit) %>
-  </p>
+    <%= f.text_area :message, class: 'required form-control',  placeholder: "Your Message", rows: "7" %>
+	</div><!-- form-group -->
+ 
+    <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :title => Spree.t(:submit), :class => "btn btn-primary btn-lg btn-block" %>
+            </div><!-- col-sm-8 -->
+      </div><!-- row -->
+  </div><!-- contactWrapper -->
+      </div><!-- well -->
 <% end %>
+
+         

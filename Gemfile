@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -61,7 +62,7 @@ gem 'spree_multi_domain',   github: 'spree/spree-multi-domain',   branch: '2-4-s
 gem 'spree_price_books', github: 'tkwl/spree_tkwl_price_books'
 gem 'spree_variant_options', github: 'tkwl/spree_tkwl_variant_options'
 gem 'spree_contact_us', github: 'jdutil/spree_contact_us',   branch: '2-4-stable'
-
+gem 'rails_12factor', group: :production
 
 gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '2-4-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-4-stable'

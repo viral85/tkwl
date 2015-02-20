@@ -39,27 +39,6 @@
 	<%= render partial: 'spree/shared/mouseflow' %>
 	<%= render partial: 'spree/shared/klaviyo' %>
 	<script>$('.lazyYT').lazyYT();</script>
-	  <%-# TODO Move this to product view -%>
-	  <script>
-	document.getElementById('gallery-links').onclick = function (event) {
-	    event = event || window.event;
-	    var target = event.target || event.srcElement,
-	        link = target.src ? target.parentNode : target,
-	        options = {index: link, event: event},
-	        links = this.getElementsByTagName('a');
-	    blueimp.Gallery(links, options);
-	};
-	</script>
-	  <script>
-	document.getElementById('gallery-links2').onclick = function (event) {
-	    event = event || window.event;
-	    var target = event.target || event.srcElement,
-	        link = target.src ? target.parentNode : target,
-	        options = {index: link, event: event},
-	        links = this.getElementsByTagName('a');
-	    blueimp.Gallery(links, options);
-	};
-	</script>
 	<%= render partial: 'spree/shared/buysafe' %>
   </body>
 </html>

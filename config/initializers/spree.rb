@@ -20,10 +20,10 @@ Spree.config do |config|
       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       bucket:            ENV['S3_BUCKET_NAME']
     },
-    s3_host_alias: 'd1fw984ffi6nce.cloudfront.net',
+    s3_host_alias: 'cdn.tokyowheel.com',
     storage:        :s3,
     s3_headers:     { "Cache-Control" => "max-age=31557600" },
-    s3_protocol:    "https",
+    s3_protocol:    "http",
     bucket:         ENV['S3_BUCKET_NAME'],
     url:            ":s3_alias_url",
 

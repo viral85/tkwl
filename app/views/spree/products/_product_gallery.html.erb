@@ -5,11 +5,10 @@
 		  <% if defined?(image) && image %>
 		    <%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
 		  <% else %>
-		  <%# TODO Fix this for cases that a product has no images uploaded %>
-		  <a href='#' class='thumbnail col-md-12 main-product-image'>
-		    <%= product_image(@product, :itemprop => "image") %>
+		  
+		  <a href='<%= @product.images[0].attachment.url(:grande) %>' title='<%= @product.images[0].alt %>' class='thumbnail col-md-12 main-product-image' style='padding:10px' data-gallery>
+		    <%= large_image(@product, :itemprop => "image", :class => "img-responsive") %>
 		</a>
-		<%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:grande), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
 		  <% end %>
 	      
          </div><!-- row -->
@@ -18,7 +17,7 @@
 	  <div class='row'>  
 	      <% @product.images.drop(1).each.with_index(1) do |i,e| %>
 		   <div class="col-md-3 col-xs-3">
-	          <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail product-thumbnails img-responsive"), i.attachment.url(:grande), :data => { :gallery => ''}) %>
+	          <%= link_to(image_tag(i.attachment.url(:small), class: "thumbnail product-thumbnails img-responsive"), i.attachment.url(:grande), :title => i.alt, :data => { :gallery => ''} ) %>
 		  </div><!-- col -->
 		  
 		  <% @i -= 1 %>
@@ -214,3 +213,24 @@
 	  <%# end taxon wheel%>
       
     </div><!-- end col-md-6 -->
+	
+	  <script>
+	document.getElementById('gallery-links').onclick = function (event) {
+	    event = event || window.event;
+	    var target = event.target || event.srcElement,
+	        link = target.src ? target.parentNode : target,
+	        options = {index: link, event: event},
+	        links = this.getElementsByTagName('a');
+	    blueimp.Gallery(links, options);
+	};
+	</script>
+	  <script>
+	document.getElementById('gallery-links2').onclick = function (event) {
+	    event = event || window.event;
+	    var target = event.target || event.srcElement,
+	        link = target.src ? target.parentNode : target,
+	        options = {index: link, event: event},
+	        links = this.getElementsByTagName('a');
+	    blueimp.Gallery(links, options);
+	};
+	</script>

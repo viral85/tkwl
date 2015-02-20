@@ -27,50 +27,10 @@
     <div class="alert-message alert-message-info">
       <h4 class='text-center'>Have a Question? Email us at <a href='mailto:questions@tokyowheel.com'>questions@tokyowheel.com</a></h4>
     </div>
-    {% form 'contact' %}
-
-{% if form.posted_successfully? %}
-	<div class="alert alert-success">
-	  <p>Thanks for contacting us! We'll get back to you as soon as possible.</p>
-	</div>
     
-{% endif %}
-
-{% if form.errors %}
-<div class="alert alert-danger">
-  <!-- {{ form.errors.size }} or {{ form.errors | size }} -->
-  <p>Oops, sorry. We were unable to submit your inquiry because it contained {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:</p>
-  {% for field in form.errors %}
-    <p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
-  {% endfor %}
-</div>
-{% endif %}
- <div class='well'>
-<div id="contactFormWrapper">
-  <div class='row'>
-    <div class='col-sm-4'>
-  <div class="form-group">
-    <label>Your Name:</label>
-    <input class="form-control" type="text" id="contactFormName" name="contact[name]" placeholder="John Doe" />
-  </div>
-  <div class="form-group">
-    <label>Email:</label>
-    <input class="form-control" type="email" id="contactFormEmail" name="contact[email]" placeholder="john@example.com" />
-  </div>
-    </div><!-- col-sm-4 -->
-    <div class='col-sm-8'>
-  <div class="form-group">
-    <label>Message:</label>
-    <textarea class="form-control" rows='7' id="contactFormMessage" name="contact[body]" placeholder="Your Message"></textarea>
-  </div>
-  <div class="form-group">
-    <input class="btn btn-primary btn-lg btn-block" type="submit" id="contactFormSubmit" value="SEND" />
-  </div>
-          </div><!-- col-sm-8 -->
-    </div><!-- row -->
-</div><!-- contactWrapper -->
-    </div><!-- well -->
-{% endform %}
+	<%= render :partial => 'spree/shared/contact_form' %>
+	
+	
   </div><!-- col-sm-8 -->
     
   <div class='col-sm-4'>

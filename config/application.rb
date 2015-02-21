@@ -33,7 +33,7 @@ module Tkwl
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     
-    config.assets.initialize_on_precompile = false
+   
     
     config.enable_mail_delivery = true
     config.mails_from = "questions@tokyowheel.com"
@@ -45,6 +45,7 @@ module Tkwl
 }
  
    config.use_transactional_fixtures = false
+   config.assets.initialize_on_precompile = false
   end
 end
 

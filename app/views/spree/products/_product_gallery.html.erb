@@ -5,10 +5,10 @@
 		  <% if defined?(image) && image %>
 		    <%= link_to(image_tag(@product.images[0].attachment.url(:large), class: "img-responsive"), @product.images[0].attachment.url(:large), :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
 		  <% else %>
-		  
-		  <a href='<%= @product.images[0].attachment.url(:grande) %>' title='<%= @product.images[0].alt %>' class='thumbnail col-md-12 main-product-image' style='padding:10px' data-gallery>
-		    <%= large_image(@product, :itemprop => "image", :class => "img-responsive") %>
-		</a>
+		  <%= link_to(large_image(@product, :itemprop => "image", :class => "img-responsive"), '#', :class => "thumbnail col-md-12 main-product-image", :data => { :gallery => ''}) %>
+		 
+		
+		
 		  <% end %>
 	      
          </div><!-- row -->

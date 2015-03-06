@@ -2,18 +2,30 @@
 #This is used later to change the thumbnail images for color selection
 if @product.taxons.map(&:name).include?("Epic 38")
 	rimdepth = 38
+elsif @product.taxons.map(&:name).include?("Epic 38-50")
+	rimdepth = 38
 elsif @product.taxons.map(&:name).include?("Epic 50")
-	rimdepth = 50
+	rimdepth = 50	
+elsif @product.taxons.map(&:name).include?("Epic 50-60")
+	rimdepth = 50	
 elsif @product.taxons.map(&:name).include?("Epic 60")
 	rimdepth = 60
+elsif @product.taxons.map(&:name).include?("Epic 60-88")
+	rimdepth = 60	
 elsif @product.taxons.map(&:name).include?("Epic 88")		
 	rimdepth = 88
 elsif @product.taxons.map(&:name).include?("Elite 38")
 	rimdepth = 38
+elsif @product.taxons.map(&:name).include?("Elite 38-50")
+	rimdepth = 38	
 elsif @product.taxons.map(&:name).include?("Elite 50")
 	rimdepth = 50
+elsif @product.taxons.map(&:name).include?("Elite 50-60")
+	rimdepth = 50	
 elsif @product.taxons.map(&:name).include?("Elite 60")
 	rimdepth = 60
+elsif @product.taxons.map(&:name).include?("Elite 60-88")
+	rimdepth = 60	
 elsif @product.taxons.map(&:name).include?("Elite 88")		
 	rimdepth = 88
 else

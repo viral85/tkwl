@@ -10,7 +10,7 @@ Spree.config do |config|
   # Uncomment to stop tracking inventory levels in the application
   Spree::Config[:track_inventory_levels] = false
   config.track_inventory_levels = false 
-  config.allow_ssl_in_production = false
+ # config.allow_ssl_in_production = false
   
    if Rails.env.production? then
   #S3 configuration

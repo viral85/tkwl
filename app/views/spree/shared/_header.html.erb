@@ -78,7 +78,7 @@
                     <a class="navbar-brand visible-xs" href="/"><img src="http://cdn.tokyowheel.com/logo-file.png" alt="Tokyowheel™"></a>  
                    
                     <% if false %>
-				        <% unless current_spree_page?(spree.cart_path) %>
+				        <% unless current_page?(spree.cart_path) %>
 				              <li >
 				  				<div id="link-to-cart" data-hook>
 				   	          <noscript>
@@ -227,7 +227,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
      
-      <% unless current_spree_page?(spree.cart_path) %>
+      <% unless current_page?(spree.cart_path) %>
             <li >
 				<div id="link-to-cart" data-hook>
  	          <noscript>

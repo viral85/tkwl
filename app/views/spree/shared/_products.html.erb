@@ -40,14 +40,16 @@
         <% end %>
       </div><!-- thumbnail -->
     </div><!-- product -->
-	<%= cycle("", "", "", "</div><div class='row'>", name: "row") -%>
+	<%= cycle("", "", "", "</div><div class='row'>".html_safe, name: "row") -%>
   <% end %>
 </div><!-- products -->
 <% end %>
 
+<div class='text-center'>
 <% if paginated_products.respond_to?(:num_pages) %>
   <%= paginate paginated_products, theme: 'twitter-bootstrap-3' %>
 <% end %>
+</div><!-- text-center -->
 
 
 </div><!-- container -->

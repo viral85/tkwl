@@ -8,6 +8,7 @@
 Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
+  Spree::Config[:track_inventory_levels] = false
   config.track_inventory_levels = false 
   config.allow_ssl_in_production = false
   

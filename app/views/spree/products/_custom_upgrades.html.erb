@@ -1,3 +1,38 @@
+<%
+#This is used later to change the thumbnail images for color selection
+if @product.taxons.map(&:name).include?("Epic 38")
+	rimdepth = 38
+elsif @product.taxons.map(&:name).include?("Epic 38-50")
+	rimdepth = 38
+elsif @product.taxons.map(&:name).include?("Epic 50")
+	rimdepth = 50	
+elsif @product.taxons.map(&:name).include?("Epic 50-60")
+	rimdepth = 50	
+elsif @product.taxons.map(&:name).include?("Epic 60")
+	rimdepth = 60
+elsif @product.taxons.map(&:name).include?("Epic 60-88")
+	rimdepth = 60	
+elsif @product.taxons.map(&:name).include?("Epic 88")		
+	rimdepth = 88
+elsif @product.taxons.map(&:name).include?("Elite 38")
+	rimdepth = 38
+elsif @product.taxons.map(&:name).include?("Elite 38-50")
+	rimdepth = 38	
+elsif @product.taxons.map(&:name).include?("Elite 50")
+	rimdepth = 50
+elsif @product.taxons.map(&:name).include?("Elite 50-60")
+	rimdepth = 50	
+elsif @product.taxons.map(&:name).include?("Elite 60")
+	rimdepth = 60
+elsif @product.taxons.map(&:name).include?("Elite 60-88")
+	rimdepth = 60	
+elsif @product.taxons.map(&:name).include?("Elite 88")		
+	rimdepth = 88
+else
+	rimdepth = 38
+end %>
+
+
 <% case value.presentation %>
 <% when "Standard Road Bike Hubs + Standard Aero Spokes" %>
 
@@ -668,8 +703,8 @@
 	   <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") + content_tag(:span, " " + value.presentation), "#", :title => value.presentation, :class => classes.join(" "), :style => "white-space:normal", :rel => "#{type.id}-#{value.id}" %>
 	</div><!-- btn-group -->
 	  </div><!-- text-center -->
-<% when "Black Epic Decals" %>
 
+<% when "Black EPIC Decals" %>
 <div class="row">
 <div class="col-md-12">
     <h3>Choose Your Color</h3>
@@ -677,7 +712,7 @@
 <div id='color-options'>
 <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-black_large.jpg?18979' title="Black Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-black_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-black_compact.jpg?18979" alt="Tokyowheel Epic Black" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-black_large.jpg?18979' title="Black Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-black_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-black_compact.jpg?18979" alt="Tokyowheel Epic Black" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Black</Strong></div>
         <span class='text-muted'>+ <%= money(0)%></span>
@@ -685,10 +720,10 @@
       </div>
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
-<% when "White Epic Decals" %>
+<% when "White EPIC Decals" %>
     <div class="col-xs-6 col-sm-3">
   <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-white_large.jpg?18979' title="White Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-white_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-white_compact.jpg?18979" alt="Tokyowheel Epic White" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-white_large.jpg?18979' title="White Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-white_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-white_compact.jpg?18979" alt="Tokyowheel Epic White" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>White</Strong></div>
         <span class='text-muted'>+ <%= money(0)%></span>
@@ -696,10 +731,10 @@
       </div>
     </div><!-- thumbnail -->
        </div><!-- col-xs-6 col-sm-3 -->
-<% when "Gold Mirror Epic Decals" %>
+<% when "Gold Mirror EPIC Decals" %>
 <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-gold_large.jpg?18979' title="Gold Mirror Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-gold_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-gold_compact.jpg?18979" alt="Tokyowheel Epic Gold Mirror" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-gold_large.jpg?18979' title="Gold Mirror Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-gold_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-gold_compact.jpg?18979" alt="Tokyowheel Epic Gold Mirror" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Gold Mirror</Strong></div>
         <span class='text-muted'>+ <%= money(0)%></span>
@@ -708,10 +743,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 
-<% when "Silver Mirror Epic Decals" %>
+<% when "Silver Mirror EPIC Decals" %>
   <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-silver_large.jpg?18979' title="Silver Mirror Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-silver_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-silver_compact.jpg?18979" alt="Tokyowheel Epic Silver Mirror" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-silver_large.jpg?18979' title="Silver Mirror Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-silver_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-silver_compact.jpg?18979" alt="Tokyowheel Epic Silver Mirror" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Silver Mirror</Strong></div>
         <span class='text-muted'>+ <%= money(0)%></span>
@@ -720,10 +755,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 
-<% when "Red Epic Decals" %>
+<% when "Red EPIC Decals" %>
    <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-red_large.jpg?18979' title="Red Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-red_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-red_compact.jpg?18979" alt="Tokyowheel Epic Red" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-red_large.jpg?18979' title="Red Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-red_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-red_compact.jpg?18979" alt="Tokyowheel Epic Red" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Red</Strong></div>
         <span class='text-muted'>+ <%= money(0)%></span>
@@ -732,10 +767,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 
-<% when "Blue Epic Decals" %>
+<% when "Blue EPIC Decals" %>
    <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-blue_large.jpg?18979' title="Blue Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-blue_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-blue_compact.jpg?18979" alt="Tokyowheel Epic Blue" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-blue_large.jpg?18979' title="Blue Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-blue_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-blue_compact.jpg?18979" alt="Tokyowheel Epic Blue" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Blue</Strong></div>
        <span class='text-muted'>+ <%= money(0)%></span>
@@ -744,10 +779,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 
-<% when "Green Epic Decals" %>
+<% when "Green EPIC Decals" %>
       <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-green_large.jpg?18979' title="Green Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-green_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-green_compact.jpg?18979" alt="Tokyowheel Epic Green" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-green_large.jpg?18979' title="Green Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-green_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-green_compact.jpg?18979" alt="Tokyowheel Epic Green" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Green</Strong></div>
          <span class='text-muted'>+ <%= money(0)%></span>
@@ -756,10 +791,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 	
-<% when "Orange Epic Decals" %>
+<% when "Orange EPIC Decals" %>
        <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-orange_large.jpg?18979' title="Orange Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-orange_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-orange_compact.jpg?18979" alt="Tokyowheel Epic Orange" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-orange_large.jpg?18979' title="Orange Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-orange_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-orange_compact.jpg?18979" alt="Tokyowheel Epic Orange" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Orange</Strong></div>
          <span class='text-muted'>+ <%= money(0)%></span>
@@ -768,10 +803,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 
-<% when "Yellow Epic Decals" %>
+<% when "Yellow EPIC Decals" %>
       <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-yellow_large.jpg?18979' title="Yellow Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-yellow_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-yellow_compact.jpg?18979" alt="Tokyowheel Epic Yellow" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-yellow_large.jpg?18979' title="Yellow Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-yellow_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-yellow_compact.jpg?18979" alt="Tokyowheel Epic Yellow" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Yellow</Strong></div>
          <span class='text-muted'>+ <%= money(0)%></span>
@@ -780,10 +815,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 
-<% when "Pink Epic Decals" %>
+<% when "Pink EPIC Decals" %>
    <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-pink_large.jpg?18932' title="Pink Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-pink_compact.jpg?18932" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-pink_compact.jpg?18932" alt="Tokyowheel Epic Pink" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-pink_large.jpg?18932' title="Pink Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-pink_compact.jpg?18932" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-pink_compact.jpg?18932" alt="Tokyowheel Epic Pink" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Pink</Strong></div>
          <span class='text-muted'>+ <%= money(0)%></span>
@@ -792,10 +827,10 @@
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
 
-<% when "Purple Epic Decals" %>
+<% when "Purple EPIC Decals" %>
      <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-purple_large.jpg?18979' title="Purple Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-purple_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-purple_compact.jpg?18979" alt="Tokyowheel Epic Purple" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-purple_large.jpg?18979' title="Purple Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-purple_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-purple_compact.jpg?18979" alt="Tokyowheel Epic Purple" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>Purple</Strong></div>
          <span class='text-muted'>+ <%= money(0)%></span>
@@ -803,11 +838,148 @@
       </div>
     </div><!-- thumbnail -->
     </div><!-- col-xs-6 col-sm-3 -->
+	
+	
+	<% when "Black ELITE Decals" %>
+	<div class="row">
+	<div class="col-md-12">
+	    <h3>Choose Your Color</h3>
+	</div><!-- col-md-12 -->
+	<div id='color-options'>
+	<div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-black_large.jpg?18979' title="Black Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-black_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-black_compact.jpg?18979" alt="Tokyowheel Elite Black" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Black</Strong></div>
+	        <span class='text-muted'>+ <%= money(0)%></span>
+	       <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+	<% when "White ELITE Decals" %>
+	    <div class="col-xs-6 col-sm-3">
+	  <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-white_large.jpg?18979' title="White Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-white_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-white_compact.jpg?18979" alt="Tokyowheel Elite White" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>White</Strong></div>
+	        <span class='text-muted'>+ <%= money(0)%></span>
+	       <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	       </div><!-- col-xs-6 col-sm-3 -->
+	<% when "Gold Mirror ELITE Decals" %>
+	<div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-gold_large.jpg?18979' title="Gold Mirror Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-gold_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-gold_compact.jpg?18979" alt="Tokyowheel Elite Gold Mirror" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Gold Mirror</Strong></div>
+	        <span class='text-muted'>+ <%= money(0)%></span>
+	       <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+
+	<% when "Silver Mirror ELITE Decals" %>
+	  <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-silver_large.jpg?18979' title="Silver Mirror Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-silver_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-silver_compact.jpg?18979" alt="Tokyowheel Elite Silver Mirror" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Silver Mirror</Strong></div>
+	        <span class='text-muted'>+ <%= money(0)%></span>
+	       <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+
+	<% when "Red ELITE Decals" %>
+	   <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-red_large.jpg?18979' title="Red Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-red_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-red_compact.jpg?18979" alt="Tokyowheel Elite Red" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Red</Strong></div>
+	        <span class='text-muted'>+ <%= money(0)%></span>
+	       <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+
+	<% when "Blue ELITE Decals" %>
+	   <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-blue_large.jpg?18979' title="Blue Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-blue_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-blue_compact.jpg?18979" alt="Tokyowheel Elite Blue" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Blue</Strong></div>
+	       <span class='text-muted'>+ <%= money(0)%></span>
+	      <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+
+	<% when "Green ELITE Decals" %>
+	      <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-green_large.jpg?18979' title="Green Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-green_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-green_compact.jpg?18979" alt="Tokyowheel Elite Green" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Green</Strong></div>
+	         <span class='text-muted'>+ <%= money(0)%></span>
+	        <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+	
+	<% when "Orange ELITE Decals" %>
+	       <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-orange_large.jpg?18979' title="Orange Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-orange_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-orange_compact.jpg?18979" alt="Tokyowheel Elite Orange" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Orange</Strong></div>
+	         <span class='text-muted'>+ <%= money(0)%></span>
+	        <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+
+	<% when "Yellow ELITE Decals" %>
+	      <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-yellow_large.jpg?18979' title="Yellow Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-yellow_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-yellow_compact.jpg?18979" alt="Tokyowheel Elite Yellow" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Yellow</Strong></div>
+	         <span class='text-muted'>+ <%= money(0)%></span>
+	        <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+
+	<% when "Pink ELITE Decals" %>
+	   <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-pink_large.jpg?18932' title="Pink Color Option" ><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-pink_compact.jpg?18932" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-pink_compact.jpg?18932" alt="Tokyowheel Elite Pink" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Pink</Strong></div>
+	         <span class='text-muted'>+ <%= money(0)%></span>
+	        <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+
+	<% when "Purple ELITE Decals" %>
+	     <div class="col-xs-6 col-sm-3">
+	    <div class="thumbnail color-selector">
+	      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-purple_large.jpg?18979' title="Purple Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-purple_compact.jpg?18979" src="http://cdn.shopify.com/s/files/1/0210/5956/files/elite-<%= rimdepth %>-front-purple_compact.jpg?18979" alt="Tokyowheel Elite Purple" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+	      <div class="caption">
+	        <div><Strong>Purple</Strong></div>
+	         <span class='text-muted'>+ <%= money(0)%></span>
+	        <%= link_to  content_tag(:i, "", :class => "fa fa-check text-yellow") +content_tag(:span, " "+ t(:select)), "#", :title => value.presentation, :class => classes.join(" ")+" btn-block", :rel => "#{type.id}-#{value.id}" %>
+	      </div>
+	    </div><!-- thumbnail -->
+	    </div><!-- col-xs-6 col-sm-3 -->
+	
 
 <% when "No-Logo" %>
     <div class="col-xs-6 col-sm-3">
     <div class="thumbnail color-selector">
-      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-no-logo_large.jpg?19038' title="No-Logo Carbon Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-no-logo_compact.jpg?19038" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-38-front-no-logo_compact.jpg?19038" alt="Tokyowheel Epic No-Logo Carbon" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
+      <a href="#myModal" data-toggle="modal" data-img-url='http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-no-logo_large.jpg?19038' title="No-Logo Carbon Color Option"><img data-src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-no-logo_compact.jpg?19038" src="http://cdn.shopify.com/s/files/1/0210/5956/files/epic-<%= rimdepth %>-front-no-logo_compact.jpg?19038" alt="Tokyowheel Epic No-Logo Carbon" class="img-responsive"><i class="fa fa-search-plus"></i> <small>Zoom</small></a>
       <div class="caption">
         <div><Strong>No-Logo</Strong></div>
          <span class='text-muted'>+ <%= money(0)%></span>

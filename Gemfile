@@ -53,7 +53,7 @@ gem 'spree_blogging_spree', github: 'tkwl/spree-blogging-spree', branch: '3-0-st
 #use multilingual spree static content fork
 gem 'spree_static_content', github: 'tkwl/spree_static_content', branch: '3-0-stable'
 gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-0-stable'
-#gem 'tinymce-rails-langs'
+gem 'tinymce-rails-langs'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: 'master'
 gem 'spree_wombat', github: 'spree/spree_wombat', branch: '3-0-stable'
 gem 'aws-sdk'

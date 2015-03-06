@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '~> 4.2.0'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
@@ -13,7 +13,7 @@ group :production do
   gem 'pg'
 end
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -47,25 +47,25 @@ gem 'sprockets'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 #use i18n for internationalization
-gem 'spree_i18n', github: 'spree/spree_i18n', branch: '2-4-stable'
-#use spree_blogging forked from stefansenk, updated gemspec to support spree 2-4-0
-gem 'spree_blogging_spree', github: 'tkwl/spree-blogging-spree'
+gem 'spree_i18n', github: 'spree/spree_i18n', branch: '3-0-stable'
+#use spree_blogging forked from stefansenk, updated gemspec to support spree 3-0-stable
+gem 'spree_blogging_spree', github: 'tkwl/spree-blogging-spree', branch: '3-0-stable'
 #use multilingual spree static content fork
-gem 'spree_static_content', github: 'tkwl/spree_static_content', branch: 'master'
-gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '2-4-stable'
+gem 'spree_static_content', github: 'tkwl/spree_static_content', branch: '3-0-stable'
+gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-0-stable'
 gem 'tinymce-rails-langs'
-gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '2-4-stable'
-gem 'spree_wombat', github: 'spree/spree_wombat', branch: '2-4-stable'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: 'master'
+gem 'spree_wombat', github: 'spree/spree_wombat', branch: '3-0-stable'
 gem 'aws-sdk'
-gem 'spree_multi_currency', github: 'spree/spree_multi_currency', branch: '2-4-stable'
-gem 'spree_multi_domain',   github: 'spree/spree-multi-domain',   branch: '2-4-stable'
-gem 'spree_price_books', github: 'tkwl/spree_tkwl_price_books'
-gem 'spree_variant_options', github: 'tkwl/spree_tkwl_variant_options'
-gem 'spree_contact_us', github: 'jdutil/spree_contact_us',   branch: '2-4-stable'
+gem 'spree_multi_currency', github: 'spree/spree_multi_currency', branch: '3-0-stable'
+gem 'spree_multi_domain',   github: 'tkwl/spree-multi-domain',   branch: '3-0-stable'
+gem 'spree_price_books', github: 'tkwl/spree_tkwl_price_books',   branch: '3-0-stable'
+gem 'spree_variant_options', github: 'tkwl/spree_tkwl_variant_options',   branch: '3-0-stable'
+gem 'spree_contact_us', github: 'jdutil/spree_contact_us',   branch: 'master'
 gem 'rails_12factor', group: :production
 
-gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '2-4-stable'
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-4-stable'
-gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-4-stable'
+gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '3-0-stable'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '3-0-stable'
+gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '3-0-stable'
 
 

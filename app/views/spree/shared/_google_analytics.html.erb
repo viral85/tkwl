@@ -1,3 +1,5 @@
+<% if false %>
+<%# commenting this out become of spree 3.0.0 enhanced ecommerce analytics %>
 <% if tracker = Spree::Tracker.current %>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,4 +35,6 @@
       ga('ecommerce:send');
     <% end %>
   </script>
+<% end %>
+
 <% end %>

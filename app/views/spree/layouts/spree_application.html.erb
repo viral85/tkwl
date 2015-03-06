@@ -9,7 +9,7 @@
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 <%= flash_messages %>
-  <% if current_spree_page?(spree.cart_path) || current_spree_page?('/checkout/registration') || current_spree_page?('/checkout') || current_spree_page?('/login') || current_spree_page?('/signup') || current_spree_page?('/checkout/address') || current_spree_page?('/checkout/payment') || current_spree_page?('/checkout/delivery') || current_spree_page?('/checkout/confirm') || current_spree_page?('/orders') || current_spree_page?(spree.update_password_path) || current_spree_page?(spree.reset_password_path) %>
+  <% if current_page?(spree.cart_path) || current_page?('/checkout/registration') || current_page?('/checkout') || current_page?('/login') || current_page?('/signup') || current_page?('/checkout/address') || current_page?('/checkout/payment') || current_page?('/checkout/delivery') || current_page?('/checkout/confirm') || current_page?('/orders') || current_page?(spree.update_password_path) || current_page?(spree.reset_password_path) %>
    <%= render partial: 'spree/shared/checkout_header' %>
   <% else %>
     <%= render partial: 'spree/shared/header' %>
@@ -21,7 +21,7 @@
         <%= yield :templates %>
 	
 	<%-# TODO show CW 101 opt in conditionally unless page.handle == 'orders' or page.handle == 'sign-up' or template == 'cart' or page.handle == 'sale-sign-up-thank-you' or template contains 'customer' or page.handle == 'ambassador' or page.handle == 'angular' or page.handle == 'share' -%>
-   <% if current_spree_page?(spree.cart_path) || current_spree_page?('/checkout/registration') || current_spree_page?('/checkout') || current_spree_page?('/login') || current_spree_page?('/signup') || current_spree_page?('/checkout/address') || current_spree_page?('/checkout/payment') || current_spree_page?('/checkout/delivery') || current_spree_page?('/checkout/confirm') || current_spree_page?('/orders/*') || current_spree_page?(spree.update_password_path) || current_spree_page?(spree.reset_password_path)%>
+   <% if current_page?(spree.cart_path) || current_page?('/checkout/registration') || current_page?('/checkout') || current_page?('/login') || current_page?('/signup') || current_page?('/checkout/address') || current_page?('/checkout/payment') || current_page?('/checkout/delivery') || current_page?('/checkout/confirm') || current_page?('/orders/*') || current_page?(spree.update_password_path) || current_page?(spree.reset_password_path)%>
    <%= render partial: 'spree/shared/checkout_footer' %>
     
    <% else %>

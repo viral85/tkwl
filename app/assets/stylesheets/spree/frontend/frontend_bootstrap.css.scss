@@ -43,32 +43,32 @@
 .alert-alert { @extend .alert-info; }
 
 .product-body {
-  height: 170px;
+ 
 }
 
 .progress-steps {
-  margin-top: $line-height-computed;
+ 
 }
 
 h1 {
-  margin-bottom: 30px;
+ 
 }
 
 // Center cart line items
 table {
   &.table > tbody > tr {
     &.line-item td, &.stock-item td {
-      vertical-align: middle;
+
     }
   }
 
   &#line-items {
     > tbody, > tfoot {
       > tr > td {
-        vertical-align: middle;
+
 
         &.order-qty {
-          text-align: center;
+
         }
       }
     }
@@ -77,18 +77,18 @@ table {
 
 // Footer links
 #footer-left a {
-  color: lighten($brand-primary, 20);
+
 
   &:hover {
-    color: lighten($brand-primary, 10);
+
   }
 }
 
 // Updated credit-card image
 #credit-card-image {
-  margin-top: -10px;
+
 }
 
 .existing-credit-card-list td {
-  padding: 5px;
+
 }

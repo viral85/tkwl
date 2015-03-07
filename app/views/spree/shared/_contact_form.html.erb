@@ -25,7 +25,7 @@ box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
  <div class='well '>
 <div id="contactFormWrapper" class='side-bar-contact'>
   <div class='row'>
-    <div class='<% if not current_spree_page?("/pages/contact") %>col-sm-4<% end %>'>
+    <div class='<% if not current_page?("/pages/contact") %>col-sm-4<% end %>'>
 <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
   <% if SpreeContactUs.require_name %>
    <div class="form-group">
@@ -38,7 +38,7 @@ box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     <%= f.email_field :email, class: 'required email  form-control', placeholder: "john@example.com"  %>
 </div><!-- form-group -->
 </div><!-- col-sm-4 -->
-    <div class='<% if not current_spree_page?("/pages/contact") %>col-sm-8<% end %>'>
+    <div class='<% if not current_page?("/pages/contact") %>col-sm-8<% end %>'>
  
   <% if SpreeContactUs.require_subject %>
 

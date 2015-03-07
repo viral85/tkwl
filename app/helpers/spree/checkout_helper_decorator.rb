@@ -1,6 +1,7 @@
-Spree::CheckoutHelper.module_eval do
+
+Spree::FrontendHelper.module_eval do
 	def checkout_progress
-      states = checkout_states
+      states = @order.checkout_steps
       items = states.map do |state|
         text = Spree.t("order_state.#{state}").titleize
 

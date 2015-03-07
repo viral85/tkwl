@@ -11,7 +11,7 @@ Spree.config do |config|
   Spree::Config[:track_inventory_levels] = false
   config.track_inventory_levels = false 
  # config.allow_ssl_in_production = false
-  
+
    if Rails.env.production? then
   #S3 configuration
   attachment_config = {
@@ -61,4 +61,6 @@ end
 
 
 Spree.user_class = "Spree::User"
+
+
 

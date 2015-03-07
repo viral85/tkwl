@@ -26,6 +26,15 @@ GIT
       tinymce-rails (~> 4.0.16)
 
 GIT
+  remote: git://github.com/spree-contrib/spree_print_invoice.git
+  revision: c48b32af100e661bf7fb297e84fa69385bb15285
+  branch: 3-0-stable
+  specs:
+    spree_print_invoice (3.0.0.beta)
+      prawn (~> 1.0.0)
+      spree_core (~> 3.0.0.beta)
+
+GIT
   remote: git://github.com/spree/spree_i18n.git
   revision: 5058890b60382852ae21d92821294c5dc8ccdc69
   branch: 3-0-stable
@@ -360,10 +369,14 @@ GEM
       xml-simple
     paypal-sdk-merchant (1.106.1)
       paypal-sdk-core (~> 0.2.3)
+    pdf-core (0.2.5)
     pg (0.18.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
+    prawn (1.0.0)
+      pdf-core (~> 0.2.2)
+      ttfunk (~> 1.1.1)
     premailer (1.8.4)
       css_parser (>= 1.3.6)
       htmlentities (>= 4.0.0)
@@ -439,7 +452,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
     state_machines (0.2.2)
     state_machines-activemodel (0.1.2)
       activemodel (~> 4.1)
@@ -457,6 +469,7 @@ GEM
     tinymce-rails-langs (4.20140129)
       tinymce-rails (~> 4.0)
     truncate_html (0.9.2)
+    ttfunk (1.1.1)
     turbolinks (2.5.3)
       coffee-rails
     twitter_cldr (3.1.2)
@@ -505,12 +518,12 @@ DEPENDENCIES
   spree_multi_domain!
   spree_paypal_express!
   spree_price_books!
+  spree_print_invoice!
   spree_static_content!
   spree_variant_options!
   spree_wombat!
   spring
   sprockets
-  sqlite3
   tinymce-rails-langs
   turbolinks
   uglifier (>= 1.3.0)

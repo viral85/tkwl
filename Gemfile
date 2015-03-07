@@ -4,14 +4,8 @@ ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.0'
-# Use sqlite3 as the database for Active Record
-group :development do
-  gem 'sqlite3'
-#   gem 'pg'
-end
-group :production do
-  gem 'pg'
-end
+# Use pg as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,6 +57,7 @@ gem 'spree_price_books', github: 'tkwl/spree_tkwl_price_books',   branch: '3-0-s
 gem 'spree_variant_options', github: 'tkwl/spree_tkwl_variant_options',   branch: '3-0-stable'
 gem 'spree_contact_us', github: 'jdutil/spree_contact_us',   branch: 'master'
 gem 'rails_12factor', group: :production
+gem 'spree_print_invoice', github: 'spree-contrib/spree_print_invoice', branch: '3-0-stable'
 
 gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '3-0-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '3-0-stable'

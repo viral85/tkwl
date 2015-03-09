@@ -1,0 +1,102 @@
+//Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
+
+@import "bootstrap-sprockets";
+@import "variables";
+@import "bootstrap";
+
+// -- Spree Custom Header and Footer ---------------------
+#spree-header {
+  background: inherit;
+  background-size: inherit;
+  margin-bottom: inherit;
+
+  #header {
+    background: inherit;
+    padding: inherit;
+  }
+
+  #logo {
+    margin-bottom: inherit;
+
+    img {
+      width: inherit;
+    }
+  }
+
+  .nav a {
+    color: inherit;
+
+    &:hover, &:focus {
+      background: inherit;
+    }
+  }
+
+  .navbar {
+    border: inherit;
+    margin-bottom: inherit;
+  }
+}
+
+#spree-footer {
+  background: inherit;
+  padding-top: inherit;
+  margin-top: inherit;
+  color: inherit;
+}
+
+// -- Spree Layout Custom Rules -------------------------
+
+.alert-notice { @extend .alert-success; }
+.alert-error, .alert-registration_error { @extend .alert-danger; }
+.alert-alert { @extend .alert-info; }
+
+.product-body {
+  height: inherit;
+}
+
+.progress-steps {
+  margin-top: inherit;
+}
+
+h1 {
+  margin-bottom: inherit;
+}
+
+// Center cart line items
+table {
+  &.table > tbody > tr {
+    &.line-item td, &.stock-item td {
+      vertical-align: inherit;
+    }
+  }
+
+  &#line-items {
+    > tbody, > tfoot {
+      > tr > td {
+        vertical-align: inherit;
+
+        &.order-qty {
+          text-align: inherit;
+        }
+      }
+    }
+  }
+}
+
+// Footer links
+#footer-left a {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+// Updated credit-card image
+#credit-card-image {
+  margin-top: inherit;
+}
+
+.existing-credit-card-list td {
+  padding: inherit;
+}

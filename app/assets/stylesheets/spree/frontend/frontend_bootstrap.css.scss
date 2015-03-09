@@ -5,10 +5,4 @@
 //@import "bootstrap";
 
 
-// -- Spree Layout Custom Rules -------------------------
-
-.alert-notice { @extend .alert-success; }
-.alert-error, .alert-registration_error { @extend .alert-danger; }
-.alert-alert { @extend .alert-info; }
-
 

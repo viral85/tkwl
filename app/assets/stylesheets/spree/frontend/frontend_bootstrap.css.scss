@@ -4,37 +4,6 @@
 //@import "variables";
 //@import "bootstrap";
 
-// -- Spree Custom Header and Footer ---------------------
-#spree-header {
- 
-  #header {
-   
-  }
-
-  #logo {
-    
-
-    img {
-     
-    }
-  }
-
-  .nav a {
-
-
-    &:hover, &:focus {
-     
-    }
-  }
-
-  .navbar {
-  
-  }
-}
-
-#spree-footer {
-
-}
 
 // -- Spree Layout Custom Rules -------------------------
 
@@ -42,53 +11,4 @@
 .alert-error, .alert-registration_error { @extend .alert-danger; }
 .alert-alert { @extend .alert-info; }
 
-.product-body {
- 
-}
 
-.progress-steps {
- 
-}
-
-h1 {
- 
-}
-
-// Center cart line items
-table {
-  &.table > tbody > tr {
-    &.line-item td, &.stock-item td {
-
-    }
-  }
-
-  &#line-items {
-    > tbody, > tfoot {
-      > tr > td {
-
-
-        &.order-qty {
-
-        }
-      }
-    }
-  }
-}
-
-// Footer links
-#footer-left a {
-
-
-  &:hover {
-
-  }
-}
-
-// Updated credit-card image
-#credit-card-image {
-
-}
-
-.existing-credit-card-list td {
-
-}

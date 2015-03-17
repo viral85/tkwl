@@ -46,8 +46,8 @@ gem 'spree_i18n', github: 'spree/spree_i18n', branch: '3-0-stable'
 gem 'spree_blogging_spree', github: 'tkwl/spree-blogging-spree', branch: '3-0-stable'
 #use multilingual spree static content fork
 gem 'spree_static_content', github: 'tkwl/spree_static_content', branch: '3-0-stable'
-gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-0-stable'
-gem 'tinymce-rails-langs'
+#gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-0-stable'
+#gem 'tinymce-rails-langs'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: 'master'
 gem 'spree_wombat', github: 'spree/spree_wombat', branch: '3-0-stable'
 gem 'aws-sdk'
@@ -59,7 +59,7 @@ gem 'spree_contact_us', github: 'jdutil/spree_contact_us',   branch: 'master'
 gem 'rails_12factor', group: :production
 gem 'spree_print_invoice', github: 'spree-contrib/spree_print_invoice', branch: '3-0-stable'
 
-gem 'spree', :git => 'https://github.com/spree/spree.git', branch: '3-0-stable'
+gem 'spree', :git => 'https://github.com/tkwl/spree.git', branch: '3-0-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '3-0-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '3-0-stable'
 

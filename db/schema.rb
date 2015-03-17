@@ -592,8 +592,10 @@ ActiveRecord::Schema.define(version: 201501219073130) do
     t.string   "meta_description", limit: 255
     t.string   "meta_keywords",    limit: 255
     t.string   "slug",             limit: 255
+    t.datetime "deleted_at"
   end
 
+  add_index "spree_product_translations", ["deleted_at"], name: "index_spree_product_translations_on_deleted_at", using: :btree
   add_index "spree_product_translations", ["locale"], name: "index_spree_product_translations_on_locale", using: :btree
   add_index "spree_product_translations", ["spree_product_id"], name: "index_spree_product_translations_on_spree_product_id", using: :btree
 

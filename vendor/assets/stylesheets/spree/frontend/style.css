@@ -52,7 +52,7 @@ span.money {
   background-position:center; 
   background-repeat:no-repeat;
   background-size:cover;
-color:white;}
+color:white !important;}
 
 
 /* Featurettes
@@ -78,12 +78,12 @@ color:white;}
   background-position:center; 
   background-repeat:no-repeat;
   background-size:cover;
-color:white;}
+color:white !important;}
 .jumbotron4{background-image: url(http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-holiday-rider-bg2.jpg?24782);
   background-position:center; 
   background-repeat:no-repeat;
   background-size:cover;
-color:white;
+color:white !important;
 padding-top: 0px;
 padding-bottom: 0px;}
 
@@ -91,14 +91,14 @@ padding-bottom: 0px;}
   background-position:center; 
   background-repeat:no-repeat;
   background-size:cover;
-color:white;
+color:white !important;
 padding:0;}
 
 .jumbotron6{background-image: url(http://cdn.shopify.com/s/files/1/0210/5956/files/tokyowheel-rider-elevation-dark_1024x1024.jpg?27012);
   background-position:left; 
   background-repeat:no-repeat;
   background-size:cover;
-color:white;
+color:white !important;
 padding:30px 0;
 margin-bottom:10px;}
 

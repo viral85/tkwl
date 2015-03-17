@@ -104,8 +104,28 @@ GIT
       spree_frontend (~> 3.0.0.rc5)
 
 GIT
-  remote: https://github.com/spree/spree.git
-  revision: 2d6e3066e7b8dc5c4c6d008a9cbafa6049cefd8f
+  remote: https://github.com/spree/spree_auth_devise.git
+  revision: 07f16255c8e83cf5763f2c3510444ee1b4cdc4dd
+  branch: 3-0-stable
+  specs:
+    spree_auth_devise (3.0.0)
+      devise (~> 3.4.1)
+      devise-encryptable (= 0.1.2)
+      json
+      multi_json
+      spree_core (~> 3.0.0.beta)
+
+GIT
+  remote: https://github.com/spree/spree_gateway.git
+  revision: 504ee9621da6479e474d7b12d08dfd84b5da465b
+  branch: 3-0-stable
+  specs:
+    spree_gateway (3.0.0.beta)
+      spree_core (~> 3.0.0.beta)
+
+GIT
+  remote: https://github.com/tkwl/spree.git
+  revision: 8b1ba10b81bb776170d1cec99c34bff12c8c8f10
   branch: 3-0-stable
   specs:
     spree (3.0.0)
@@ -163,26 +183,6 @@ GIT
       sprockets-rails (~> 2.2)
     spree_sample (3.0.0)
       spree_core (= 3.0.0)
-
-GIT
-  remote: https://github.com/spree/spree_auth_devise.git
-  revision: 07f16255c8e83cf5763f2c3510444ee1b4cdc4dd
-  branch: 3-0-stable
-  specs:
-    spree_auth_devise (3.0.0)
-      devise (~> 3.4.1)
-      devise-encryptable (= 0.1.2)
-      json
-      multi_json
-      spree_core (~> 3.0.0.beta)
-
-GIT
-  remote: https://github.com/spree/spree_gateway.git
-  revision: 504ee9621da6479e474d7b12d08dfd84b5da465b
-  branch: 3-0-stable
-  specs:
-    spree_gateway (3.0.0.beta)
-      spree_core (~> 3.0.0.beta)
 
 GEM
   remote: https://rubygems.org/

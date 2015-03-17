@@ -26,13 +26,14 @@
         <% end %>
         <%= form.hidden_field :state_lock_version %>
         <%= render @order.state, :form => form %>
-      <% end %>
+      
     </div>
     <% if @order.state != 'confirm' %>
       <div id="checkout-summary" data-hook="checkout_summary_box" class="col-sm-5">
-        <%= render :partial => 'summary', :locals => { :order => @order } %>
+        <%= render :partial => 'summary', :locals => { :order => @order, :form => form } %>
       </div>
     <% end %>
+	<% end %>
   </div>
 </div>
 

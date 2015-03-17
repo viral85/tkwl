@@ -125,7 +125,7 @@ GIT
 
 GIT
   remote: https://github.com/tkwl/spree.git
-  revision: 8b1ba10b81bb776170d1cec99c34bff12c8c8f10
+  revision: 32e4c87b9ee4c6bd5747aa2c431cbe7d8308428a
   branch: 3-0-stable
   specs:
     spree (3.0.0)

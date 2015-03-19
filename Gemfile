@@ -57,7 +57,8 @@ gem 'spree_price_books', github: 'tkwl/spree_tkwl_price_books',   branch: '3-0-s
 gem 'spree_variant_options', github: 'tkwl/spree_tkwl_variant_options',   branch: '3-0-stable'
 gem 'spree_contact_us', github: 'jdutil/spree_contact_us',   branch: 'master'
 gem 'rails_12factor', group: :production
-gem 'spree_print_invoice', github: 'spree-contrib/spree_print_invoice', branch: '3-0-stable'
+#use modified version to fix issue 75 in spree_print_invoice
+gem 'spree_print_invoice', github: 'tkwl/spree_print_invoice', branch: '3-0-stable'
 
 gem 'spree', :git => 'https://github.com/tkwl/spree.git', branch: '3-0-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '3-0-stable'

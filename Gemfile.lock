@@ -84,12 +84,12 @@ GIT
 
 GIT
   remote: git://github.com/tkwl/spree_tkwl_price_books.git
-  revision: 99dbcb077710deb19a089ecaa156895e58330578
+  revision: 1212a6f988acb8389d2af8fd206cfb0cc0426332
   branch: 3-0-stable
   specs:
     spree_price_books (3.0.0.beta)
       google_currency
-      spree_core (~> 3.0.0.rc5)
+      spree_core (~> 3.0.0)
       validates_timeliness (~> 3.0)
 
 GIT

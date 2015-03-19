@@ -66,6 +66,17 @@ GIT
       spree_frontend (>= 3.0.0.rc5)
 
 GIT
+  remote: git://github.com/tkwl/spree_comments.git
+  revision: 42e5738c9dadccf538c49537dcd7246556adf353
+  branch: 3-0-stable
+  specs:
+    spree_comments (3.0.0)
+      acts_as_commentable (= 4.0.1)
+      spree_api (~> 3.0.0)
+      spree_backend (~> 3.0.0)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/tkwl/spree_print_invoice.git
   revision: 65bad4a399e56e761bbc7f9488af1abd9e8c42e8
   branch: 3-0-stable
@@ -231,6 +242,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.0.2)
       rails (>= 3, < 5)
+    acts_as_commentable (4.0.1)
     acts_as_list (0.6.0)
       activerecord (>= 3.0)
     addressable (2.3.7)
@@ -492,6 +504,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_blogging_spree!
+  spree_comments!
   spree_contact_us!
   spree_gateway!
   spree_i18n!

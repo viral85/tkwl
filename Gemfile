@@ -58,6 +58,7 @@ gem 'spree_variant_options', github: 'tkwl/spree_tkwl_variant_options',   branch
 gem 'spree_contact_us', github: 'jdutil/spree_contact_us',   branch: 'master'
 gem 'rails_12factor', group: :production
 gem 'spree_print_invoice', github: 'spree-contrib/spree_print_invoice', branch: '3-0-stable'
+gem "spree_comments", path: '../spree_comments', branch: '3-0-stable'
 
 gem 'spree', :git => 'https://github.com/tkwl/spree.git', branch: '3-0-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '3-0-stable'

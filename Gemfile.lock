@@ -16,15 +16,6 @@ GIT
       spree_core (~> 3.0.0.rc)
 
 GIT
-  remote: git://github.com/spree-contrib/spree_print_invoice.git
-  revision: c48b32af100e661bf7fb297e84fa69385bb15285
-  branch: 3-0-stable
-  specs:
-    spree_print_invoice (3.0.0.beta)
-      prawn (~> 1.0.0)
-      spree_core (~> 3.0.0.beta)
-
-GIT
   remote: git://github.com/spree/spree_i18n.git
   revision: 60c724208510d0efd4151d4b40b1b35168c3e55e
   branch: 3-0-stable
@@ -56,7 +47,7 @@ GIT
 
 GIT
   remote: git://github.com/tkwl/spree-blogging-spree.git
-  revision: de44cf6f6feaca96030cf5f0507b464275ce14fd
+  revision: 6558976c059f82415e428dc2ed922b02d0abe61b
   branch: 3-0-stable
   specs:
     spree_blogging_spree (2.3.0)
@@ -75,6 +66,26 @@ GIT
       spree_frontend (>= 3.0.0.rc5)
 
 GIT
+  remote: git://github.com/tkwl/spree_comments.git
+  revision: 42e5738c9dadccf538c49537dcd7246556adf353
+  branch: 3-0-stable
+  specs:
+    spree_comments (3.0.0)
+      acts_as_commentable (= 4.0.1)
+      spree_api (~> 3.0.0)
+      spree_backend (~> 3.0.0)
+      spree_core (~> 3.0.0)
+
+GIT
+  remote: git://github.com/tkwl/spree_print_invoice.git
+  revision: 65bad4a399e56e761bbc7f9488af1abd9e8c42e8
+  branch: 3-0-stable
+  specs:
+    spree_print_invoice (3.0.0.beta)
+      prawn (~> 1.0.0)
+      spree_core (~> 3.0.0.beta)
+
+GIT
   remote: git://github.com/tkwl/spree_static_content.git
   revision: ab3682f84755dd2b95f12c75eed3a0503cf24b0a
   branch: 3-0-stable
@@ -84,12 +95,12 @@ GIT
 
 GIT
   remote: git://github.com/tkwl/spree_tkwl_price_books.git
-  revision: 99dbcb077710deb19a089ecaa156895e58330578
+  revision: fdb47abad421e393e487c6c099e2881b5b10989e
   branch: 3-0-stable
   specs:
     spree_price_books (3.0.0.beta)
       google_currency
-      spree_core (~> 3.0.0.rc5)
+      spree_core (~> 3.0.0)
       validates_timeliness (~> 3.0)
 
 GIT
@@ -117,7 +128,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_gateway.git
-  revision: 504ee9621da6479e474d7b12d08dfd84b5da465b
+  revision: d9305a348d259df0ffcb2a81ef79823b637539bc
   branch: 3-0-stable
   specs:
     spree_gateway (3.0.0.beta)
@@ -231,11 +242,12 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.0.2)
       rails (>= 3, < 5)
+    acts_as_commentable (4.0.1)
     acts_as_list (0.6.0)
       activerecord (>= 3.0)
     addressable (2.3.7)
     arel (6.0.0)
-    autoprefixer-rails (5.1.7)
+    autoprefixer-rails (5.1.7.1)
       execjs
       json
     awesome_nested_set (3.0.2)
@@ -250,7 +262,7 @@ GEM
     aws-sdk-resources (2.0.30)
       aws-sdk-core (= 2.0.30)
     bcrypt (3.1.10)
-    bootstrap-sass (3.3.4)
+    bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
@@ -388,7 +400,7 @@ GEM
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.5)
+    rails-dom-testing (1.0.6)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
@@ -492,6 +504,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_blogging_spree!
+  spree_comments!
   spree_contact_us!
   spree_gateway!
   spree_i18n!
